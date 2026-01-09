@@ -18,7 +18,7 @@ class SkillDataProcessor {
         if (this.loaded) return;
 
         try {
-            const response = await fetch('../ClearOffers.json');
+            const response = await fetch('./ClearOffers.json');
             this.offers = await response.json();
             this.loaded = true;
             console.log(`Loaded ${this.offers.length} job offers`);
