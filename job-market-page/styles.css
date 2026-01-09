@@ -142,7 +142,7 @@ body {
 
 .subtitle {
     font-family: var(--font-mono);
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
     font-weight: 400;
     letter-spacing: 0.05em;
@@ -662,5 +662,125 @@ body {
 
     .skill-bubbles {
         height: 400px;
+    }
+}
+
+/* ===== TEAM MEMBER STYLING ===== */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: var(--warm-sand);
+    border: 1px solid var(--border-hairline);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+/* Hover Effect - Similar to your Chart Containers */
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 64px var(--shadow-subtle);
+    border-color: var(--burnt-orange);
+}
+
+.member-photo-frame {
+    width: 200px;
+    height: 200px;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    border-radius: 50%; /* Makes it circular like skill bubbles */
+    overflow: hidden;
+    border: 2px solid var(--matte-carbon);
+    background: var(--alabaster);
+    box-shadow: 0 8px 24px rgba(43, 43, 43, 0.12);
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.team-member:hover .member-photo {
+    transform: scale(1.05);
+}
+
+.member-info {
+    width: 100%;
+}
+
+.member-name {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--matte-carbon);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.1;
+}
+
+.member-role {
+    font-family: var(--font-mono);
+    color: var(--burnt-orange);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--border-hairline);
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.social-icon {
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon:hover {
+    color: var(--burnt-orange);
+    border-color: var(--burnt-orange);
+    transform: translateY(-2px);
+    background: rgba(200, 90, 62, 0.05);
+}
+
+/* Responsive adjustment for Mobile */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .member-photo-frame {
+        width: 160px;
+        height: 160px;
     }
 }
