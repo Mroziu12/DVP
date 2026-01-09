@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Market Analytics - Main Dashboard</title>
+    <meta name="description"
+        content="Comprehensive job market analytics dashboard with interactive skill visualizations and salary insights">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Job Market Analytics</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Main</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="page-header">
+                <h2>Market Overview</h2>
+                <p class="subtitle">Explore the latest trends in the job market with interactive visualizations</p>
+            </header>
+
+            <!-- Main Big Graph Chart -->
+            <section class="chart-section main-chart-section">
+                <div class="chart-header">
+                    <h3>Skills Distribution</h3>
+                    <p class="chart-description">Click on any skill to view detailed analytics</p>
+                </div>
+                <div class="chart-container big-chart" id="mainChart">
+                    <div class="chart-placeholder">
+                        <!-- Placeholder for clickable skills -->
+                        <div class="skill-bubbles">
+                            <div class="skill-bubble" data-skill="JavaScript"
+                                style="--size: 180px; --x: 15%; --y: 20%;">
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-bubble" data-skill="Python" style="--size: 160px; --x: 45%; --y: 15%;">
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-bubble" data-skill="Java" style="--size: 140px; --x: 75%; --y: 25%;">
+                                <span>Java</span>
+                            </div>
+                            <div class="skill-bubble" data-skill="React" style="--size: 120px; --x: 25%; --y: 55%;">
+                                <span>React</span>
+                            </div>
+                            <div class="skill-bubble" data-skill="Node.js" style="--size: 110px; --x: 60%; --y: 60%;">
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-bubble" data-skill="Docker" style="--size: 100px; --x: 80%; --y: 65%;">
+                                <span>Docker</span>
+                            </div>
+                            <div class="skill-bubble" data-skill="AWS" style="--size: 95px; --x: 40%; --y: 75%;">
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two Charts Below -->
+            <div class="charts-grid">
+                <!-- Level vs Salary Chart -->
+                <section class="chart-section">
+                    <div class="chart-header">
+                        <h3>Level vs Salary</h3>
+                        <p class="chart-description">Salary distribution across experience levels</p>
+                    </div>
+                    <div class="chart-container medium-chart" id="levelSalaryChart">
+                        <div class="chart-placeholder">
+                            <div class="bar-chart-placeholder">
+                                <div class="bar" style="--height: 60%; --color: #C85A3E;">
+                                    <span class="bar-label">Junior</span>
+                                </div>
+                                <div class="bar" style="--height: 80%; --color: #3A4D39;">
+                                    <span class="bar-label">Mid</span>
+                                </div>
+                                <div class="bar" style="--height: 95%; --color: #2B2B2B;">
+                                    <span class="bar-label">Senior</span>
+                                </div>
+                                <div class="bar" style="--height: 75%; --color: #C85A3E;">
+                                    <span class="bar-label">Lead</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Category Breakout Chart -->
+                <section class="chart-section">
+                    <div class="chart-header">
+                        <h3>Category Breakout</h3>
+                        <p class="chart-description">Job distribution by category</p>
+                    </div>
+                    <div class="chart-container medium-chart" id="categoryChart">
+                        <div class="chart-placeholder">
+                            <div class="pie-chart-placeholder">
+                                <svg viewBox="0 0 200 200" class="pie-svg">
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#C85A3E" stroke-width="40"
+                                        stroke-dasharray="150 351" transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A4D39" stroke-width="40"
+                                        stroke-dasharray="100 351" stroke-dashoffset="-150"
+                                        transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2B2B2B" stroke-width="40"
+                                        stroke-dasharray="80 351" stroke-dashoffset="-250"
+                                        transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#E8DCC4" stroke-width="40"
+                                        stroke-dasharray="21 351" stroke-dashoffset="-330"
+                                        transform="rotate(-90 100 100)" />
+                                </svg>
+                                <div class="pie-legend">
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #C85A3E;"></span> Frontend</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #3A4D39;"></span> Backend</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #2B2B2B;"></span> DevOps</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #E8DCC4;"></span> Data</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

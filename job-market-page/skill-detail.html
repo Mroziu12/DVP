@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Details - Job Market Analytics</title>
+    <meta name="description" content="Detailed analytics for specific skills in the job market">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Job Market Analytics</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Main</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Back Button -->
+            <div class="back-navigation">
+                <a href="index.html" class="back-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Back to Overview
+                </a>
+            </div>
+
+            <!-- Header Section -->
+            <header class="page-header skill-header">
+                <h2 id="skillName">Skill Name</h2>
+                <p class="subtitle">Comprehensive analytics and market insights</p>
+            </header>
+
+            <!-- Row 1: Word Cloud Graph -->
+            <section class="chart-section">
+                <div class="chart-header">
+                    <h3>Related Technologies & Keywords</h3>
+                    <p class="chart-description">Word cloud visualization of associated skills</p>
+                </div>
+                <div class="chart-container large-chart" id="wordCloudChart">
+                    <div class="chart-placeholder">
+                        <div class="word-cloud-placeholder">
+                            <span class="word-item" style="--size: 48px; --x: 20%; --y: 25%;">Framework</span>
+                            <span class="word-item" style="--size: 36px; --x: 50%; --y: 15%;">API</span>
+                            <span class="word-item" style="--size: 42px; --x: 70%; --y: 30%;">Database</span>
+                            <span class="word-item" style="--size: 28px; --x: 15%; --y: 55%;">Testing</span>
+                            <span class="word-item" style="--size: 38px; --x: 45%; --y: 50%;">Cloud</span>
+                            <span class="word-item" style="--size: 32px; --x: 75%; --y: 60%;">DevOps</span>
+                            <span class="word-item" style="--size: 26px; --x: 30%; --y: 75%;">Agile</span>
+                            <span class="word-item" style="--size: 34px; --x: 60%; --y: 80%;">CI/CD</span>
+                            <span class="word-item" style="--size: 30px; --x: 85%; --y: 45%;">Security</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Row 2: Scatter Plot -->
+            <section class="chart-section">
+                <div class="chart-header">
+                    <h3>Salary vs Experience Distribution</h3>
+                    <p class="chart-description">Scatter plot showing salary correlation with experience</p>
+                </div>
+                <div class="chart-container large-chart" id="scatterPlotChart">
+                    <div class="chart-placeholder">
+                        <div class="scatter-plot-placeholder">
+                            <div class="scatter-point" style="--x: 15%; --y: 70%;"></div>
+                            <div class="scatter-point" style="--x: 20%; --y: 65%;"></div>
+                            <div class="scatter-point" style="--x: 25%; --y: 60%;"></div>
+                            <div class="scatter-point" style="--x: 30%; --y: 55%;"></div>
+                            <div class="scatter-point" style="--x: 35%; --y: 50%;"></div>
+                            <div class="scatter-point" style="--x: 40%; --y: 48%;"></div>
+                            <div class="scatter-point" style="--x: 45%; --y: 45%;"></div>
+                            <div class="scatter-point" style="--x: 50%; --y: 40%;"></div>
+                            <div class="scatter-point" style="--x: 55%; --y: 38%;"></div>
+                            <div class="scatter-point" style="--x: 60%; --y: 35%;"></div>
+                            <div class="scatter-point" style="--x: 65%; --y: 30%;"></div>
+                            <div class="scatter-point" style="--x: 70%; --y: 28%;"></div>
+                            <div class="scatter-point" style="--x: 75%; --y: 25%;"></div>
+                            <div class="scatter-point" style="--x: 80%; --y: 20%;"></div>
+                            <div class="scatter-point" style="--x: 85%; --y: 18%;"></div>
+                            <div class="scatter-point" style="--x: 22%; --y: 68%;"></div>
+                            <div class="scatter-point" style="--x: 38%; --y: 52%;"></div>
+                            <div class="scatter-point" style="--x: 52%; --y: 42%;"></div>
+                            <div class="scatter-point" style="--x: 68%; --y: 32%;"></div>
+                            <div class="scatter-point" style="--x: 78%; --y: 22%;"></div>
+                            <div class="axis-label x-axis">Experience (Years)</div>
+                            <div class="axis-label y-axis">Salary</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Row 3: Three Pie Charts -->
+            <div class="charts-grid three-columns">
+                <!-- Pie Chart 1: Contract Type -->
+                <section class="chart-section">
+                    <div class="chart-header">
+                        <h3>Contract Type</h3>
+                        <p class="chart-description">Distribution by contract</p>
+                    </div>
+                    <div class="chart-container small-chart" id="contractTypeChart">
+                        <div class="chart-placeholder">
+                            <div class="pie-chart-placeholder small">
+                                <svg viewBox="0 0 200 200" class="pie-svg">
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#C85A3E" stroke-width="40"
+                                        stroke-dasharray="200 351" transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A4D39" stroke-width="40"
+                                        stroke-dasharray="100 351" stroke-dashoffset="-200"
+                                        transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2B2B2B" stroke-width="40"
+                                        stroke-dasharray="51 351" stroke-dashoffset="-300"
+                                        transform="rotate(-90 100 100)" />
+                                </svg>
+                                <div class="pie-legend">
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #C85A3E;"></span> B2B</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #3A4D39;"></span> Permanent</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #2B2B2B;"></span> Contract</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pie Chart 2: Work Mode -->
+                <section class="chart-section">
+                    <div class="chart-header">
+                        <h3>Work Mode</h3>
+                        <p class="chart-description">Remote vs office distribution</p>
+                    </div>
+                    <div class="chart-container small-chart" id="workModeChart">
+                        <div class="chart-placeholder">
+                            <div class="pie-chart-placeholder small">
+                                <svg viewBox="0 0 200 200" class="pie-svg">
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A4D39" stroke-width="40"
+                                        stroke-dasharray="180 351" transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#C85A3E" stroke-width="40"
+                                        stroke-dasharray="120 351" stroke-dashoffset="-180"
+                                        transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#E8DCC4" stroke-width="40"
+                                        stroke-dasharray="51 351" stroke-dashoffset="-300"
+                                        transform="rotate(-90 100 100)" />
+                                </svg>
+                                <div class="pie-legend">
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #3A4D39;"></span> Remote</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #C85A3E;"></span> Hybrid</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #E8DCC4;"></span> Office</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pie Chart 3: Company Size -->
+                <section class="chart-section">
+                    <div class="chart-header">
+                        <h3>Company Size</h3>
+                        <p class="chart-description">Distribution by company size</p>
+                    </div>
+                    <div class="chart-container small-chart" id="companySizeChart">
+                        <div class="chart-placeholder">
+                            <div class="pie-chart-placeholder small">
+                                <svg viewBox="0 0 200 200" class="pie-svg">
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#C85A3E" stroke-width="40"
+                                        stroke-dasharray="90 351" transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A4D39" stroke-width="40"
+                                        stroke-dasharray="130 351" stroke-dashoffset="-90"
+                                        transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2B2B2B" stroke-width="40"
+                                        stroke-dasharray="80 351" stroke-dashoffset="-220"
+                                        transform="rotate(-90 100 100)" />
+                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#E8DCC4" stroke-width="40"
+                                        stroke-dasharray="51 351" stroke-dashoffset="-300"
+                                        transform="rotate(-90 100 100)" />
+                                </svg>
+                                <div class="pie-legend">
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #C85A3E;"></span> Startup</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #3A4D39;"></span> Medium</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #2B2B2B;"></span> Large</div>
+                                    <div class="legend-item"><span class="legend-color"
+                                            style="background: #E8DCC4;"></span> Enterprise</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
