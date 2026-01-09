@@ -12,18 +12,21 @@ class SkillDataProcessor {
     }
 
     /**
-     * Load ClearOffers.json data
+     * Load ClearOffers.json data from embedded window.CLEAR_OFFERS_DATA
      */
-    async loadData() {
+    loadData() {
         if (this.loaded) return;
 
         try {
-            const response = await fetch('./ClearOffers.json');
-            this.offers = await response.json();
+            // Use embedded data instead of fetch to avoid CORS issues
+            if (typeof window.CLEAR_OFFERS_DATA === 'undefined') {
+                throw new Error('CLEAR_OFFERS_DATA not found. Make sure clearOffersData.js is loaded before this script.');
+            }
+
+            this.offers = window.CLEAR_OFFERS_DATA;
             this.loaded = true;
-            console.log(`Loaded ${this.offers.length} job offers`);
         } catch (error) {
-            console.error('Error loading ClearOffers.json:', error);
+            console.error('Error loading ClearOffers data:', error);
             throw error;
         }
     }

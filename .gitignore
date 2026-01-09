@@ -1,0 +1,24 @@
+# Gemini/AI artifacts and debugging
+.gemini/
+
+# Build scripts (run locally only)
+createEmbeddedData.js
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node modules (if you add any JS tooling later)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

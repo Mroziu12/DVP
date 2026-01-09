@@ -1,5 +1,5 @@
 // ===== SKILL DETAIL PAGE =====
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', function () {
     // Get skill name from URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const skillName = urlParams.get('skill');
@@ -20,8 +20,12 @@ document.addEventListener('DOMContentLoaded', async function () {
     const processor = new SkillDataProcessor();
 
     try {
-        // Load data
-        await processor.loadData();
+        console.log('Attempting to load data...');
+
+        // Load data (now synchronous)
+        processor.loadData();
+
+        console.log('Data loaded successfully!');
 
         // Get offer count
         const offerCount = processor.getOfferCount(skillName);
@@ -39,9 +43,9 @@ document.addEventListener('DOMContentLoaded', async function () {
         const contractTypeData = processor.getContractTypeData(skillName);
 
         // Render the pie charts
-        renderPieChart('experienceLevelChart', experienceData, getExperienceColors());
-        renderPieChart('workModeChart', workModeData, getWorkModeColors());
         renderPieChart('contractTypeChart', contractTypeData, getContractColors());
+        renderPieChart('workModeChart', workModeData, getWorkModeColors());
+        renderPieChart('experienceLevelChart', experienceData, getExperienceColors());
 
     } catch (error) {
         console.error('Error loading skill data:', error);
@@ -71,8 +75,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         chartObserver.observe(section);
     });
-
-    console.log('Skill Detail Page initialized');
 });
 
 // ===== PIE CHART RENDERING =====
@@ -84,6 +86,8 @@ document.addEventListener('DOMContentLoaded', async function () {
  * @param {Array} colors - Array of color strings
  */
 function renderPieChart(containerId, data, colors) {
+    console.log(`Rendering chart: ${containerId}`, data);
+
     const container = document.getElementById(containerId);
     if (!container) {
         console.error(`Container ${containerId} not found`);
@@ -166,8 +170,9 @@ function renderPieChart(containerId, data, colors) {
  * Color schemes for different chart types
  */
 function getExperienceColors() {
-    return ['#C85A3E', '#3A4D39', '#2B2B2B', '#E8DCC4'];
+    return ['#C85A3E', '#3A4D39', '#2B2B2B', '#D4A574']; // Junior, Mid, Senior, Lead (gold)
 }
+
 
 function getWorkModeColors() {
     return ['#3A4D39', '#C85A3E', '#E8DCC4', '#2B2B2B'];
@@ -203,7 +208,7 @@ function showErrorMessage() {
         if (container) {
             const placeholder = container.querySelector('.chart-placeholder');
             if (placeholder) {
-                placeholder.innerHTML = '<p style="text-align: center; padding: 40px; color: #C85A3E;">Error loading data</p>';
+                placeholder.innerHTML = '<p style="text-align: center; padding: 40px; color: #C85A3E;">Error loading data - Check browser console (F12) for details</p>';
             }
         }
     });
