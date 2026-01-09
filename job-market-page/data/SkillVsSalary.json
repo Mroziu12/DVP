@@ -1,0 +1,2462 @@
+[
+  {
+    "skill": "Polish",
+    "avg_level": 1.03,
+    "avg_salary": 6900.0,
+    "count": 545
+  },
+  {
+    "skill": "English",
+    "avg_level": 1.15,
+    "avg_salary": 6581.0,
+    "count": 1034
+  },
+  {
+    "skill": "Machine Learning",
+    "avg_level": 3.47,
+    "avg_salary": 5723.0,
+    "count": 29
+  },
+  {
+    "skill": "LLM",
+    "avg_level": 3.42,
+    "avg_salary": 6522.0,
+    "count": 38
+  },
+  {
+    "skill": "AI",
+    "avg_level": 3.3,
+    "avg_salary": 6119.0,
+    "count": 65
+  },
+  {
+    "skill": "Data Science",
+    "avg_level": 3.5,
+    "avg_salary": 5671.0,
+    "count": 9
+  },
+  {
+    "skill": "Python",
+    "avg_level": 3.35,
+    "avg_salary": 6474.0,
+    "count": 312
+  },
+  {
+    "skill": "Android",
+    "avg_level": 3.69,
+    "avg_salary": 5071.0,
+    "count": 41
+  },
+  {
+    "skill": "PHP",
+    "avg_level": 3.42,
+    "avg_salary": 4038.0,
+    "count": 70
+  },
+  {
+    "skill": "React",
+    "avg_level": 3.22,
+    "avg_salary": 5803.0,
+    "count": 137
+  },
+  {
+    "skill": "Azure",
+    "avg_level": 3.19,
+    "avg_salary": 6079.0,
+    "count": 122
+  },
+  {
+    "skill": "Airflow",
+    "avg_level": 2.67,
+    "avg_salary": 5958.0,
+    "count": 17
+  },
+  {
+    "skill": "NLP",
+    "avg_level": 3.3,
+    "avg_salary": 6111.0,
+    "count": 10
+  },
+  {
+    "skill": "PySpark",
+    "avg_level": 2.88,
+    "avg_salary": 5740.0,
+    "count": 17
+  },
+  {
+    "skill": "NoSQL",
+    "avg_level": 3.06,
+    "avg_salary": 5498.0,
+    "count": 21
+  },
+  {
+    "skill": "Langchain",
+    "avg_level": 3.17,
+    "avg_salary": 6389.0,
+    "count": 20
+  },
+  {
+    "skill": "TensorFlow",
+    "avg_level": 2.95,
+    "avg_salary": 6846.0,
+    "count": 11
+  },
+  {
+    "skill": "PyTorch",
+    "avg_level": 3.14,
+    "avg_salary": 6442.0,
+    "count": 23
+  },
+  {
+    "skill": "Cloud",
+    "avg_level": 3.34,
+    "avg_salary": 6251.0,
+    "count": 61
+  },
+  {
+    "skill": "Power Platform",
+    "avg_level": 2.56,
+    "avg_salary": 6249.0,
+    "count": 8
+  },
+  {
+    "skill": "Power Automate",
+    "avg_level": 3.38,
+    "avg_salary": 5502.0,
+    "count": 4
+  },
+  {
+    "skill": "RAG",
+    "avg_level": 3.43,
+    "avg_salary": 6386.0,
+    "count": 18
+  },
+  {
+    "skill": "fastapi",
+    "avg_level": 3.38,
+    "avg_salary": 5684.0,
+    "count": 17
+  },
+  {
+    "skill": "Azure Services",
+    "avg_level": 3.43,
+    "avg_salary": 6334.0,
+    "count": 6
+  },
+  {
+    "skill": "JavaScript",
+    "avg_level": 3.26,
+    "avg_salary": 6300.0,
+    "count": 123
+  },
+  {
+    "skill": "UX/UI",
+    "avg_level": 3.52,
+    "avg_salary": 3847.0,
+    "count": 17
+  },
+  {
+    "skill": "Docker",
+    "avg_level": 3,
+    "avg_salary": 5556.0,
+    "count": 160
+  },
+  {
+    "skill": "MySQL",
+    "avg_level": 3.22,
+    "avg_salary": 4477.0,
+    "count": 49
+  },
+  {
+    "skill": "Elasticsearch",
+    "avg_level": 3.04,
+    "avg_salary": 5188.0,
+    "count": 18
+  },
+  {
+    "skill": "RESTful API",
+    "avg_level": 3.38,
+    "avg_salary": 6481.0,
+    "count": 21
+  },
+  {
+    "skill": "REST API",
+    "avg_level": 3.25,
+    "avg_salary": 5039.0,
+    "count": 82
+  },
+  {
+    "skill": "AI/ML",
+    "avg_level": 2.56,
+    "avg_salary": 5912.0,
+    "count": 4
+  },
+  {
+    "skill": "DevOps",
+    "avg_level": 3.44,
+    "avg_salary": 8596.0,
+    "count": 50
+  },
+  {
+    "skill": "GCP",
+    "avg_level": 2.92,
+    "avg_salary": 7094.0,
+    "count": 52
+  },
+  {
+    "skill": "Langgraph",
+    "avg_level": 2.75,
+    "avg_salary": 6421.0,
+    "count": 11
+  },
+  {
+    "skill": "Generative AI",
+    "avg_level": 2.92,
+    "avg_salary": 5608.0,
+    "count": 6
+  },
+  {
+    "skill": "API",
+    "avg_level": 3.27,
+    "avg_salary": 8614.0,
+    "count": 39
+  },
+  {
+    "skill": "C#",
+    "avg_level": 3.3,
+    "avg_salary": 7147.0,
+    "count": 66
+  },
+  {
+    "skill": "Kubernetes",
+    "avg_level": 3.1,
+    "avg_salary": 5958.0,
+    "count": 175
+  },
+  {
+    "skill": "ETL",
+    "avg_level": 3.25,
+    "avg_salary": 5354.0,
+    "count": 30
+  },
+  {
+    "skill": "GenAI",
+    "avg_level": 3.6,
+    "avg_salary": 6273.0,
+    "count": 12
+  },
+  {
+    "skill": "LLMs",
+    "avg_level": 4,
+    "avg_salary": 7016.0,
+    "count": 4
+  },
+  {
+    "skill": "scikit-learn",
+    "avg_level": 4.33,
+    "avg_salary": 7280.0,
+    "count": 3
+  },
+  {
+    "skill": "Deep Learning",
+    "avg_level": 3.71,
+    "avg_salary": 6179.0,
+    "count": 6
+  },
+  {
+    "skill": "Pandas",
+    "avg_level": 3.5,
+    "avg_salary": 5851.0,
+    "count": 8
+  },
+  {
+    "skill": "ORM",
+    "avg_level": 3.4,
+    "avg_salary": 6632.0,
+    "count": 4
+  },
+  {
+    "skill": "Computer Vision",
+    "avg_level": 2.83,
+    "avg_salary": 5557.0,
+    "count": 6
+  },
+  {
+    "skill": "CI/CD",
+    "avg_level": 3.09,
+    "avg_salary": 6556.0,
+    "count": 131
+  },
+  {
+    "skill": "GitHub Actions",
+    "avg_level": 3.31,
+    "avg_salary": 4965.0,
+    "count": 10
+  },
+  {
+    "skill": "Terraform",
+    "avg_level": 3.22,
+    "avg_salary": 6553.0,
+    "count": 85
+  },
+  {
+    "skill": "Microsoft Azure Cloud",
+    "avg_level": 3.83,
+    "avg_salary": 4658.0,
+    "count": 6
+  },
+  {
+    "skill": "Azure AI foundry",
+    "avg_level": 3,
+    "avg_salary": 5460.0,
+    "count": 3
+  },
+  {
+    "skill": "MCP",
+    "avg_level": 2.67,
+    "avg_salary": 6401.0,
+    "count": 3
+  },
+  {
+    "skill": "Snowflake",
+    "avg_level": 3.33,
+    "avg_salary": 5758.0,
+    "count": 28
+  },
+  {
+    "skill": "Azure DevOps",
+    "avg_level": 2.98,
+    "avg_salary": 5385.0,
+    "count": 32
+  },
+  {
+    "skill": "SQL",
+    "avg_level": 3.23,
+    "avg_salary": 8795.0,
+    "count": 213
+  },
+  {
+    "skill": "SAP",
+    "avg_level": 3.4,
+    "avg_salary": 5883.0,
+    "count": 24
+  },
+  {
+    "skill": "AWS",
+    "avg_level": 3.24,
+    "avg_salary": 7459.0,
+    "count": 187
+  },
+  {
+    "skill": "Architecture",
+    "avg_level": 3.65,
+    "avg_salary": 6697.0,
+    "count": 18
+  },
+  {
+    "skill": "MLOps",
+    "avg_level": 3.73,
+    "avg_salary": 6251.0,
+    "count": 6
+  },
+  {
+    "skill": "Relational Databases",
+    "avg_level": 3,
+    "avg_salary": 1898.0,
+    "count": 3
+  },
+  {
+    "skill": "Team Management",
+    "avg_level": 3.69,
+    "avg_salary": 5779.0,
+    "count": 8
+  },
+  {
+    "skill": "Software Development",
+    "avg_level": 3.93,
+    "avg_salary": 6740.0,
+    "count": 12
+  },
+  {
+    "skill": "Project Management",
+    "avg_level": 3.54,
+    "avg_salary": 3933.0,
+    "count": 31
+  },
+  {
+    "skill": "People Management",
+    "avg_level": 3.5,
+    "avg_salary": 6490.0,
+    "count": 4
+  },
+  {
+    "skill": "Risk Management",
+    "avg_level": 3.25,
+    "avg_salary": 6626.0,
+    "count": 3
+  },
+  {
+    "skill": "TypeScript",
+    "avg_level": 3.31,
+    "avg_salary": 6639.0,
+    "count": 127
+  },
+  {
+    "skill": "Angular",
+    "avg_level": 3.23,
+    "avg_salary": 5233.0,
+    "count": 61
+  },
+  {
+    "skill": ".Net",
+    "avg_level": 3.38,
+    "avg_salary": 5749.0,
+    "count": 80
+  },
+  {
+    "skill": "Scrum",
+    "avg_level": 3.32,
+    "avg_salary": 4176.0,
+    "count": 34
+  },
+  {
+    "skill": "Data",
+    "avg_level": 3.73,
+    "avg_salary": 5933.0,
+    "count": 24
+  },
+  {
+    "skill": "JSON",
+    "avg_level": 2.89,
+    "avg_salary": 97067.0,
+    "count": 7
+  },
+  {
+    "skill": "Jira",
+    "avg_level": 3.01,
+    "avg_salary": 4247.0,
+    "count": 79
+  },
+  {
+    "skill": "PostgreSQL",
+    "avg_level": 3.12,
+    "avg_salary": 5805.0,
+    "count": 89
+  },
+  {
+    "skill": "Spark",
+    "avg_level": 3.22,
+    "avg_salary": 6279.0,
+    "count": 12
+  },
+  {
+    "skill": "Big Data",
+    "avg_level": 3.75,
+    "avg_salary": 5787.0,
+    "count": 10
+  },
+  {
+    "skill": "Agile",
+    "avg_level": 3.15,
+    "avg_salary": 4746.0,
+    "count": 75
+  },
+  {
+    "skill": "MLflow",
+    "avg_level": 2.55,
+    "avg_salary": 5298.0,
+    "count": 9
+  },
+  {
+    "skill": "Flask",
+    "avg_level": 3.33,
+    "avg_salary": 5590.0,
+    "count": 8
+  },
+  {
+    "skill": "Go",
+    "avg_level": 3.14,
+    "avg_salary": 13781.0,
+    "count": 34
+  },
+  {
+    "skill": "Java",
+    "avg_level": 3.35,
+    "avg_salary": 6026.0,
+    "count": 177
+  },
+  {
+    "skill": "GraphQL",
+    "avg_level": 3.04,
+    "avg_salary": 5249.0,
+    "count": 12
+  },
+  {
+    "skill": "C++",
+    "avg_level": 3.47,
+    "avg_salary": 5040.0,
+    "count": 47
+  },
+  {
+    "skill": "Microsoft Azure",
+    "avg_level": 3.62,
+    "avg_salary": 5496.0,
+    "count": 21
+  },
+  {
+    "skill": "OpenAI",
+    "avg_level": 3.67,
+    "avg_salary": 6680.0,
+    "count": 5
+  },
+  {
+    "skill": "Scala",
+    "avg_level": 2.98,
+    "avg_salary": 5796.0,
+    "count": 34
+  },
+  {
+    "skill": "Google Cloud Platform",
+    "avg_level": 2.97,
+    "avg_salary": 5673.0,
+    "count": 14
+  },
+  {
+    "skill": "Testing",
+    "avg_level": 3.54,
+    "avg_salary": 5760.0,
+    "count": 10
+  },
+  {
+    "skill": "Automation Tools",
+    "avg_level": 3.2,
+    "avg_salary": 4529.0,
+    "count": 3
+  },
+  {
+    "skill": "Git",
+    "avg_level": 3.13,
+    "avg_salary": 4559.0,
+    "count": 103
+  },
+  {
+    "skill": "Node.js",
+    "avg_level": 3.46,
+    "avg_salary": 6036.0,
+    "count": 62
+  },
+  {
+    "skill": "Kotlin",
+    "avg_level": 3.39,
+    "avg_salary": 5532.0,
+    "count": 69
+  },
+  {
+    "skill": "Kafka",
+    "avg_level": 2.95,
+    "avg_salary": 6174.0,
+    "count": 61
+  },
+  {
+    "skill": "German",
+    "avg_level": 1.16,
+    "avg_salary": 10243.0,
+    "count": 17
+  },
+  {
+    "skill": "SDLC",
+    "avg_level": 3.8,
+    "avg_salary": 5909.0,
+    "count": 7
+  },
+  {
+    "skill": "French",
+    "avg_level": 1.43,
+    "avg_salary": 6016.0,
+    "count": 3
+  },
+  {
+    "skill": "Jenkins",
+    "avg_level": 3.24,
+    "avg_salary": 5387.0,
+    "count": 26
+  },
+  {
+    "skill": "Software Architecture",
+    "avg_level": 4.07,
+    "avg_salary": 7449.0,
+    "count": 12
+  },
+  {
+    "skill": "Rust",
+    "avg_level": 2.54,
+    "avg_salary": 6709.0,
+    "count": 17
+  },
+  {
+    "skill": "ASP.NET",
+    "avg_level": 3.5,
+    "avg_salary": 4119.0,
+    "count": 14
+  },
+  {
+    "skill": "Cybersecurity",
+    "avg_level": 3.36,
+    "avg_salary": 5288.0,
+    "count": 33
+  },
+  {
+    "skill": "Analytical Thinking",
+    "avg_level": 3.71,
+    "avg_salary": 4460.0,
+    "count": 17
+  },
+  {
+    "skill": "Business Analysis",
+    "avg_level": 3.56,
+    "avg_salary": 4838.0,
+    "count": 27
+  },
+  {
+    "skill": "Next.js",
+    "avg_level": 3.15,
+    "avg_salary": 5103.0,
+    "count": 26
+  },
+  {
+    "skill": "IaC",
+    "avg_level": 3.47,
+    "avg_salary": 6145.0,
+    "count": 11
+  },
+  {
+    "skill": "ITIL",
+    "avg_level": 3.09,
+    "avg_salary": 5582.0,
+    "count": 4
+  },
+  {
+    "skill": "ServiceNow",
+    "avg_level": 3.04,
+    "avg_salary": 5568.0,
+    "count": 9
+  },
+  {
+    "skill": "Google Cloud",
+    "avg_level": 2.25,
+    "avg_salary": 5251.0,
+    "count": 3
+  },
+  {
+    "skill": "Redis",
+    "avg_level": 2.83,
+    "avg_salary": 5461.0,
+    "count": 25
+  },
+  {
+    "skill": "IT Support",
+    "avg_level": 3,
+    "avg_salary": 3364.0,
+    "count": 3
+  },
+  {
+    "skill": "iOS",
+    "avg_level": 3.47,
+    "avg_salary": 5080.0,
+    "count": 28
+  },
+  {
+    "skill": "XML",
+    "avg_level": 3.23,
+    "avg_salary": 96766.0,
+    "count": 7
+  },
+  {
+    "skill": "QA",
+    "avg_level": 3,
+    "avg_salary": 5664.0,
+    "count": 3
+  },
+  {
+    "skill": "transformers",
+    "avg_level": 3.33,
+    "avg_salary": 6104.0,
+    "count": 3
+  },
+  {
+    "skill": "Leadership",
+    "avg_level": 3.89,
+    "avg_salary": 7266.0,
+    "count": 9
+  },
+  {
+    "skill": "Databricks",
+    "avg_level": 3.7,
+    "avg_salary": 6547.0,
+    "count": 27
+  },
+  {
+    "skill": "Hadoop",
+    "avg_level": 3.86,
+    "avg_salary": 4890.0,
+    "count": 6
+  },
+  {
+    "skill": "Data modeling",
+    "avg_level": 3.71,
+    "avg_salary": 5210.0,
+    "count": 4
+  },
+  {
+    "skill": "TOGAF",
+    "avg_level": 3.19,
+    "avg_salary": 6138.0,
+    "count": 7
+  },
+  {
+    "skill": "Communication",
+    "avg_level": 4.23,
+    "avg_salary": 6370.0,
+    "count": 10
+  },
+  {
+    "skill": "Backend",
+    "avg_level": 3.75,
+    "avg_salary": 11565.0,
+    "count": 13
+  },
+  {
+    "skill": "Front-End",
+    "avg_level": 3.14,
+    "avg_salary": 16413.0,
+    "count": 5
+  },
+  {
+    "skill": "NumPy",
+    "avg_level": 3.6,
+    "avg_salary": 5307.0,
+    "count": 4
+  },
+  {
+    "skill": "Infrastructure as code",
+    "avg_level": 3.5,
+    "avg_salary": 47030.0,
+    "count": 3
+  },
+  {
+    "skill": "LUA",
+    "avg_level": 2.33,
+    "avg_salary": 1010.0,
+    "count": 5
+  },
+  {
+    "skill": "NGINX",
+    "avg_level": 2.83,
+    "avg_salary": 3563.0,
+    "count": 4
+  },
+  {
+    "skill": "GitHub",
+    "avg_level": 3.29,
+    "avg_salary": 4598.0,
+    "count": 11
+  },
+  {
+    "skill": "MongoDB",
+    "avg_level": 3.19,
+    "avg_salary": 5660.0,
+    "count": 23
+  },
+  {
+    "skill": "REST",
+    "avg_level": 3.29,
+    "avg_salary": 27131.0,
+    "count": 29
+  },
+  {
+    "skill": "CSS",
+    "avg_level": 3.16,
+    "avg_salary": 3716.0,
+    "count": 37
+  },
+  {
+    "skill": "Unit Testing",
+    "avg_level": 3.33,
+    "avg_salary": 4173.0,
+    "count": 6
+  },
+  {
+    "skill": "React Native",
+    "avg_level": 3.45,
+    "avg_salary": 4759.0,
+    "count": 28
+  },
+  {
+    "skill": "Spring",
+    "avg_level": 3.43,
+    "avg_salary": 5541.0,
+    "count": 35
+  },
+  {
+    "skill": "CSS3",
+    "avg_level": 3,
+    "avg_salary": 3978.0,
+    "count": 6
+  },
+  {
+    "skill": "HTML5",
+    "avg_level": 3.24,
+    "avg_salary": 3973.0,
+    "count": 17
+  },
+  {
+    "skill": "Confluence",
+    "avg_level": 3.02,
+    "avg_salary": 4297.0,
+    "count": 46
+  },
+  {
+    "skill": "Spring Boot",
+    "avg_level": 3.69,
+    "avg_salary": 5501.0,
+    "count": 37
+  },
+  {
+    "skill": "RabbitMQ",
+    "avg_level": 2.81,
+    "avg_salary": 4740.0,
+    "count": 8
+  },
+  {
+    "skill": "Microservices",
+    "avg_level": 3.47,
+    "avg_salary": 6227.0,
+    "count": 43
+  },
+  {
+    "skill": "HTML",
+    "avg_level": 3.07,
+    "avg_salary": 4115.0,
+    "count": 33
+  },
+  {
+    "skill": "Maven",
+    "avg_level": 3,
+    "avg_salary": 5774.0,
+    "count": 4
+  },
+  {
+    "skill": "Hibernate",
+    "avg_level": 3.32,
+    "avg_salary": 5923.0,
+    "count": 18
+  },
+  {
+    "skill": "Datadog",
+    "avg_level": 2.6,
+    "avg_salary": 41264.0,
+    "count": 4
+  },
+  {
+    "skill": "Shopify",
+    "avg_level": 3,
+    "avg_salary": 4191.0,
+    "count": 11
+  },
+  {
+    "skill": "Node",
+    "avg_level": 3.2,
+    "avg_salary": 5586.0,
+    "count": 3
+  },
+  {
+    "skill": "Vue.js",
+    "avg_level": 2.91,
+    "avg_salary": 5156.0,
+    "count": 14
+  },
+  {
+    "skill": "Tailwind CSS",
+    "avg_level": 3.33,
+    "avg_salary": 3757.0,
+    "count": 3
+  },
+  {
+    "skill": "System Design",
+    "avg_level": 3.67,
+    "avg_salary": 8990.0,
+    "count": 3
+  },
+  {
+    "skill": "integration",
+    "avg_level": 3.5,
+    "avg_salary": 5911.0,
+    "count": 6
+  },
+  {
+    "skill": "Mobile Development",
+    "avg_level": 3,
+    "avg_salary": 5825.0,
+    "count": 4
+  },
+  {
+    "skill": "WebSocket",
+    "avg_level": 3.17,
+    "avg_salary": 5258.0,
+    "count": 6
+  },
+  {
+    "skill": "SaaS",
+    "avg_level": 3.07,
+    "avg_salary": 5136.0,
+    "count": 7
+  },
+  {
+    "skill": "UX Design",
+    "avg_level": 4.2,
+    "avg_salary": 3805.0,
+    "count": 6
+  },
+  {
+    "skill": "Amazon AWS",
+    "avg_level": 3.43,
+    "avg_salary": 8017.0,
+    "count": 26
+  },
+  {
+    "skill": "SCSS",
+    "avg_level": 2.54,
+    "avg_salary": 3126.0,
+    "count": 12
+  },
+  {
+    "skill": "Nest.js",
+    "avg_level": 3.43,
+    "avg_salary": 5806.0,
+    "count": 4
+  },
+  {
+    "skill": "Qt",
+    "avg_level": 3.17,
+    "avg_salary": 3943.0,
+    "count": 4
+  },
+  {
+    "skill": "WordPress",
+    "avg_level": 3.69,
+    "avg_salary": 3186.0,
+    "count": 10
+  },
+  {
+    "skill": "jQuery",
+    "avg_level": 3.22,
+    "avg_salary": 3467.0,
+    "count": 6
+  },
+  {
+    "skill": "Flutter",
+    "avg_level": 3.25,
+    "avg_salary": 4830.0,
+    "count": 11
+  },
+  {
+    "skill": "Visual Studio",
+    "avg_level": 2.9,
+    "avg_salary": 4815.0,
+    "count": 6
+  },
+  {
+    "skill": "Figma",
+    "avg_level": 3.66,
+    "avg_salary": 3936.0,
+    "count": 43
+  },
+  {
+    "skill": "Golang",
+    "avg_level": 3.67,
+    "avg_salary": 6482.0,
+    "count": 39
+  },
+  {
+    "skill": "SEO",
+    "avg_level": 1.83,
+    "avg_salary": 3656.0,
+    "count": 3
+  },
+  {
+    "skill": "SASS",
+    "avg_level": 2.67,
+    "avg_salary": 5067.0,
+    "count": 3
+  },
+  {
+    "skill": "RxJS",
+    "avg_level": 3.67,
+    "avg_salary": 4175.0,
+    "count": 3
+  },
+  {
+    "skill": "AWS/Azure/GCP",
+    "avg_level": 3,
+    "avg_salary": 5256.0,
+    "count": 3
+  },
+  {
+    "skill": "UI Design",
+    "avg_level": 3.27,
+    "avg_salary": 3502.0,
+    "count": 8
+  },
+  {
+    "skill": "Redux",
+    "avg_level": 3.3,
+    "avg_salary": 4318.0,
+    "count": 9
+  },
+  {
+    "skill": "Express.js",
+    "avg_level": 3.33,
+    "avg_salary": 4660.0,
+    "count": 3
+  },
+  {
+    "skill": "UI",
+    "avg_level": 3.33,
+    "avg_salary": 5258.0,
+    "count": 11
+  },
+  {
+    "skill": "CRM",
+    "avg_level": 3.17,
+    "avg_salary": 4320.0,
+    "count": 3
+  },
+  {
+    "skill": ".NET C#",
+    "avg_level": 3.73,
+    "avg_salary": 4103.0,
+    "count": 11
+  },
+  {
+    "skill": "Jest",
+    "avg_level": 3.17,
+    "avg_salary": 4522.0,
+    "count": 3
+  },
+  {
+    "skill": "Vue",
+    "avg_level": 3.67,
+    "avg_salary": 5954.0,
+    "count": 3
+  },
+  {
+    "skill": "Cloud Computing",
+    "avg_level": 3.62,
+    "avg_salary": 8103.0,
+    "count": 8
+  },
+  {
+    "skill": "Symfony",
+    "avg_level": 3.45,
+    "avg_salary": 4245.0,
+    "count": 22
+  },
+  {
+    "skill": "Oracle",
+    "avg_level": 3.1,
+    "avg_salary": 5143.0,
+    "count": 33
+  },
+  {
+    "skill": "Ruby on Rails",
+    "avg_level": 3.53,
+    "avg_salary": 4634.0,
+    "count": 16
+  },
+  {
+    "skill": "JVM",
+    "avg_level": 3.75,
+    "avg_salary": 6353.0,
+    "count": 6
+  },
+  {
+    "skill": "Networks",
+    "avg_level": 3,
+    "avg_salary": 6279.0,
+    "count": 8
+  },
+  {
+    "skill": "Functional Programming",
+    "avg_level": 1,
+    "avg_salary": 6768.0,
+    "count": 5
+  },
+  {
+    "skill": "GitLab",
+    "avg_level": 3.11,
+    "avg_salary": 4961.0,
+    "count": 17
+  },
+  {
+    "skill": "Mobile Apps",
+    "avg_level": 3.8,
+    "avg_salary": 3824.0,
+    "count": 3
+  },
+  {
+    "skill": "Expo",
+    "avg_level": 3.33,
+    "avg_salary": 3887.0,
+    "count": 3
+  },
+  {
+    "skill": "WooCommerce",
+    "avg_level": 2.8,
+    "avg_salary": 2097.0,
+    "count": 4
+  },
+  {
+    "skill": "DynamoDB",
+    "avg_level": 3,
+    "avg_salary": 4257.0,
+    "count": 3
+  },
+  {
+    "skill": "Management",
+    "avg_level": 4.4,
+    "avg_salary": 6771.0,
+    "count": 3
+  },
+  {
+    "skill": "oauth",
+    "avg_level": 3.33,
+    "avg_salary": 6424.0,
+    "count": 5
+  },
+  {
+    "skill": "Salesforce",
+    "avg_level": 3,
+    "avg_salary": 5384.0,
+    "count": 14
+  },
+  {
+    "skill": "Team Leadership",
+    "avg_level": 3.84,
+    "avg_salary": 7932.0,
+    "count": 11
+  },
+  {
+    "skill": "Event-Driven Architecture",
+    "avg_level": 2.83,
+    "avg_salary": 7221.0,
+    "count": 6
+  },
+  {
+    "skill": "RDBMS",
+    "avg_level": 3.42,
+    "avg_salary": 4275.0,
+    "count": 6
+  },
+  {
+    "skill": "eCommerce",
+    "avg_level": 2.5,
+    "avg_salary": 3048.0,
+    "count": 3
+  },
+  {
+    "skill": "E-commerce",
+    "avg_level": 3.1,
+    "avg_salary": 3816.0,
+    "count": 14
+  },
+  {
+    "skill": "Tutoring",
+    "avg_level": 2,
+    "avg_salary": 750.0,
+    "count": 4
+  },
+  {
+    "skill": "Algorithms",
+    "avg_level": 3,
+    "avg_salary": 3404.0,
+    "count": 4
+  },
+  {
+    "skill": "Windows",
+    "avg_level": 3.21,
+    "avg_salary": 4686.0,
+    "count": 13
+  },
+  {
+    "skill": "Linux",
+    "avg_level": 3.25,
+    "avg_salary": 4906.0,
+    "count": 87
+  },
+  {
+    "skill": "MS Excel",
+    "avg_level": 3.14,
+    "avg_salary": 3566.0,
+    "count": 10
+  },
+  {
+    "skill": "Bitbucket",
+    "avg_level": 3,
+    "avg_salary": 4022.0,
+    "count": 9
+  },
+  {
+    "skill": "Apex",
+    "avg_level": 3.43,
+    "avg_salary": 5256.0,
+    "count": 4
+  },
+  {
+    "skill": "Laravel",
+    "avg_level": 3.55,
+    "avg_salary": 4117.0,
+    "count": 21
+  },
+  {
+    "skill": "PHP 8",
+    "avg_level": 3.75,
+    "avg_salary": 3701.0,
+    "count": 10
+  },
+  {
+    "skill": "OOP",
+    "avg_level": 3.17,
+    "avg_salary": 4684.0,
+    "count": 11
+  },
+  {
+    "skill": "Shopware",
+    "avg_level": 1.67,
+    "avg_salary": 3405.0,
+    "count": 3
+  },
+  {
+    "skill": "Solid",
+    "avg_level": 3.1,
+    "avg_salary": 3605.0,
+    "count": 6
+  },
+  {
+    "skill": "DDD",
+    "avg_level": 2.36,
+    "avg_salary": 4774.0,
+    "count": 8
+  },
+  {
+    "skill": "Grafana",
+    "avg_level": 3.25,
+    "avg_salary": 5947.0,
+    "count": 16
+  },
+  {
+    "skill": "PHPUnit",
+    "avg_level": 3,
+    "avg_salary": 3912.0,
+    "count": 9
+  },
+  {
+    "skill": "Magento",
+    "avg_level": 3,
+    "avg_salary": 4351.0,
+    "count": 5
+  },
+  {
+    "skill": "frontend",
+    "avg_level": 2.2,
+    "avg_salary": 5062.0,
+    "count": 5
+  },
+  {
+    "skill": "ERP",
+    "avg_level": 3.05,
+    "avg_salary": 4152.0,
+    "count": 18
+  },
+  {
+    "skill": "PrestaShop",
+    "avg_level": 3.2,
+    "avg_salary": 2761.0,
+    "count": 4
+  },
+  {
+    "skill": "Databases",
+    "avg_level": 3.22,
+    "avg_salary": 5779.0,
+    "count": 21
+  },
+  {
+    "skill": "Magento 2",
+    "avg_level": 3.14,
+    "avg_salary": 4440.0,
+    "count": 4
+  },
+  {
+    "skill": "PHP 7",
+    "avg_level": 4,
+    "avg_salary": 3976.0,
+    "count": 4
+  },
+  {
+    "skill": "Composer",
+    "avg_level": 2.75,
+    "avg_salary": 3537.0,
+    "count": 4
+  },
+  {
+    "skill": "HTML5 / CSS3",
+    "avg_level": 2.67,
+    "avg_salary": 1333.0,
+    "count": 3
+  },
+  {
+    "skill": "Analytics",
+    "avg_level": 3.46,
+    "avg_salary": 4764.0,
+    "count": 6
+  },
+  {
+    "skill": "MsSQL",
+    "avg_level": 3.25,
+    "avg_salary": 6082.0,
+    "count": 5
+  },
+  {
+    "skill": "MS SQL",
+    "avg_level": 3.15,
+    "avg_salary": 5379.0,
+    "count": 26
+  },
+  {
+    "skill": "Bazy Danych",
+    "avg_level": 3,
+    "avg_salary": 5455.0,
+    "count": 3
+  },
+  {
+    "skill": "MVC",
+    "avg_level": 3.25,
+    "avg_salary": 5409.0,
+    "count": 4
+  },
+  {
+    "skill": "Go/Ruby/Python",
+    "avg_level": 4.29,
+    "avg_salary": 6411.0,
+    "count": 7
+  },
+  {
+    "skill": "Automated Testing",
+    "avg_level": 3.25,
+    "avg_salary": 5808.0,
+    "count": 4
+  },
+  {
+    "skill": "Ruby",
+    "avg_level": 3.33,
+    "avg_salary": 5063.0,
+    "count": 16
+  },
+  {
+    "skill": "Security",
+    "avg_level": 3.3,
+    "avg_salary": 7079.0,
+    "count": 33
+  },
+  {
+    "skill": "Backend Platforms",
+    "avg_level": 4,
+    "avg_salary": 6213.0,
+    "count": 3
+  },
+  {
+    "skill": "Distributed systems",
+    "avg_level": 3.55,
+    "avg_salary": 7263.0,
+    "count": 9
+  },
+  {
+    "skill": "Realibility",
+    "avg_level": 4,
+    "avg_salary": 6213.0,
+    "count": 3
+  },
+  {
+    "skill": "Observability",
+    "avg_level": 3.8,
+    "avg_salary": 30272.0,
+    "count": 5
+  },
+  {
+    "skill": "RSpec",
+    "avg_level": 3.5,
+    "avg_salary": 4737.0,
+    "count": 4
+  },
+  {
+    "skill": "Django",
+    "avg_level": 3.54,
+    "avg_salary": 5047.0,
+    "count": 24
+  },
+  {
+    "skill": "PostreSQL",
+    "avg_level": 2.42,
+    "avg_salary": 7685.0,
+    "count": 8
+  },
+  {
+    "skill": "Bash",
+    "avg_level": 3.2,
+    "avg_salary": 4371.0,
+    "count": 25
+  },
+  {
+    "skill": "HTTP",
+    "avg_level": 3.42,
+    "avg_salary": 5901.0,
+    "count": 4
+  },
+  {
+    "skill": "Rest Services",
+    "avg_level": 3.67,
+    "avg_salary": 9496.0,
+    "count": 3
+  },
+  {
+    "skill": "Powershell",
+    "avg_level": 3.4,
+    "avg_salary": 5952.0,
+    "count": 20
+  },
+  {
+    "skill": "VMware",
+    "avg_level": 3.42,
+    "avg_salary": 6251.0,
+    "count": 9
+  },
+  {
+    "skill": "Active Directory",
+    "avg_level": 3.59,
+    "avg_salary": 5926.0,
+    "count": 17
+  },
+  {
+    "skill": "Microsoft 365",
+    "avg_level": 3.46,
+    "avg_salary": 6173.0,
+    "count": 6
+  },
+  {
+    "skill": "Linux / Unix",
+    "avg_level": 2.93,
+    "avg_salary": 6720.0,
+    "count": 13
+  },
+  {
+    "skill": "SQL Server",
+    "avg_level": 3.13,
+    "avg_salary": 5061.0,
+    "count": 11
+  },
+  {
+    "skill": "C",
+    "avg_level": 3.4,
+    "avg_salary": 5365.0,
+    "count": 16
+  },
+  {
+    "skill": "DBT",
+    "avg_level": 2.85,
+    "avg_salary": 5638.0,
+    "count": 11
+  },
+  {
+    "skill": "API Testing",
+    "avg_level": 3.29,
+    "avg_salary": 4067.0,
+    "count": 7
+  },
+  {
+    "skill": "Firebase",
+    "avg_level": 2.83,
+    "avg_salary": 6292.0,
+    "count": 4
+  },
+  {
+    "skill": "Unity",
+    "avg_level": 2.93,
+    "avg_salary": 3616.0,
+    "count": 10
+  },
+  {
+    "skill": "Roblox",
+    "avg_level": 2.14,
+    "avg_salary": 850.0,
+    "count": 4
+  },
+  {
+    "skill": "BigQuery",
+    "avg_level": 3.15,
+    "avg_salary": 5888.0,
+    "count": 10
+  },
+  {
+    "skill": "Apache Spark",
+    "avg_level": 3.5,
+    "avg_salary": 6793.0,
+    "count": 13
+  },
+  {
+    "skill": "Data analysis",
+    "avg_level": 3.62,
+    "avg_salary": 5445.0,
+    "count": 3
+  },
+  {
+    "skill": "Ansible",
+    "avg_level": 3.24,
+    "avg_salary": 5210.0,
+    "count": 25
+  },
+  {
+    "skill": "Red Hat",
+    "avg_level": 3.67,
+    "avg_salary": 4882.0,
+    "count": 5
+  },
+  {
+    "skill": "pytest",
+    "avg_level": 3,
+    "avg_salary": 5520.0,
+    "count": 3
+  },
+  {
+    "skill": "Apache Kafka",
+    "avg_level": 3.06,
+    "avg_salary": 6032.0,
+    "count": 26
+  },
+  {
+    "skill": "Selenium",
+    "avg_level": 3,
+    "avg_salary": 6208.0,
+    "count": 5
+  },
+  {
+    "skill": "Gradle",
+    "avg_level": 3.25,
+    "avg_salary": 4587.0,
+    "count": 4
+  },
+  {
+    "skill": "SOAP",
+    "avg_level": 3.18,
+    "avg_salary": 37094.0,
+    "count": 20
+  },
+  {
+    "skill": "BPMN",
+    "avg_level": 3.38,
+    "avg_salary": 4876.0,
+    "count": 50
+  },
+  {
+    "skill": "Design Patterns",
+    "avg_level": 2.8,
+    "avg_salary": 4628.0,
+    "count": 3
+  },
+  {
+    "skill": "SonarQube",
+    "avg_level": 3.4,
+    "avg_salary": 5992.0,
+    "count": 4
+  },
+  {
+    "skill": "JUnit",
+    "avg_level": 3.15,
+    "avg_salary": 4502.0,
+    "count": 7
+  },
+  {
+    "skill": "Groovy",
+    "avg_level": 3.3,
+    "avg_salary": 5900.0,
+    "count": 10
+  },
+  {
+    "skill": "Microservice Architecture",
+    "avg_level": 3.64,
+    "avg_salary": 5627.0,
+    "count": 11
+  },
+  {
+    "skill": "UML",
+    "avg_level": 3.33,
+    "avg_salary": 5238.0,
+    "count": 59
+  },
+  {
+    "skill": "Spring / Spring Boot",
+    "avg_level": 3,
+    "avg_salary": 6052.0,
+    "count": 6
+  },
+  {
+    "skill": "Swagger",
+    "avg_level": 3.25,
+    "avg_salary": 4089.0,
+    "count": 4
+  },
+  {
+    "skill": "AWS / GCP / Azure",
+    "avg_level": 1,
+    "avg_salary": 6355.0,
+    "count": 3
+  },
+  {
+    "skill": "ELK Stack",
+    "avg_level": 2.33,
+    "avg_salary": 3797.0,
+    "count": 3
+  },
+  {
+    "skill": "Prometheus",
+    "avg_level": 3.33,
+    "avg_salary": 5297.0,
+    "count": 13
+  },
+  {
+    "skill": "Oracle DB",
+    "avg_level": 3.38,
+    "avg_salary": 5365.0,
+    "count": 7
+  },
+  {
+    "skill": "T-SQL",
+    "avg_level": 3.33,
+    "avg_salary": 5885.0,
+    "count": 9
+  },
+  {
+    "skill": "Entity Framework",
+    "avg_level": 3.19,
+    "avg_salary": 3653.0,
+    "count": 9
+  },
+  {
+    "skill": "Web API",
+    "avg_level": 3.5,
+    "avg_salary": 4305.0,
+    "count": 4
+  },
+  {
+    "skill": "PL/SQL",
+    "avg_level": 3.07,
+    "avg_salary": 5446.0,
+    "count": 9
+  },
+  {
+    "skill": "SharePoint",
+    "avg_level": 3.89,
+    "avg_salary": 3091.0,
+    "count": 3
+  },
+  {
+    "skill": ".NET Core",
+    "avg_level": 3.64,
+    "avg_salary": 5486.0,
+    "count": 24
+  },
+  {
+    "skill": ".Net Framework",
+    "avg_level": 3.14,
+    "avg_salary": 4496.0,
+    "count": 5
+  },
+  {
+    "skill": "ASP.NET Core",
+    "avg_level": 3.64,
+    "avg_salary": 5224.0,
+    "count": 11
+  },
+  {
+    "skill": "Blazor",
+    "avg_level": 1.5,
+    "avg_salary": 5682.0,
+    "count": 3
+  },
+  {
+    "skill": "ASP.NET MVC",
+    "avg_level": 3,
+    "avg_salary": 3496.0,
+    "count": 3
+  },
+  {
+    "skill": "SAFe",
+    "avg_level": 3.38,
+    "avg_salary": 6356.0,
+    "count": 5
+  },
+  {
+    "skill": "Microsoft Dynamics",
+    "avg_level": 2.5,
+    "avg_salary": 5460.0,
+    "count": 3
+  },
+  {
+    "skill": "WCAG",
+    "avg_level": 2.83,
+    "avg_salary": 3523.0,
+    "count": 3
+  },
+  {
+    "skill": "Linux Kernel",
+    "avg_level": 2.73,
+    "avg_salary": 7650.0,
+    "count": 5
+  },
+  {
+    "skill": "Postman",
+    "avg_level": 3.25,
+    "avg_salary": 5384.0,
+    "count": 5
+  },
+  {
+    "skill": "Microsoft Entra ID",
+    "avg_level": 3.25,
+    "avg_salary": 6181.0,
+    "count": 4
+  },
+  {
+    "skill": "MS SQL Server",
+    "avg_level": 3.22,
+    "avg_salary": 5525.0,
+    "count": 6
+  },
+  {
+    "skill": "LAN",
+    "avg_level": 3.16,
+    "avg_salary": 3313.0,
+    "count": 4
+  },
+  {
+    "skill": "TCP/IP",
+    "avg_level": 3.29,
+    "avg_salary": 6838.0,
+    "count": 3
+  },
+  {
+    "skill": "Cisco",
+    "avg_level": 3.39,
+    "avg_salary": 5296.0,
+    "count": 3
+  },
+  {
+    "skill": "MS Azure",
+    "avg_level": 2.8,
+    "avg_salary": 6028.0,
+    "count": 3
+  },
+  {
+    "skill": "IAM",
+    "avg_level": 4,
+    "avg_salary": 6079.0,
+    "count": 14
+  },
+  {
+    "skill": "Enterprise Architect",
+    "avg_level": 3.15,
+    "avg_salary": 5290.0,
+    "count": 27
+  },
+  {
+    "skill": "cats",
+    "avg_level": 3,
+    "avg_salary": 4215.0,
+    "count": 3
+  },
+  {
+    "skill": "Embedded",
+    "avg_level": 3.54,
+    "avg_salary": 4727.0,
+    "count": 9
+  },
+  {
+    "skill": "Networking",
+    "avg_level": 3,
+    "avg_salary": 5797.0,
+    "count": 4
+  },
+  {
+    "skill": "CMake",
+    "avg_level": 3.75,
+    "avg_salary": 5048.0,
+    "count": 3
+  },
+  {
+    "skill": "SoC",
+    "avg_level": 2.83,
+    "avg_salary": 4647.0,
+    "count": 6
+  },
+  {
+    "skill": "Hardware",
+    "avg_level": 2.75,
+    "avg_salary": 4980.0,
+    "count": 3
+  },
+  {
+    "skill": "Communication Skills",
+    "avg_level": 4,
+    "avg_salary": 4882.0,
+    "count": 4
+  },
+  {
+    "skill": "IoT",
+    "avg_level": 2.88,
+    "avg_salary": 6391.0,
+    "count": 7
+  },
+  {
+    "skill": "Linux OS",
+    "avg_level": 3.2,
+    "avg_salary": 4091.0,
+    "count": 4
+  },
+  {
+    "skill": "Network Protocols",
+    "avg_level": 3.17,
+    "avg_salary": 5179.0,
+    "count": 3
+  },
+  {
+    "skill": "Swift",
+    "avg_level": 3.37,
+    "avg_salary": 5173.0,
+    "count": 32
+  },
+  {
+    "skill": "SwiftUI",
+    "avg_level": 3.31,
+    "avg_salary": 5023.0,
+    "count": 11
+  },
+  {
+    "skill": "XCode",
+    "avg_level": 3,
+    "avg_salary": 4476.0,
+    "count": 3
+  },
+  {
+    "skill": "Dart",
+    "avg_level": 3.5,
+    "avg_salary": 4738.0,
+    "count": 3
+  },
+  {
+    "skill": "BLE",
+    "avg_level": 3.33,
+    "avg_salary": 5345.0,
+    "count": 6
+  },
+  {
+    "skill": "Android SDK",
+    "avg_level": 3.16,
+    "avg_salary": 5568.0,
+    "count": 11
+  },
+  {
+    "skill": "UIKit",
+    "avg_level": 3.25,
+    "avg_salary": 5408.0,
+    "count": 7
+  },
+  {
+    "skill": "iOS SDK",
+    "avg_level": 2.67,
+    "avg_salary": 7080.0,
+    "count": 3
+  },
+  {
+    "skill": "KMP",
+    "avg_level": 2.67,
+    "avg_salary": 3801.0,
+    "count": 3
+  },
+  {
+    "skill": "Android Studio",
+    "avg_level": 3.44,
+    "avg_salary": 4627.0,
+    "count": 7
+  },
+  {
+    "skill": "VPN",
+    "avg_level": 3.7,
+    "avg_salary": 5715.0,
+    "count": 3
+  },
+  {
+    "skill": "DNS",
+    "avg_level": 3.79,
+    "avg_salary": 5572.0,
+    "count": 5
+  },
+  {
+    "skill": "IT Security",
+    "avg_level": 3.64,
+    "avg_salary": 5204.0,
+    "count": 7
+  },
+  {
+    "skill": "Jetpack Compose",
+    "avg_level": 3.31,
+    "avg_salary": 4834.0,
+    "count": 10
+  },
+  {
+    "skill": "Mockk",
+    "avg_level": 3.25,
+    "avg_salary": 4396.0,
+    "count": 3
+  },
+  {
+    "skill": "MVVM",
+    "avg_level": 3.5,
+    "avg_salary": 4539.0,
+    "count": 8
+  },
+  {
+    "skill": "Kotlin multiplatform",
+    "avg_level": 3,
+    "avg_salary": 4128.0,
+    "count": 6
+  },
+  {
+    "skill": "Compose Multiplatform",
+    "avg_level": 2.8,
+    "avg_salary": 4066.0,
+    "count": 5
+  },
+  {
+    "skill": "SRE",
+    "avg_level": 4,
+    "avg_salary": 7670.0,
+    "count": 5
+  },
+  {
+    "skill": "Windows Server",
+    "avg_level": 3.38,
+    "avg_salary": 5306.0,
+    "count": 8
+  },
+  {
+    "skill": "Entra ID",
+    "avg_level": 3.5,
+    "avg_salary": 6212.0,
+    "count": 7
+  },
+  {
+    "skill": "Helm",
+    "avg_level": 2.83,
+    "avg_salary": 7414.0,
+    "count": 10
+  },
+  {
+    "skill": "Hashicorp Vault",
+    "avg_level": 3.67,
+    "avg_salary": 5066.0,
+    "count": 3
+  },
+  {
+    "skill": "AKS",
+    "avg_level": 3.75,
+    "avg_salary": 5977.0,
+    "count": 3
+  },
+  {
+    "skill": "Scripting",
+    "avg_level": 2.6,
+    "avg_salary": 5638.0,
+    "count": 3
+  },
+  {
+    "skill": "Azure Data Factory",
+    "avg_level": 3.5,
+    "avg_salary": 5740.0,
+    "count": 3
+  },
+  {
+    "skill": "SAS",
+    "avg_level": 3.25,
+    "avg_salary": 4956.0,
+    "count": 3
+  },
+  {
+    "skill": "ArgoCD",
+    "avg_level": 2.83,
+    "avg_salary": 6968.0,
+    "count": 4
+  },
+  {
+    "skill": "Troubleshooting",
+    "avg_level": 3.12,
+    "avg_salary": 5715.0,
+    "count": 7
+  },
+  {
+    "skill": "VLAN",
+    "avg_level": 3,
+    "avg_salary": 4924.0,
+    "count": 3
+  },
+  {
+    "skill": "Firewall",
+    "avg_level": 3.11,
+    "avg_salary": 5739.0,
+    "count": 4
+  },
+  {
+    "skill": "Palo Alto",
+    "avg_level": 2.5,
+    "avg_salary": 9044.0,
+    "count": 3
+  },
+  {
+    "skill": "LAN/WAN",
+    "avg_level": 3,
+    "avg_salary": 5104.0,
+    "count": 3
+  },
+  {
+    "skill": "Zabbix",
+    "avg_level": 2.8,
+    "avg_salary": 4422.0,
+    "count": 4
+  },
+  {
+    "skill": "routing protocols",
+    "avg_level": 3,
+    "avg_salary": 5104.0,
+    "count": 3
+  },
+  {
+    "skill": "Google Workspace",
+    "avg_level": 3.5,
+    "avg_salary": 4412.0,
+    "count": 6
+  },
+  {
+    "skill": "PMI",
+    "avg_level": 2.8,
+    "avg_salary": 4836.0,
+    "count": 3
+  },
+  {
+    "skill": "DHCP",
+    "avg_level": 3,
+    "avg_salary": 5116.0,
+    "count": 3
+  },
+  {
+    "skill": "Network Administration",
+    "avg_level": 3.5,
+    "avg_salary": 4526.0,
+    "count": 3
+  },
+  {
+    "skill": "SIEM",
+    "avg_level": 3.35,
+    "avg_salary": 5705.0,
+    "count": 7
+  },
+  {
+    "skill": "DLP",
+    "avg_level": 2.8,
+    "avg_salary": 5095.0,
+    "count": 4
+  },
+  {
+    "skill": "Power BI",
+    "avg_level": 3.07,
+    "avg_salary": 4953.0,
+    "count": 20
+  },
+  {
+    "skill": "Tableau",
+    "avg_level": 1.7,
+    "avg_salary": 3575.0,
+    "count": 8
+  },
+  {
+    "skill": "WebLogic",
+    "avg_level": 3.67,
+    "avg_salary": 5082.0,
+    "count": 3
+  },
+  {
+    "skill": "Governance",
+    "avg_level": 3,
+    "avg_salary": 4751.0,
+    "count": 3
+  },
+  {
+    "skill": "Atlassian",
+    "avg_level": 4.2,
+    "avg_salary": 4057.0,
+    "count": 3
+  },
+  {
+    "skill": "Virtualization",
+    "avg_level": 3,
+    "avg_salary": 2691.0,
+    "count": 3
+  },
+  {
+    "skill": "Adobe XD",
+    "avg_level": 3.5,
+    "avg_salary": 3498.0,
+    "count": 6
+  },
+  {
+    "skill": "Amplitude",
+    "avg_level": 3.67,
+    "avg_salary": 4591.0,
+    "count": 3
+  },
+  {
+    "skill": "UX Research",
+    "avg_level": 4,
+    "avg_salary": 4114.0,
+    "count": 3
+  },
+  {
+    "skill": "UX",
+    "avg_level": 3.8,
+    "avg_salary": 4611.0,
+    "count": 16
+  },
+  {
+    "skill": "Design Systems",
+    "avg_level": 3.25,
+    "avg_salary": 4050.0,
+    "count": 3
+  },
+  {
+    "skill": "Product design",
+    "avg_level": 4.17,
+    "avg_salary": 4709.0,
+    "count": 6
+  },
+  {
+    "skill": "FigJam",
+    "avg_level": 3.33,
+    "avg_salary": 5245.0,
+    "count": 3
+  },
+  {
+    "skill": "MIRO",
+    "avg_level": 2.89,
+    "avg_salary": 4000.0,
+    "count": 6
+  },
+  {
+    "skill": "HotJar",
+    "avg_level": 3.25,
+    "avg_salary": 5286.0,
+    "count": 3
+  },
+  {
+    "skill": "Sketch",
+    "avg_level": 3.33,
+    "avg_salary": 4365.0,
+    "count": 3
+  },
+  {
+    "skill": "Analiza Biznesowa",
+    "avg_level": 3.57,
+    "avg_salary": 4208.0,
+    "count": 12
+  },
+  {
+    "skill": "Waterfall",
+    "avg_level": 3.12,
+    "avg_salary": 5146.0,
+    "count": 5
+  },
+  {
+    "skill": "MS Project",
+    "avg_level": 2.77,
+    "avg_salary": 3676.0,
+    "count": 9
+  },
+  {
+    "skill": "analiza systemowa",
+    "avg_level": 3.5,
+    "avg_salary": 3014.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP Ariba",
+    "avg_level": 2.25,
+    "avg_salary": 3778.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP MM",
+    "avg_level": 3.75,
+    "avg_salary": 15148.0,
+    "count": 8
+  },
+  {
+    "skill": "PRINCE2",
+    "avg_level": 2.54,
+    "avg_salary": 4450.0,
+    "count": 10
+  },
+  {
+    "skill": "MS Office",
+    "avg_level": 3.5,
+    "avg_salary": 4367.0,
+    "count": 8
+  },
+  {
+    "skill": "Product Management",
+    "avg_level": 3.82,
+    "avg_salary": 6356.0,
+    "count": 10
+  },
+  {
+    "skill": "PM",
+    "avg_level": 3.43,
+    "avg_salary": 3655.0,
+    "count": 3
+  },
+  {
+    "skill": "Kanban",
+    "avg_level": 3.5,
+    "avg_salary": 6231.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP HANA",
+    "avg_level": 3.29,
+    "avg_salary": 5600.0,
+    "count": 8
+  },
+  {
+    "skill": "Quality Assurance",
+    "avg_level": 2,
+    "avg_salary": 5294.0,
+    "count": 3
+  },
+  {
+    "skill": "Analityczne My\u015blenie",
+    "avg_level": 3.75,
+    "avg_salary": 3634.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP S/4HANA",
+    "avg_level": 3.44,
+    "avg_salary": 5977.0,
+    "count": 5
+  },
+  {
+    "skill": "oms",
+    "avg_level": 3.67,
+    "avg_salary": 4103.0,
+    "count": 3
+  },
+  {
+    "skill": "Insurance",
+    "avg_level": 2.83,
+    "avg_salary": 5430.0,
+    "count": 5
+  },
+  {
+    "skill": "S/4HANA",
+    "avg_level": 2.33,
+    "avg_salary": 4202.0,
+    "count": 3
+  },
+  {
+    "skill": "Data Integration",
+    "avg_level": 3.5,
+    "avg_salary": 6424.0,
+    "count": 4
+  },
+  {
+    "skill": "Excel",
+    "avg_level": 3.5,
+    "avg_salary": 5931.0,
+    "count": 3
+  },
+  {
+    "skill": "Stakeholder Management",
+    "avg_level": 3.75,
+    "avg_salary": 5821.0,
+    "count": 4
+  },
+  {
+    "skill": "System Analysis",
+    "avg_level": 3.29,
+    "avg_salary": 5388.0,
+    "count": 4
+  },
+  {
+    "skill": "Collibra",
+    "avg_level": 3.67,
+    "avg_salary": 5538.0,
+    "count": 3
+  },
+  {
+    "skill": "ArchiMate",
+    "avg_level": 3.1,
+    "avg_salary": 4999.0,
+    "count": 5
+  },
+  {
+    "skill": "SOA",
+    "avg_level": 3.44,
+    "avg_salary": 6172.0,
+    "count": 4
+  },
+  {
+    "skill": "Sparx Enterprise Architect",
+    "avg_level": 3.5,
+    "avg_salary": 6472.0,
+    "count": 5
+  },
+  {
+    "skill": "ABAP",
+    "avg_level": 2.81,
+    "avg_salary": 6190.0,
+    "count": 4
+  },
+  {
+    "skill": "IaaS",
+    "avg_level": 3,
+    "avg_salary": 5016.0,
+    "count": 3
+  },
+  {
+    "skill": "BSS",
+    "avg_level": 3,
+    "avg_salary": 6636.0,
+    "count": 3
+  },
+  {
+    "skill": "Splunk",
+    "avg_level": 3.6,
+    "avg_salary": 6040.0,
+    "count": 5
+  },
+  {
+    "skill": "EDR",
+    "avg_level": 3.67,
+    "avg_salary": 6292.0,
+    "count": 3
+  },
+  {
+    "skill": "XDR",
+    "avg_level": 3.5,
+    "avg_salary": 6100.0,
+    "count": 4
+  },
+  {
+    "skill": "CyberArk",
+    "avg_level": 3.29,
+    "avg_salary": 5672.0,
+    "count": 4
+  },
+  {
+    "skill": "PAM",
+    "avg_level": 3.25,
+    "avg_salary": 5307.0,
+    "count": 4
+  },
+  {
+    "skill": "Thales",
+    "avg_level": 4,
+    "avg_salary": 7476.0,
+    "count": 3
+  },
+  {
+    "skill": "data governance",
+    "avg_level": 4,
+    "avg_salary": 6850.0,
+    "count": 3
+  },
+  {
+    "skill": "Data Quality",
+    "avg_level": 4,
+    "avg_salary": 7019.0,
+    "count": 4
+  },
+  {
+    "skill": "R",
+    "avg_level": 4,
+    "avg_salary": 6603.0,
+    "count": 3
+  },
+  {
+    "skill": "Python 3",
+    "avg_level": 4,
+    "avg_salary": 9548.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP HCM",
+    "avg_level": 2.25,
+    "avg_salary": 6580.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP FI",
+    "avg_level": 3.85,
+    "avg_salary": 5507.0,
+    "count": 8
+  },
+  {
+    "skill": "SAP SD",
+    "avg_level": 3.41,
+    "avg_salary": 11126.0,
+    "count": 14
+  },
+  {
+    "skill": "KSeF",
+    "avg_level": 3,
+    "avg_salary": 4457.0,
+    "count": 4
+  },
+  {
+    "skill": "SAP ABAP",
+    "avg_level": 4.4,
+    "avg_salary": 6189.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP S/4 HANA",
+    "avg_level": 3.75,
+    "avg_salary": 7990.0,
+    "count": 4
+  },
+  {
+    "skill": "SAP Integration",
+    "avg_level": 3.67,
+    "avg_salary": 32327.0,
+    "count": 3
+  },
+  {
+    "skill": "SAP Configuration",
+    "avg_level": 4,
+    "avg_salary": 34087.0,
+    "count": 3
+  }
+]
