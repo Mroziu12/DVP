@@ -40,6 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ===== LOAD REAL CHART DATA =====
     // This replaces the artificial bars with real data from your Python aggregation
+
+    fetch('data/CategoryStats.json')
+        .then(res => res.json())
+        .then(data => renderCategoryChart(data))
+        .catch(err => console.error('Error loading categories:', err));
+
     fetch('data/ExperienceStats.json')
         .then(response => {
             if (!response.ok) {
@@ -55,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     // 2. NEW: Fetch Skill Correlation Data (Scatter Plot)
-fetch('data/SkillVsSalary.json')
+    fetch('data/SkillVsSalary.json')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
@@ -65,15 +71,17 @@ fetch('data/SkillVsSalary.json')
             const salaries = data.map(d => d.avg_salary);
             const maxSal = Math.ceil(Math.max(...salaries) / 1000) * 1000;
 
-            createScatterChart(data, {
-                containerId: '#skillCorrelationChart',
-                xMin: 1, xMax: 5,
-                yMin: 0, yMax: maxSal,
-                xLabel: 'Avg Required Level (1-5)',
-                jitterAmount: 0.6, // High jitter to spread out the crowd
-                labelThresholdSalary: 6000,
-                labelThresholdCount: 20
-            });
+        createScatterChart(data, {
+                        containerId: '#skillCorrelationChart',
+                        xMin: 1, xMax: 5,
+                        // CHANGE: 4 steps creates exactly 5 ticks: 1, 2, 3, 4, 5
+                        xSteps: 4, 
+                        yMin: 0, yMax: maxSal,
+                        xLabel: 'Avg Required Level (1-5)',
+                        jitterAmount: 0,
+                        labelThresholdSalary: 6000,
+                        labelThresholdCount: 20
+                    });
 
             // --- PLOT 2: DEEP DIVE (Trimmed Data) ---
             // Here is where we "Trim the bubbles" for the zoom
@@ -437,6 +445,7 @@ function createScatterChart(data, config) {
     container.style.borderBottom = '1px solid #ccc';
 
     const { xMin, xMax, yMin, yMax } = config;
+    
 
     // --- A. Draw Y-Axis ---
     const ySteps = 5;
@@ -466,7 +475,7 @@ function createScatterChart(data, config) {
     }
 
     // --- B. Draw X-Axis ---
-    const xSteps = 5;
+    const xSteps = 4;
     for (let i = 0; i <= xSteps; i++) {
         const value = xMin + ((xMax - xMin) / xSteps) * i;
         const label = document.createElement('div');
@@ -569,4 +578,150 @@ function createScatterChart(data, config) {
 
         container.appendChild(bubble);
     });
+}
+
+// ===== 3. CATEGORY CHART LOGIC (Treemap) =====
+    // Recursive function to generate rectangles
+    // items: array of data objects
+    // x, y, w, h: bounding box in percentages (0-100)
+// ===== 3. CATEGORY CHART LOGIC (Treemap - Aspect Ratio Fixed) =====
+// ===== 3. CATEGORY CHART LOGIC (Robust Squarified Treemap) =====
+// ===== 3. CATEGORY CHART LOGIC (Fixed Squarified Treemap) =====
+function renderCategoryChart(data) {
+    const container = document.querySelector('#categoryChart .chart-placeholder');
+    if (!container) return;
+
+    container.innerHTML = '';
+    
+    // Setup Container
+    container.style.position = 'relative';
+    container.style.width = '100%';
+    container.style.height = '100%';
+    container.style.overflow = 'hidden';
+
+    // 1. DIMENSION FIX: Force valid height if DOM reports 0/small
+    let containerWidth = container.offsetWidth;
+    let containerHeight = container.offsetHeight;
+
+    // If chart is hidden or loading, height might be 0. Force a default.
+    if (!containerHeight || containerHeight < 100) {
+        console.warn('Treemap: Container height too small, forcing 600px.');
+        containerHeight = 600;
+        // Optional: Force the physical container to match if it collapsed
+        container.style.height = '600px'; 
+    }
+    
+    // 2. DATA SORTING: Sort Largest to Smallest (Crucial for "Blocky" layout)
+    // Random sorting creates "strips". Descending sort creates "blocks".
+    const sortedData = [...data]
+        .filter(item => item.count > 0)
+        .sort((a, b) => b.count - a.count); // Descending
+
+    const treeData = sortedData.slice(0, 10);
+    const colors = ['#C85A3E', '#3A4D39', '#2B2B2B', '#D4A373', '#6B705C', '#A5A58D', '#4A4A4A', '#8C3D2B'];
+
+    // Recursive function
+    // x, y, w, h are percentages (0-100)
+    function generateTreemap(items, x, y, w, h) {
+        if (items.length === 0) return;
+
+        // Base Case: Draw Item
+        if (items.length === 1) {
+            const item = items[0];
+            const rect = document.createElement('div');
+            
+            rect.style.position = 'absolute';
+            rect.style.left = `${x}%`;
+            rect.style.top = `${y}%`;
+            rect.style.width = `${w}%`;
+            rect.style.height = `${h}%`;
+            rect.style.backgroundColor = colors[data.indexOf(item) % colors.length];
+            rect.style.border = '1px solid #fff'; 
+            rect.style.boxSizing = 'border-box';
+            rect.style.color = '#fff';
+            rect.style.display = 'flex';
+            rect.style.flexDirection = 'column';
+            rect.style.justifyContent = 'center';
+            rect.style.alignItems = 'center';
+            rect.style.cursor = 'pointer';
+            rect.style.transition = 'all 0.2s';
+            rect.style.overflow = 'hidden';
+
+            // Text Sizing
+            const pixelW = (w / 100) * containerWidth;
+            const pixelH = (h / 100) * containerHeight;
+            const isTiny = pixelW < 40 || pixelH < 30;
+
+            if (!isTiny) {
+                rect.innerHTML = `
+                    <span style="font-weight:bold; font-size:13px; text-align:center; padding:0 2px; text-shadow:0 1px 2px rgba(0,0,0,0.2);">${item.category}</span>
+                    <span style="font-size:11px; opacity:0.9;">${item.count}</span>
+                `;
+            } else {
+                 rect.innerHTML = `<span style="font-size:10px; font-weight:bold;">${item.category.substring(0,2)}</span>`;
+            }
+
+            rect.title = `${item.category}\nOffers: ${item.count}\nAvg Salary: €${item.avg_salary}`;
+            
+            // Hover
+            rect.addEventListener('mouseenter', () => {
+                rect.style.filter = 'brightness(1.15)';
+                rect.style.zIndex = 10;
+                rect.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            });
+            rect.addEventListener('mouseleave', () => {
+                rect.style.filter = 'none';
+                rect.style.zIndex = 1;
+                rect.style.boxShadow = 'none';
+            });
+
+            container.appendChild(rect);
+            return;
+        }
+
+        // --- SPLIT LOGIC ---
+        // Find split point close to 50% weight
+        const totalWeight = items.reduce((sum, i) => sum + i.count, 0);
+        let currentWeight = 0;
+        let splitIndex = 0;
+        let bestDiff = Infinity;
+        
+        for (let i = 0; i < items.length; i++) {
+            currentWeight += items[i].count;
+            const diff = Math.abs(currentWeight - (totalWeight / 2));
+            if (diff < bestDiff) {
+                bestDiff = diff;
+                splitIndex = i + 1;
+            }
+        }
+        
+        // Safety clamps
+        if (splitIndex >= items.length) splitIndex = items.length - 1;
+        if (splitIndex < 1) splitIndex = 1;
+
+        const group1 = items.slice(0, splitIndex);
+        const group2 = items.slice(splitIndex);
+        
+        const weight1 = group1.reduce((sum, i) => sum + i.count, 0);
+        const ratio = weight1 / totalWeight;
+
+        // --- ASPECT RATIO CHECK ---
+        // Check "Current Shape" in Pixels to decide cut
+        const pixelW = (w / 100) * containerWidth;
+        const pixelH = (h / 100) * containerHeight;
+
+        // If it's wider than it is tall -> Cut Vertically (Left | Right)
+        // If it's taller than it is wide -> Cut Horizontally (Top / Bottom)
+        if (pixelW >= pixelH) {
+            const w1 = w * ratio;
+            generateTreemap(group1, x, y, w1, h);
+            generateTreemap(group2, x + w1, y, w - w1, h);
+        } else {
+            const h1 = h * ratio;
+            generateTreemap(group1, x, y, w, h1);
+            generateTreemap(group2, x, y + h1, w, h - h1);
+        }
+    }
+
+    generateTreemap(treeData, 0, 0, 100, 100);
 }

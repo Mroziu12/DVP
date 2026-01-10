@@ -1,0 +1,112 @@
+[
+  {
+    "category": "Ai",
+    "count": 152,
+    "avg_salary": 5951.0
+  },
+  {
+    "category": "Javascript",
+    "count": 151,
+    "avg_salary": 6727.0
+  },
+  {
+    "category": "Python",
+    "count": 151,
+    "avg_salary": 6570.0
+  },
+  {
+    "category": "Java",
+    "count": 151,
+    "avg_salary": 5512.0
+  },
+  {
+    "category": "Net",
+    "count": 151,
+    "avg_salary": 4974.0
+  },
+  {
+    "category": "Mobile",
+    "count": 151,
+    "avg_salary": 5068.0
+  },
+  {
+    "category": "Devops",
+    "count": 151,
+    "avg_salary": 5974.0
+  },
+  {
+    "category": "Admin",
+    "count": 151,
+    "avg_salary": 4362.0
+  },
+  {
+    "category": "Pm",
+    "count": 151,
+    "avg_salary": 4580.0
+  },
+  {
+    "category": "Analytics",
+    "count": 151,
+    "avg_salary": 11924.0
+  },
+  {
+    "category": "Security",
+    "count": 151,
+    "avg_salary": 6161.0
+  },
+  {
+    "category": "Data",
+    "count": 151,
+    "avg_salary": 5746.0
+  },
+  {
+    "category": "Erp",
+    "count": 151,
+    "avg_salary": 6765.0
+  },
+  {
+    "category": "Architecture",
+    "count": 151,
+    "avg_salary": 6681.0
+  },
+  {
+    "category": "C",
+    "count": 115,
+    "avg_salary": 5427.0
+  },
+  {
+    "category": "Php",
+    "count": 112,
+    "avg_salary": 4046.0
+  },
+  {
+    "category": "Ux",
+    "count": 80,
+    "avg_salary": 4125.0
+  },
+  {
+    "category": "Go",
+    "count": 61,
+    "avg_salary": 8864.0
+  },
+  {
+    "category": "Ruby",
+    "count": 27,
+    "avg_salary": 5027.0
+  },
+  {
+    "category": "Scala",
+    "count": 23,
+    "avg_salary": 5342.0
+  },
+  {
+    "category": "Game",
+    "count": 18,
+    "avg_salary": 2967.0
+  },
+  {
+    "category": "Html",
+    "count": 17,
+    "avg_salary": 2385.0
+  }
+]
