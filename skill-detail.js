@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Render the word cloud
         renderWordCloud(skillName);
 
+        // Render the boxplot
+        renderBoxplot(skillName);
+
     } catch (error) {
         console.error('Error loading skill data:', error);
         showErrorMessage();
@@ -304,3 +307,270 @@ async function renderWordCloud(skillName) {
     }
 }
 
+// ===== BOXPLOT RENDERING =====
+
+/**
+ * Render boxplot for skill level vs salary
+ * @param {string} skillName - Name of the skill to show boxplot for
+ */
+function renderBoxplot(skillName) {
+    console.log(`Rendering boxplot for: ${skillName}`);
+
+    const container = document.getElementById('boxplotChart');
+    if (!container) {
+        console.error('Boxplot container not found');
+        return;
+    }
+
+    const placeholder = container.querySelector('.chart-placeholder');
+    if (!placeholder) {
+        console.error('Boxplot placeholder not found');
+        return;
+    }
+
+    // Check if boxplot data is available
+    if (typeof BOXPLOT_DATA === 'undefined') {
+        console.error('BOXPLOT_DATA not loaded');
+        placeholder.innerHTML = '<p style="text-align: center; padding: 60px; color: #C85A3E;">Boxplot data not available</p>';
+        return;
+    }
+
+    // Get data for this skill
+    const skillData = BOXPLOT_DATA[skillName];
+
+    if (!skillData || Object.keys(skillData).length === 0) {
+        placeholder.innerHTML = '<p style="text-align: center; padding: 60px; color: #666;">No salary data available for different skill levels</p>';
+        return;
+    }
+
+    console.log(`Boxplot data for ${skillName}:`, skillData);
+
+    // Clear placeholder
+    placeholder.innerHTML = '';
+
+    // Prepare data for D3
+    const boxplotData = [];
+    for (let level = 1; level <= 5; level++) {
+        if (skillData[level]) {
+            boxplotData.push({
+                level: level,
+                ...skillData[level]
+            });
+        }
+    }
+
+    if (boxplotData.length === 0) {
+        placeholder.innerHTML = '<p style="text-align: center; padding: 60px; color: #666;">No data available</p>';
+        return;
+    }
+
+    // Set up dimensions
+    const margin = { top: 40, right: 40, bottom: 60, left: 80 };
+    const width = 800 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+
+    // Create SVG
+    const svg = d3.select(placeholder)
+        .append('svg')
+        .attr('width', '100%')
+        .attr('height', '100%')
+        .attr('viewBox', `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
+        .attr('preserveAspectRatio', 'xMidYMid meet')
+        .append('g')
+        .attr('transform', `translate(${margin.left},${margin.top})`);
+
+    // Set up scales
+    const xScale = d3.scaleBand()
+        .domain([1, 2, 3, 4, 5])
+        .range([0, width])
+        .padding(0.3);
+
+    // Calculate domain including outliers
+    const allValues = boxplotData.flatMap(d => {
+        const values = [d.whiskerMin, d.whiskerMax];
+        if (d.outliers && d.outliers.length > 0) {
+            values.push(...d.outliers);
+        }
+        return values;
+    });
+    const yScale = d3.scaleLinear()
+        .domain([0, d3.max(allValues) * 1.1])
+        .range([height, 0]);
+
+    // Add X axis
+    svg.append('g')
+        .attr('transform', `translate(0,${height})`)
+        .call(d3.axisBottom(xScale))
+        .style('font-family', 'IBM Plex Mono, monospace')
+        .style('font-size', '12px')
+        .style('color', '#2B2B2B');
+
+    // Add Y axis
+    svg.append('g')
+        .call(d3.axisLeft(yScale).ticks(8).tickFormat(d => `€${d}`))
+        .style('font-family', 'IBM Plex Mono, monospace')
+        .style('font-size', '12px')
+        .style('color', '#2B2B2B');
+
+    // Add X axis label
+    svg.append('text')
+        .attr('x', width / 2)
+        .attr('y', height + 45)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Crimson Pro, serif')
+        .style('font-size', '14px')
+        .style('fill', '#2B2B2B')
+        .text('Skill Level Required');
+
+    // Add Y axis label
+    svg.append('text')
+        .attr('transform', 'rotate(-90)')
+        .attr('x', -height / 2)
+        .attr('y', -60)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Crimson Pro, serif')
+        .style('font-size', '14px')
+        .style('fill', '#2B2B2B')
+        .text('Salary (EUR)');
+
+    // Color scheme - softer, gentler colors
+    const boxColor = '#9c9583';         // Soft sage
+    const medianColor = '#B33951';      // Soft gold
+    const whiskerColor = '#3b5249';     // Muted forest
+
+    // Draw boxplots
+    boxplotData.forEach(d => {
+        const x = xScale(d.level);
+        const boxWidth = xScale.bandwidth();
+
+        // Vertical line (whiskers) - now using whiskerMin and whiskerMax
+        svg.append('line')
+            .attr('x1', x + boxWidth / 2)
+            .attr('x2', x + boxWidth / 2)
+            .attr('y1', yScale(d.whiskerMin))
+            .attr('y2', yScale(d.whiskerMax))
+            .attr('stroke', whiskerColor)
+            .attr('stroke-width', 1);
+
+        // Min whisker line
+        svg.append('line')
+            .attr('x1', x + boxWidth * 0.25)
+            .attr('x2', x + boxWidth * 0.75)
+            .attr('y1', yScale(d.whiskerMin))
+            .attr('y2', yScale(d.whiskerMin))
+            .attr('stroke', whiskerColor)
+            .attr('stroke-width', 1);
+
+        // Max whisker line
+        svg.append('line')
+            .attr('x1', x + boxWidth * 0.25)
+            .attr('x2', x + boxWidth * 0.75)
+            .attr('y1', yScale(d.whiskerMax))
+            .attr('y2', yScale(d.whiskerMax))
+            .attr('stroke', whiskerColor)
+            .attr('stroke-width', 1);
+
+        // Box (Q1 to Q3)
+        const boxHeight = yScale(d.q1) - yScale(d.q3);
+        svg.append('rect')
+            .attr('x', x)
+            .attr('y', yScale(d.q3))
+            .attr('width', boxWidth)
+            .attr('height', boxHeight)
+            .attr('fill', boxColor)
+            .attr('fill-opacity', 1)
+            .attr('stroke', whiskerColor)
+            .attr('stroke-width', 1);
+
+        // Median line
+        svg.append('line')
+            .attr('x1', x)
+            .attr('x2', x + boxWidth)
+            .attr('y1', yScale(d.median))
+            .attr('y2', yScale(d.median))
+            .attr('stroke', medianColor)
+            .attr('stroke-width', 3);
+
+        // Draw outliers as individual points
+        if (d.outliers && d.outliers.length > 0) {
+            d.outliers.forEach(outlier => {
+                svg.append('circle')
+                    .attr('cx', x + boxWidth / 2)
+                    .attr('cy', yScale(outlier))
+                    .attr('r', 3)
+                    .attr('fill', 'none')
+                    .attr('stroke', whiskerColor)
+                    .attr('stroke-width', 1.5)
+                    .attr('opacity', 0.7);
+            });
+        }
+
+        // Add tooltip
+        const tooltip = svg.append('g')
+            .attr('class', 'boxplot-tooltip')
+            .style('opacity', 0)
+            .style('pointer-events', 'none')
+            .style('z-index', 1000);
+
+        tooltip.append('rect')
+            .attr('fill', '#2B2B2B')
+            .attr('rx', 4);
+
+        tooltip.append('text')
+            .attr('fill', '#E8DCC4')
+            .style('font-family', 'IBM Plex Mono, monospace')
+            .style('font-size', '11px');
+
+        // Interactive overlay
+        svg.append('rect')
+            .attr('x', x)
+            .attr('y', 0)
+            .attr('width', boxWidth)
+            .attr('height', height)
+            .attr('fill', 'transparent')
+            .on('mouseenter', function () {
+                const outlierText = d.outliers && d.outliers.length > 0 ? `\nOutliers: ${d.outliers.length}` : '';
+                const tooltipText = `Level ${d.level} (n=${d.count})\nQ1: €${d.q1}\nMedian: €${d.median}\nQ3: €${d.q3}`;
+
+                const lines = tooltipText.split('\n');
+                const lineHeight = 14;
+                const padding = 8;
+                const textWidth = Math.max(...lines.map(line => line.length * 6.5));
+
+                // Calculate tooltip Y position (centered on median, but keep within bounds)
+                const tooltipHeight = lines.length * lineHeight + padding * 2;
+                let tooltipY = yScale(d.median) - tooltipHeight / 2;
+
+                // Keep tooltip within chart bounds
+                if (tooltipY < 0) tooltipY = 10;
+                if (tooltipY + tooltipHeight > height) tooltipY = height - tooltipHeight - 10;
+
+                // Position tooltip to the left for level 5, right for others
+                const tooltipX = d.level === 5 ? x - textWidth - padding * 2 - 10 : x + boxWidth + 10;
+
+                // Position tooltip
+                tooltip.select('rect')
+                    .attr('x', tooltipX)
+                    .attr('y', tooltipY)
+                    .attr('width', textWidth + padding * 2)
+                    .attr('height', tooltipHeight);
+
+                tooltip.select('text')
+                    .selectAll('tspan')
+                    .data(lines)
+                    .join('tspan')
+                    .attr('x', tooltipX + padding)
+                    .attr('y', (_, i) => tooltipY + padding + 10 + i * lineHeight)
+                    .attr('text-anchor', 'start')
+                    .text(d => d);
+
+                tooltip.style('opacity', 1);
+
+                // Bring tooltip to front
+                tooltip.raise();
+            })
+            .on('mouseleave', function () {
+                tooltip.style('opacity', 0);
+            });
+    });
+}

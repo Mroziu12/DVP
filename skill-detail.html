@@ -73,43 +73,21 @@
                 </div>
             </section>
 
-            <!-- Row 2: Scatter Plot -->
+            <!-- Row 3: Boxplot Chart -->
             <section class="chart-section">
                 <div class="chart-header">
-                    <h3>Salary vs Experience Distribution</h3>
-                    <p class="chart-description">Scatter plot showing salary correlation with experience</p>
+                    <h3>Salary Distribution by Skill Level</h3>
+                    <p class="chart-description">Boxplot showing salary ranges for different skill level requirements
+                    </p>
                 </div>
-                <div class="chart-container large-chart" id="scatterPlotChart">
+                <div class="chart-container large-chart" id="boxplotChart">
                     <div class="chart-placeholder">
-                        <div class="scatter-plot-placeholder">
-                            <div class="scatter-point" style="--x: 15%; --y: 70%;"></div>
-                            <div class="scatter-point" style="--x: 20%; --y: 65%;"></div>
-                            <div class="scatter-point" style="--x: 25%; --y: 60%;"></div>
-                            <div class="scatter-point" style="--x: 30%; --y: 55%;"></div>
-                            <div class="scatter-point" style="--x: 35%; --y: 50%;"></div>
-                            <div class="scatter-point" style="--x: 40%; --y: 48%;"></div>
-                            <div class="scatter-point" style="--x: 45%; --y: 45%;"></div>
-                            <div class="scatter-point" style="--x: 50%; --y: 40%;"></div>
-                            <div class="scatter-point" style="--x: 55%; --y: 38%;"></div>
-                            <div class="scatter-point" style="--x: 60%; --y: 35%;"></div>
-                            <div class="scatter-point" style="--x: 65%; --y: 30%;"></div>
-                            <div class="scatter-point" style="--x: 70%; --y: 28%;"></div>
-                            <div class="scatter-point" style="--x: 75%; --y: 25%;"></div>
-                            <div class="scatter-point" style="--x: 80%; --y: 20%;"></div>
-                            <div class="scatter-point" style="--x: 85%; --y: 18%;"></div>
-                            <div class="scatter-point" style="--x: 22%; --y: 68%;"></div>
-                            <div class="scatter-point" style="--x: 38%; --y: 52%;"></div>
-                            <div class="scatter-point" style="--x: 52%; --y: 42%;"></div>
-                            <div class="scatter-point" style="--x: 68%; --y: 32%;"></div>
-                            <div class="scatter-point" style="--x: 78%; --y: 22%;"></div>
-                            <div class="axis-label x-axis">Experience (Years)</div>
-                            <div class="axis-label y-axis">Salary</div>
-                        </div>
+                        <p style="text-align: center; padding: 40px; color: #666;">Loading...</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Row 3: Three Pie Charts -->
+            <!-- Row 4: Three Pie Charts -->
             <div class="charts-grid three-columns">
                 <!-- Pie Chart 1: Contract Type -->
                 <section class="chart-section">
@@ -155,6 +133,7 @@
 
     <script src="clearOffersData.js"></script>
     <script src="jaccardData.js"></script>
+    <script src="boxplotData.js"></script>
     <script src="skillDataProcessor.js"></script>
     <script src="wordCloudProcessor.js"></script>
     <script src="skill-detail.js"></script>
