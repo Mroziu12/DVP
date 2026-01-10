@@ -126,8 +126,7 @@ body {
 /* ===== PAGE HEADER ===== */
 .page-header {
     margin-bottom: var(--spacing-2xl);
-    text-align: left;
-    padding-left: 8%;
+    text-align: center;
 }
 
 .page-header h2 {
@@ -148,6 +147,58 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-top: var(--spacing-sm);
+}
+
+/* ===== INTRODUCTION SECTION ===== */
+.intro-section {
+    max-width: 900px;
+    margin: 0 auto var(--spacing-2xl);
+    padding: 0 var(--spacing-lg);
+}
+
+.intro-text {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    text-align: center;
+    font-weight: 400;
+}
+
+/* ===== SECTION DIVIDER ===== */
+.section-divider {
+    text-align: center;
+    margin: var(--spacing-2xl) 0 var(--spacing-md) 0;
+    padding: var(--spacing-lg) 0;
+    position: relative;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--burnt-orange);
+}
+
+.section-divider-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--matte-carbon);
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: -0.02em;
+}
+
+.section-divider-text {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 /* ===== BACK NAVIGATION ===== */
@@ -178,6 +229,43 @@ body {
     transform: translateX(-6px);
 }
 
+/* ===== HERO GRAPH (EDGE BUNDLING) ===== */
+.hero-graph {
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+}
+
+.hero-graph-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-graph-header h3 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--matte-carbon);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.hero-graph-description {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.hero-graph-container {
+    background: var(--alabaster);
+    position: relative;
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border-hairline);
+    border-bottom: 1px solid var(--border-hairline);
+}
+
 /* ===== CHART SECTIONS ===== */
 .chart-section {
     margin-bottom: var(--spacing-xl);
@@ -189,7 +277,7 @@ body {
 
 .chart-header {
     margin-bottom: var(--spacing-md);
-    padding-left: 8%;
+    text-align: center;
 }
 
 .chart-header h3 {
@@ -740,7 +828,8 @@ body {
     height: 200px;
     margin-bottom: var(--spacing-md);
     position: relative;
-    border-radius: 50%; /* Makes it circular like skill bubbles */
+    border-radius: 50%;
+    /* Makes it circular like skill bubbles */
     overflow: hidden;
     border: 2px solid var(--matte-carbon);
     background: var(--alabaster);
@@ -819,7 +908,7 @@ body {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .member-photo-frame {
         width: 160px;
         height: 160px;
@@ -828,12 +917,16 @@ body {
 
 /* Market Insights Card Styling */
 .insight-card {
-    background-color: #F9F7F2; /* Very light beige/paper color */
-    border-left: 6px solid #C85A3E; /* Your Theme Orange */
+    background-color: #F9F7F2;
+    /* Very light beige/paper color */
+    border-left: 6px solid #C85A3E;
+    /* Your Theme Orange */
     padding: 2rem;
-    margin: 3rem 0 2rem 0; /* Spacing around the card */
+    margin: 3rem 0 2rem 0;
+    /* Spacing around the card */
     border-radius: 0 12px 12px 0;
-    box-shadow: 0 4px 20px rgba(58, 77, 57, 0.08); /* Subtle shadow using your Theme Green */
+    box-shadow: 0 4px 20px rgba(58, 77, 57, 0.08);
+    /* Subtle shadow using your Theme Green */
     position: relative;
     overflow: hidden;
 }
@@ -846,23 +939,27 @@ body {
     right: 20px;
     font-family: 'Crimson Pro', serif;
     font-size: 120px;
-    color: rgba(200, 90, 62, 0.1); /* Faint orange */
+    color: rgba(200, 90, 62, 0.1);
+    /* Faint orange */
     pointer-events: none;
 }
 
 .insight-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 1rem;
 }
 
 .insight-header h3 {
-    font-family: 'IBM Plex Mono', monospace; /* Tech/Data font */
+    font-family: 'IBM Plex Mono', monospace;
+    /* Tech/Data font */
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #3A4D39; /* Theme Green */
+    color: #3A4D39;
+    /* Theme Green */
     margin: 0;
     font-weight: 600;
 }
@@ -872,7 +969,8 @@ body {
 }
 
 .insight-content p {
-    font-family: 'Crimson Pro', serif; /* Readable body font */
+    font-family: 'Crimson Pro', serif;
+    /* Readable body font */
     font-size: 1.2rem;
     line-height: 1.6;
     color: #2B2B2B;
@@ -889,7 +987,69 @@ body {
     background: linear-gradient(120deg, rgba(200, 90, 62, 0.2) 0%, rgba(200, 90, 62, 0.2) 100%);
     background-repeat: no-repeat;
     background-size: 100% 40%;
-    background-position: 0 88%; /* Underline marker effect */
+    background-position: 0 88%;
+    /* Underline marker effect */
     padding: 0 4px;
     font-weight: 600;
+}
+
+/* ===== EDGE BUNDLING GRAPH ===== */
+.edge-bundling-container {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edge-bundling-container svg {
+    width: 100%;
+    height: 100%;
+}
+
+.edge-bundling-node {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--matte-carbon);
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.edge-bundling-link {
+    stroke: var(--deep-moss);
+    stroke-opacity: 0.3;
+    fill: none;
+    pointer-events: none;
+    transition: stroke-opacity var(--transition-fast), stroke var(--transition-fast);
+}
+
+/* Responsive adjustments for edge bundling */
+@media (max-width: 768px) {
+    .hero-graph-header h3 {
+        font-size: 3rem;
+    }
+
+    .edge-bundling-container {
+        height: 700px;
+    }
+
+    .edge-bundling-node {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-graph-header h3 {
+        font-size: 2.5rem;
+    }
+
+    .edge-bundling-container {
+        height: 600px;
+    }
+
+    .edge-bundling-node {
+        font-size: 7px;
+    }
 }
