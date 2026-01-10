@@ -7,7 +7,7 @@ def calculate_and_save_stats(input_file_name, output_file_name):
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Input: Go 2 folders UP to find the file (../../ClearOffers.json)
-    input_path = os.path.join(script_dir, '..', '..', input_file_name)
+    input_path = os.path.join(script_dir, '..', input_file_name)
     
     # Output: Go 1 folder UP, then into 'data' (../data/ExperienceStats1.json)
     output_path = os.path.join(script_dir, '..', 'data', output_file_name)

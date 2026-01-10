@@ -3,14 +3,18 @@ import os
 import statistics
 from collections import defaultdict
 
+
 def analyze_skills_data():
     # 1. Setup Paths
     # Script location: .../job-market-page/scripts/
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Input: Go 2 folders up to find ClearOffers.json (based on your previous structure)
-    # If ClearOffers is actually inside 'data', change this to: os.path.join(script_dir, '..', 'data', 'ClearOffers.json')
-    input_path = os.path.join(script_dir, '..', '..', 'ClearOffers.json')
+    # Input: Go 2 folders up to find ClearOffers.json 
+    # (based on your previous structure)
+    # If ClearOffers is actually inside 'data', 
+    # change this to: os.path.join
+    # (script_dir, '..', 'data', 'ClearOffers.json')
+    input_path = os.path.join(script_dir, '..', 'ClearOffers.json')
     
     # OUTPUT CHANGED HERE:
     # Go UP one level (to job-market-page), then DOWN into 'data'
@@ -45,7 +49,7 @@ def analyze_skills_data():
 
     # 4. Calculate Averages
     results = []
-    MIN_OFFERS = 3
+    MIN_OFFERS = 10
 
     for name, stats in skill_data.items():
         if len(stats['salaries']) >= MIN_OFFERS:
@@ -68,6 +72,7 @@ def analyze_skills_data():
     
     print(f"Success! Processed {len(results)} skills.")
     print(f"JSON saved to: {output_json}")
+
 
 if __name__ == "__main__":
     analyze_skills_data()
