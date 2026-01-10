@@ -71,25 +71,25 @@ document.addEventListener('DOMContentLoaded', function () {
             const salaries = data.map(d => d.avg_salary);
             const maxSal = Math.ceil(Math.max(...salaries) / 1000) * 1000;
 
-        createScatterChart(data, {
-                        containerId: '#skillCorrelationChart',
-                        xMin: 1, xMax: 5,
-                        // CHANGE: 4 steps creates exactly 5 ticks: 1, 2, 3, 4, 5
-                        xSteps: 4, 
-                        yMin: 0, yMax: maxSal,
-                        xLabel: 'Avg Required Level (1-5)',
-                        jitterAmount: 0,
-                        labelThresholdSalary: 6000,
-                        labelThresholdCount: 20
-                    });
+            createScatterChart(data, {
+                containerId: '#skillCorrelationChart',
+                xMin: 1, xMax: 5,
+                // CHANGE: 4 steps creates exactly 5 ticks: 1, 2, 3, 4, 5
+                xSteps: 4,
+                yMin: 0, yMax: maxSal,
+                xLabel: 'Avg Required Level (1-5)',
+                jitterAmount: 0,
+                labelThresholdSalary: 6000,
+                labelThresholdCount: 20
+            });
 
             // --- PLOT 2: DEEP DIVE (Trimmed Data) ---
             // Here is where we "Trim the bubbles" for the zoom
             const trimmedData = data.filter(item => {
                 // 1. Must be within our zoom range
                 const inRange = item.avg_level >= 3.0 && item.avg_level <= 3.8 &&
-                                item.avg_salary >= 3600 && item.avg_salary <= 7000;
-                
+                    item.avg_salary >= 3600 && item.avg_salary <= 7000;
+
                 // 2. TRIM NOISE: Only show skills with at least 5 offers
                 // This removes the tiny dots that make the chart unreadable
                 const isSignificant = item.count >= 5;
@@ -110,6 +110,21 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error('Error loading skill data:', error);
         });
+
+    // 3. NEW: Render Edge Bundling Graph
+    try {
+        const edgeBundlingProcessor = new EdgeBundlingProcessor();
+        edgeBundlingProcessor.loadData();
+        edgeBundlingProcessor.renderEdgeBundling('#edgeBundlingChart .edge-bundling-container', {
+            diameter: 960,
+            innerRadiusOffset: 120,
+            bundleTension: 0.85,
+            topSkills: 80,
+            minJaccard: 0.08
+        });
+    } catch (error) {
+        console.error('Error rendering edge bundling graph:', error);
+    }
 
     // ===== CHART INTERACTIONS =====
     const chartElements = document.querySelectorAll('.bar, .scatter-point, .word-item');
@@ -188,12 +203,12 @@ function renderSalaryChart(data) {
     if (!chartContainer) return;
 
     chartContainer.innerHTML = '';
-    
+
     // Layout: Flexbox for Axis + Bars
     chartContainer.style.display = 'flex';
     chartContainer.style.alignItems = 'flex-end';
     chartContainer.style.paddingLeft = '10px';
-    
+
     // Sort Levels
     const order = ['Junior', 'Mid', 'Senior', 'C-level', 'Lead', 'Principal'];
     data.sort((a, b) => {
@@ -247,19 +262,19 @@ function renderSalaryChart(data) {
     barsContainer.style.justifyContent = 'space-around';
     barsContainer.style.flexGrow = '1';
     barsContainer.style.height = '100%';
-    
-    const colors = ['#C85A3E', '#3A4D39', '#2B2B2B', '#D4A373']; 
+
+    const colors = ['#C85A3E', '#3A4D39', '#2B2B2B', '#D4A373'];
 
     data.forEach((item, index) => {
         if (!item.average_salary || item.experience_level === 'Unknown') return;
 
         const barWrapper = document.createElement('div');
         barWrapper.className = 'bar';
-        barWrapper.style.width = '12%'; 
+        barWrapper.style.width = '12%';
         barWrapper.style.margin = '0 1%';
-        
+
         const heightPercent = (item.average_salary / scaleMax) * 100;
-        
+
         barWrapper.style.setProperty('--height', `${heightPercent}%`);
         barWrapper.style.setProperty('--color', colors[index % colors.length]);
         barWrapper.title = `€${item.average_salary.toFixed(0)}`;
@@ -267,7 +282,7 @@ function renderSalaryChart(data) {
         const label = document.createElement('span');
         label.className = 'bar-label';
         label.textContent = item.experience_level;
-        
+
         barWrapper.appendChild(label);
         barsContainer.appendChild(barWrapper);
     });
@@ -280,36 +295,36 @@ function renderScatterPlot(data) {
     if (!container) return;
 
     container.innerHTML = ''; // Clear loading text
-    
+
     // Setup container
     container.style.position = 'relative';
     container.style.height = '100%';
     container.style.boxSizing = 'border-box';
     // Add padding for axes: Top, Right, Bottom (X-axis), Left (Y-axis)
-    container.style.padding = '20px 40px 50px 60px'; 
+    container.style.padding = '20px 40px 50px 60px';
     container.style.borderLeft = '1px solid #ccc';
     container.style.borderBottom = '1px solid #ccc';
 
     // 1. Determine Scale
     const salaries = data.map(d => d.avg_salary);
-    const maxSalary = Math.ceil(Math.max(...salaries) / 1000) * 1000; 
-    
+    const maxSalary = Math.ceil(Math.max(...salaries) / 1000) * 1000;
+
     // 2. Create Y-Axis (Salary)
     const ySteps = 5;
     for (let i = 0; i <= ySteps; i++) {
         const value = Math.round((maxSalary / ySteps) * i);
-        
+
         // Tick Label
         const label = document.createElement('div');
-        label.textContent = value > 0 ? `${value/1000}k` : '0';
+        label.textContent = value > 0 ? `${value / 1000}k` : '0';
         label.style.position = 'absolute';
-        label.style.left = '-45px'; 
+        label.style.left = '-45px';
         label.style.bottom = `${(i / ySteps) * 100}%`;
-        label.style.transform = 'translateY(50%)'; 
+        label.style.transform = 'translateY(50%)';
         label.style.fontSize = '12px';
         label.style.color = '#666';
         container.appendChild(label);
-        
+
         // Grid Line
         if (i > 0) {
             const gridLine = document.createElement('div');
@@ -322,7 +337,7 @@ function renderScatterPlot(data) {
             container.appendChild(gridLine);
         }
     }
-    
+
     // Y-Axis Title
     const yAxisTitle = document.createElement('div');
     yAxisTitle.textContent = 'Avg Salary (EUR)';
@@ -334,11 +349,11 @@ function renderScatterPlot(data) {
     container.appendChild(yAxisTitle);
 
     // 3. Create X-Axis (Levels 1-5)
-    const xLevels = [2.5,2.75,3,3.25, 3.5]; // Midpoints for levels 1-5
+    const xLevels = [2.5, 2.75, 3, 3.25, 3.5]; // Midpoints for levels 1-5
     xLevels.forEach(level => {
         // Map 1..5 to 0..100% width
-        const leftPercent = ((level - 3.5) / 1) * 100; 
-        
+        const leftPercent = ((level - 3.5) / 1) * 100;
+
         // Tick Label
         const label = document.createElement('div');
         label.textContent = level;
@@ -349,7 +364,7 @@ function renderScatterPlot(data) {
         label.style.fontSize = '12px';
         label.style.color = '#666';
         container.appendChild(label);
-        
+
         // Vertical Grid Line
         const gridLine = document.createElement('div');
         gridLine.style.position = 'absolute';
@@ -375,11 +390,11 @@ function renderScatterPlot(data) {
     // 4. Plot Bubbles
     data.forEach(item => {
         const bubble = document.createElement('div');
-        
+
         // Calculate Position
         const xPercent = ((item.avg_level - 1) / 4) * 100;
         const yPercent = (item.avg_salary / maxSalary) * 100;
-        
+
         // Size based on popularity (clamped between 10px and 40px)
         const size = Math.max(3, Math.min(10, item.count * 2));
 
@@ -392,10 +407,10 @@ function renderScatterPlot(data) {
         bubble.style.borderRadius = '50%';
         bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.6)'; // Theme green
         bubble.style.border = '1px solid #3A4D39';
-        bubble.style.transform = 'translate(-50%, 50%)'; 
+        bubble.style.transform = 'translate(-50%, 50%)';
         bubble.style.cursor = 'pointer';
         bubble.style.zIndex = '2';
-        
+
         // Tooltip
         bubble.title = `${item.skill}\nLevel: ${item.avg_level}\nSalary: €${item.avg_salary}\nOffers: ${item.count}`;
 
@@ -404,7 +419,7 @@ function renderScatterPlot(data) {
             const text = document.createElement('span');
             text.textContent = item.skill;
             text.style.position = 'absolute';
-            text.style.left = '12px'; 
+            text.style.left = '12px';
             text.style.top = '-12px';
             text.style.fontSize = '10px';
             text.style.color = '#333';
@@ -435,34 +450,34 @@ function createScatterChart(data, config) {
     if (!container) return;
 
     container.innerHTML = '';
-    
+
     // Layout
     container.style.position = 'relative';
     container.style.height = '100%';
     container.style.boxSizing = 'border-box';
-    container.style.padding = '20px 40px 50px 60px'; 
+    container.style.padding = '20px 40px 50px 60px';
     container.style.borderLeft = '1px solid #ccc';
     container.style.borderBottom = '1px solid #ccc';
 
     const { xMin, xMax, yMin, yMax } = config;
-    
+
 
     // --- A. Draw Y-Axis ---
     const ySteps = 5;
     for (let i = 0; i <= ySteps; i++) {
         const value = yMin + ((yMax - yMin) / ySteps) * i;
         const label = document.createElement('div');
-        label.textContent = `${(value/1000).toFixed(1)}k`; 
+        label.textContent = `${(value / 1000).toFixed(1)}k`;
         label.style.position = 'absolute';
-        label.style.left = '-50px'; 
+        label.style.left = '-50px';
         label.style.bottom = `${(i / ySteps) * 100}%`;
-        label.style.transform = 'translateY(50%)'; 
+        label.style.transform = 'translateY(50%)';
         label.style.fontSize = '11px';
         label.style.color = '#666';
         label.style.textAlign = 'right';
         label.style.width = '40px';
         container.appendChild(label);
-        
+
         if (i > 0) {
             const gridLine = document.createElement('div');
             gridLine.style.position = 'absolute';
@@ -487,7 +502,7 @@ function createScatterChart(data, config) {
         label.style.fontSize = '12px';
         label.style.color = '#666';
         container.appendChild(label);
-        
+
         const gridLine = document.createElement('div');
         gridLine.style.position = 'absolute';
         gridLine.style.top = '0';
@@ -496,7 +511,7 @@ function createScatterChart(data, config) {
         gridLine.style.borderLeft = '1px dashed #eee';
         container.appendChild(gridLine);
     }
-    
+
     // Axis Titles
     const yTitle = document.createElement('div');
     yTitle.textContent = 'EUR';
@@ -520,9 +535,9 @@ function createScatterChart(data, config) {
     // --- C. Plot Bubbles ---
     data.forEach(item => {
         // Jitter
-        const jitter = 0; 
+        const jitter = 0;
         const jitteredLevel = item.avg_level + jitter;
-        
+
         // Scale to %
         const xPercent = ((jitteredLevel - xMin) / (xMax - xMin)) * 100;
         const yPercent = ((item.avg_salary - yMin) / (yMax - yMin)) * 100;
@@ -539,12 +554,12 @@ function createScatterChart(data, config) {
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
         bubble.style.borderRadius = '50%';
-        bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.5)'; 
+        bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.5)';
         bubble.style.border = '1px solid rgba(43, 43, 43, 0.5)';
-        bubble.style.transform = 'translate(-50%, 50%)'; 
+        bubble.style.transform = 'translate(-50%, 50%)';
         bubble.style.cursor = 'pointer';
         bubble.style.zIndex = '2';
-        
+
         bubble.title = `${item.skill}\nLevel: ${item.avg_level}\nSalary: €${item.avg_salary}\nOffers: ${item.count}`;
 
         // Dynamic Labeling based on Config
@@ -552,7 +567,7 @@ function createScatterChart(data, config) {
             const text = document.createElement('span');
             text.textContent = item.skill;
             text.style.position = 'absolute';
-            text.style.left = '10px'; 
+            text.style.left = '10px';
             text.style.top = '-10px';
             text.style.fontSize = '10px';
             text.style.color = '#333';
@@ -565,9 +580,9 @@ function createScatterChart(data, config) {
 
         // Hover
         bubble.addEventListener('mouseenter', () => {
-            bubble.style.backgroundColor = '#C85A3E'; 
+            bubble.style.backgroundColor = '#C85A3E';
             bubble.style.opacity = '1';
-            bubble.style.zIndex = '100'; 
+            bubble.style.zIndex = '100';
             bubble.style.transform = 'translate(-50%, 50%) scale(1.4)';
         });
         bubble.addEventListener('mouseleave', () => {
@@ -581,9 +596,9 @@ function createScatterChart(data, config) {
 }
 
 // ===== 3. CATEGORY CHART LOGIC (Treemap) =====
-    // Recursive function to generate rectangles
-    // items: array of data objects
-    // x, y, w, h: bounding box in percentages (0-100)
+// Recursive function to generate rectangles
+// items: array of data objects
+// x, y, w, h: bounding box in percentages (0-100)
 // ===== 3. CATEGORY CHART LOGIC (Treemap - Aspect Ratio Fixed) =====
 // ===== 3. CATEGORY CHART LOGIC (Robust Squarified Treemap) =====
 // ===== 3. CATEGORY CHART LOGIC (Fixed Squarified Treemap) =====
@@ -592,7 +607,7 @@ function renderCategoryChart(data) {
     if (!container) return;
 
     container.innerHTML = '';
-    
+
     // Setup Container
     container.style.position = 'relative';
     container.style.width = '100%';
@@ -608,9 +623,9 @@ function renderCategoryChart(data) {
         console.warn('Treemap: Container height too small, forcing 600px.');
         containerHeight = 600;
         // Optional: Force the physical container to match if it collapsed
-        container.style.height = '600px'; 
+        container.style.height = '600px';
     }
-    
+
     // 2. DATA SORTING: Sort Largest to Smallest (Crucial for "Blocky" layout)
     // Random sorting creates "strips". Descending sort creates "blocks".
     const sortedData = [...data]
@@ -629,14 +644,14 @@ function renderCategoryChart(data) {
         if (items.length === 1) {
             const item = items[0];
             const rect = document.createElement('div');
-            
+
             rect.style.position = 'absolute';
             rect.style.left = `${x}%`;
             rect.style.top = `${y}%`;
             rect.style.width = `${w}%`;
             rect.style.height = `${h}%`;
             rect.style.backgroundColor = colors[data.indexOf(item) % colors.length];
-            rect.style.border = '1px solid #fff'; 
+            rect.style.border = '1px solid #fff';
             rect.style.boxSizing = 'border-box';
             rect.style.color = '#fff';
             rect.style.display = 'flex';
@@ -658,11 +673,11 @@ function renderCategoryChart(data) {
                     <span style="font-size:11px; opacity:0.9;">${item.count}</span>
                 `;
             } else {
-                 rect.innerHTML = `<span style="font-size:10px; font-weight:bold;">${item.category.substring(0,2)}</span>`;
+                rect.innerHTML = `<span style="font-size:10px; font-weight:bold;">${item.category.substring(0, 2)}</span>`;
             }
 
             rect.title = `${item.category}\nOffers: ${item.count}\nAvg Salary: €${item.avg_salary}`;
-            
+
             // Hover
             rect.addEventListener('mouseenter', () => {
                 rect.style.filter = 'brightness(1.15)';
@@ -685,7 +700,7 @@ function renderCategoryChart(data) {
         let currentWeight = 0;
         let splitIndex = 0;
         let bestDiff = Infinity;
-        
+
         for (let i = 0; i < items.length; i++) {
             currentWeight += items[i].count;
             const diff = Math.abs(currentWeight - (totalWeight / 2));
@@ -694,14 +709,14 @@ function renderCategoryChart(data) {
                 splitIndex = i + 1;
             }
         }
-        
+
         // Safety clamps
         if (splitIndex >= items.length) splitIndex = items.length - 1;
         if (splitIndex < 1) splitIndex = 1;
 
         const group1 = items.slice(0, splitIndex);
         const group2 = items.slice(splitIndex);
-        
+
         const weight1 = group1.reduce((sum, i) => sum + i.count, 0);
         const ratio = weight1 / totalWeight;
 

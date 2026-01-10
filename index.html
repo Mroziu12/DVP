@@ -13,155 +13,151 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <div class="logo">
-                <h1>Job Market Analytics</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Main</a></li>
-                <li><a href="team.html">Team</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Simple Navigation Links -->
+    <div class="top-nav-links">
+        <a href="index.html" class="nav-link active">Main</a>
+        <a href="team.html" class="nav-link">Team</a>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <!-- Header Section -->
             <header class="page-header">
                 <h2>Market Overview</h2>
-                <p class="subtitle">Explore the latest trends in the job market with interactive visualizations</p>
+                <p class="subtitle">Explore the skill relationship network and market trends</p>
             </header>
 
-            <!-- Main Big Graph Chart -->
-            <section class="chart-section main-chart-section">
-                <div class="chart-header">
-                    <h3>Skills Distribution</h3>
-                    <p class="chart-description">Click on any skill to view detailed analytics</p>
+            <div class="intro-section">
+                <p class="intro-text">
+                    The job market is a complex web of interconnected skills and technologies.
+                    Understanding which skills complement each other and how they co-occur in real job postings
+                    is crucial for making informed career decisions. This platform analyzes thousands of job offers
+                    to reveal the patterns and relationships between technical skills, helping you identify
+                    which skills to learn next based on actual market demand and skill synergies.
+                </p>
+            </div>
+
+            <!-- Hero: Edge Bundling Graph (Main Graph) -->
+            <div class="hero-graph">
+                <div class="hero-graph-header">
+                    <h3>Skill Relationships Network</h3>
+                    <p class="hero-graph-description">Click on any skill to explore detailed analytics • Hover to see
+                        connections</p>
                 </div>
-                <div class="chart-container big-chart" id="mainChart">
+                <div class="hero-graph-container" id="edgeBundlingChart">
+                    <div class="chart-placeholder edge-bundling-container">
+                        <p style="text-align: center; color: #666; padding-top: 350px;">Loading network...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Statistics Section Divider -->
+            <div class="section-divider">
+                <h4 class="section-divider-title">Market-Wide Statistics</h4>
+                <p class="section-divider-text">Explore comprehensive analytics across the entire job market</p>
+            </div>
+
+            <!-- Two Charts Below -->
+            <section class="chart-section">
+                <div class="chart-header">
+                    <h3>Experience vs Salary</h3>
+                    <p class="chart-description">Salary distribution across experience levels </p>
+                </div>
+                <div class="chart-container medium-chart" id="levelSalaryChart">
                     <div class="chart-placeholder">
-                        <!-- Placeholder for clickable skills -->
-                        <div class="skill-bubbles">
-                            <div class="skill-bubble" data-skill="JavaScript"
-                                style="--size: 180px; --x: 15%; --y: 20%;">
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="skill-bubble" data-skill="Python" style="--size: 160px; --x: 45%; --y: 15%;">
-                                <span>Python</span>
-                            </div>
-                            <div class="skill-bubble" data-skill="Java" style="--size: 140px; --x: 75%; --y: 25%;">
-                                <span>Java</span>
-                            </div>
-                            <div class="skill-bubble" data-skill="React" style="--size: 120px; --x: 25%; --y: 55%;">
-                                <span>React</span>
-                            </div>
-                            <div class="skill-bubble" data-skill="Node.js" style="--size: 110px; --x: 60%; --y: 60%;">
-                                <span>Node.js</span>
-                            </div>
-                            <div class="skill-bubble" data-skill="Docker" style="--size: 100px; --x: 80%; --y: 65%;">
-                                <span>Docker</span>
-                            </div>
-                            <div class="skill-bubble" data-skill="AWS" style="--size: 95px; --x: 40%; --y: 75%;">
-                                <span>AWS</span>
-                            </div>
+                        <div class="bar-chart-placeholder">
+                            <p style="color: #666; font-style: italic; align-self: center;">Loading chart data...</p>
                         </div>
                     </div>
                 </div>
             </section>
+            <div class="insight-card">
+                <div class="insight-header">
+                    <span class="insight-icon">📈</span>
+                    <h3>Career Value Trajectory</h3>
+                </div>
+                <div class="insight-content">
+                    <p>
+                        Salary progression in IT is not linear; it is <strong>exponential</strong>.
+                        While moving from Junior to Senior the pay rates are rising steady, with predictable returns,
+                        the data exposes a massive
+                        <span class="highlight-text">Leadership Multiplier</span> at the Lead level.
+                        The enormous valuation spike suggests that the market pays a premium not just for writing better
+                        code,
+                        but for the <strong>leverage</strong> of managing teams and architecture.
+                        Strategy and force-multiplication are clearly valued far above individual contribution.
+                    </p>
+                </div>
+            </div>
+            <!-- Category Breakout Chart -->
 
-            <!-- Two Charts Below -->
-                <section class="chart-section">
-                    <div class="chart-header">
-                        <h3>Experience vs Salary</h3>
-                        <p class="chart-description">Salary distribution across experience levels </p>
-                    </div>
-                    <div class="chart-container medium-chart" id="levelSalaryChart">
-                        <div class="chart-placeholder">
-                            <div class="bar-chart-placeholder">
-                                <p style="color: #666; font-style: italic; align-self: center;">Loading chart data...</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <div class="insight-card">
-                    <div class="insight-header">
-                        <span class="insight-icon">📈</span>
-                        <h3>Career Value Trajectory</h3>
-                    </div>
-                    <div class="insight-content">
-                        <p>
-                            Salary progression in IT is not linear; it is <strong>exponential</strong>. 
-                            While moving from Junior to Senior the pay rates are rising steady, with predictable returns, the data exposes a massive 
-                            <span class="highlight-text">Leadership Multiplier</span> at the Lead level. 
-                            The enormous valuation spike suggests that the market pays a premium not just for writing better code, 
-                            but for the <strong>leverage</strong> of managing teams and architecture. 
-                            Strategy and force-multiplication are clearly valued far above individual contribution.
-                        </p>
+            <section class="chart-section">
+                <div class="chart-header">
+                    <h3>Category Breakout</h3>
+                    <p class="chart-description">Market share by job category (Top 10)</p>
+                </div>
+                <div class="chart-container medium-chart" id="categoryChart">
+                    <div class="chart-placeholder" style="height: 600px; position: relative;">
+                        <p style="text-align: center; color: #666; margin-top: 250px;">Loading treemap...</p>
                     </div>
                 </div>
-                <!-- Category Breakout Chart -->
-                
-<section class="chart-section">
-    <div class="chart-header">
-        <h3>Category Breakout</h3>
-        <p class="chart-description">Market share by job category (Top 10)</p>
-    </div>
-    <div class="chart-container medium-chart" id="categoryChart">
-        <div class="chart-placeholder" style="height: 600px; position: relative;">
-            <p style="text-align: center; color: #666; margin-top: 250px;">Loading treemap...</p>
-        </div>
-    </div>
-</section>
+            </section>
 
-                <section class="chart-section" style="margin-top: 2rem;">
-                    <div class="chart-header">
-                        <h3>Skill Value Analysis (Overview)</h3>
-                        <p class="chart-description">Full market view</p>
-                    </div>
-                    <div class="chart-container big-chart" id="skillCorrelationChart">
-                        <div class="chart-placeholder" style="position: relative; min-height: 400px;">
-                            <p style="text-align: center; color: #666; padding-top: 180px;">Loading overview...</p>
-                        </div>
-                    </div>
-                </section>
-                <div class="insight-card">
-                    <div class="insight-header">
-                        <span class="insight-icon">💡</span>
-                        <h3>Key Market Observations</h3>
-                    </div>
-                    <div class="insight-content">
-                        <p>
-                            The data reveals a distinct <strong>"Gravity Well"</strong> in the tech sector. 
-                            Contrary to the expectation of a linear progression, the market does not hire for potential alone: 
-                            <span class="highlight-text">there is virtually zero demand for skills below Level 2</span>. 
-                            Instead, offers cluster heavily in the <strong>Mid-Senior tier (Levels 3.0–3.8)</strong>, suggesting 
-                            companies prioritize hands-on knowledge and experience over novice training or theoretical mastery. 
-                            Interestingly, the highest salaries often peak not at Level 5, but within this "High-Mid" sweet spot, 
-                            where specialized practical application meets high demand.
-                        </p>
+            <section class="chart-section" style="margin-top: 2rem;">
+                <div class="chart-header">
+                    <h3>Skill Value Analysis (Overview)</h3>
+                    <p class="chart-description">Full market view</p>
+                </div>
+                <div class="chart-container big-chart" id="skillCorrelationChart">
+                    <div class="chart-placeholder" style="position: relative; min-height: 400px;">
+                        <p style="text-align: center; color: #666; padding-top: 180px;">Loading overview...</p>
                     </div>
                 </div>
-                <section class="chart-section" style="margin-top: 2rem;">
-                    <div class="chart-header">
-                        <h3>Deep Dive: Mid/Senior Sweet Spot</h3>
-                        <p class="chart-description">Zoomed view: most dense level</p>
+            </section>
+            <div class="insight-card">
+                <div class="insight-header">
+                    <span class="insight-icon">💡</span>
+                    <h3>Key Market Observations</h3>
+                </div>
+                <div class="insight-content">
+                    <p>
+                        The data reveals a distinct <strong>"Gravity Well"</strong> in the tech sector.
+                        Contrary to the expectation of a linear progression, the market does not hire for potential
+                        alone:
+                        <span class="highlight-text">there is virtually zero demand for skills below Level 2</span>.
+                        Instead, offers cluster heavily in the <strong>Mid-Senior tier (Levels 3.0–3.8)</strong>,
+                        suggesting
+                        companies prioritize hands-on knowledge and experience over novice training or theoretical
+                        mastery.
+                        Interestingly, the highest salaries often peak not at Level 5, but within this "High-Mid" sweet
+                        spot,
+                        where specialized practical application meets high demand.
+                    </p>
+                </div>
+            </div>
+            <section class="chart-section" style="margin-top: 2rem;">
+                <div class="chart-header">
+                    <h3>Deep Dive: Mid/Senior Sweet Spot</h3>
+                    <p class="chart-description">Zoomed view: most dense level</p>
+                </div>
+                <div class="chart-container big-chart" id="skillCorrelationChartZoom">
+                    <div class="chart-placeholder" style="position: relative; min-height: 400px;">
+                        <p style="text-align: center; color: #666; padding-top: 180px;">Loading zoom...</p>
                     </div>
-                    <div class="chart-container big-chart" id="skillCorrelationChartZoom">
-                        <div class="chart-placeholder" style="position: relative; min-height: 400px;">
-                            <p style="text-align: center; color: #666; padding-top: 180px;">Loading zoom...</p>
-                        </div>
-                    </div>
-                </section>
+                </div>
+            </section>
+
+
 
         </div>
     </main>
 
+    <script src="jaccardData.js"></script>
+    <script src="edgeBundlingProcessor.js"></script>
     <script src="script.js"></script>
     <script src="main.js"></script>
 </body>
