@@ -1,0 +1,22 @@
+[
+  {
+    "experience_level": "Senior",
+    "count": 1986,
+    "average_salary": 6404.26
+  },
+  {
+    "experience_level": "Lead",
+    "count": 21,
+    "average_salary": 19049.8
+  },
+  {
+    "experience_level": "Mid",
+    "count": 551,
+    "average_salary": 4105.23
+  },
+  {
+    "experience_level": "Junior",
+    "count": 10,
+    "average_salary": 1813.5
+  }
+]
