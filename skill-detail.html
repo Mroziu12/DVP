@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -52,7 +54,7 @@
             <section class="chart-section">
                 <div class="chart-header">
                     <h3>Related Technologies & Keywords</h3>
-                    <p class="chart-description">Word cloud visualization of associated skills</p>
+                    <p class="chart-description">Word cloud sized by Jaccard Index similarity</p>
                 </div>
                 <div class="chart-container large-chart" id="wordCloudChart">
                     <div class="chart-placeholder">
@@ -117,26 +119,7 @@
                     </div>
                     <div class="chart-container small-chart" id="contractTypeChart">
                         <div class="chart-placeholder">
-                            <div class="pie-chart-placeholder small">
-                                <svg viewBox="0 0 200 200" class="pie-svg">
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#C85A3E" stroke-width="40"
-                                        stroke-dasharray="200 351" transform="rotate(-90 100 100)" />
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A4D39" stroke-width="40"
-                                        stroke-dasharray="100 351" stroke-dashoffset="-200"
-                                        transform="rotate(-90 100 100)" />
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2B2B2B" stroke-width="40"
-                                        stroke-dasharray="51 351" stroke-dashoffset="-300"
-                                        transform="rotate(-90 100 100)" />
-                                </svg>
-                                <div class="pie-legend">
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #C85A3E;"></span> B2B</div>
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #3A4D39;"></span> Permanent</div>
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #2B2B2B;"></span> Contract</div>
-                                </div>
-                            </div>
+                            <p style="text-align: center; padding: 40px; color: #666;">Loading...</p>
                         </div>
                     </div>
                 </section>
@@ -149,63 +132,20 @@
                     </div>
                     <div class="chart-container small-chart" id="workModeChart">
                         <div class="chart-placeholder">
-                            <div class="pie-chart-placeholder small">
-                                <svg viewBox="0 0 200 200" class="pie-svg">
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A4D39" stroke-width="40"
-                                        stroke-dasharray="180 351" transform="rotate(-90 100 100)" />
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#C85A3E" stroke-width="40"
-                                        stroke-dasharray="120 351" stroke-dashoffset="-180"
-                                        transform="rotate(-90 100 100)" />
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#E8DCC4" stroke-width="40"
-                                        stroke-dasharray="51 351" stroke-dashoffset="-300"
-                                        transform="rotate(-90 100 100)" />
-                                </svg>
-                                <div class="pie-legend">
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #3A4D39;"></span> Remote</div>
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #C85A3E;"></span> Hybrid</div>
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #E8DCC4;"></span> Office</div>
-                                </div>
-                            </div>
+                            <p style="text-align: center; padding: 40px; color: #666;">Loading...</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Pie Chart 3: Company Size -->
+                <!-- Pie Chart 3: Experience Level -->
                 <section class="chart-section">
                     <div class="chart-header">
-                        <h3>Company Size</h3>
-                        <p class="chart-description">Distribution by company size</p>
+                        <h3>Experience Level</h3>
+                        <p class="chart-description">Junior/Mid/Senior/Lead distribution</p>
                     </div>
-                    <div class="chart-container small-chart" id="companySizeChart">
+                    <div class="chart-container small-chart" id="experienceLevelChart">
                         <div class="chart-placeholder">
-                            <div class="pie-chart-placeholder small">
-                                <svg viewBox="0 0 200 200" class="pie-svg">
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#C85A3E" stroke-width="40"
-                                        stroke-dasharray="90 351" transform="rotate(-90 100 100)" />
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#3A4D39" stroke-width="40"
-                                        stroke-dasharray="130 351" stroke-dashoffset="-90"
-                                        transform="rotate(-90 100 100)" />
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#2B2B2B" stroke-width="40"
-                                        stroke-dasharray="80 351" stroke-dashoffset="-220"
-                                        transform="rotate(-90 100 100)" />
-                                    <circle cx="100" cy="100" r="80" fill="none" stroke="#E8DCC4" stroke-width="40"
-                                        stroke-dasharray="51 351" stroke-dashoffset="-300"
-                                        transform="rotate(-90 100 100)" />
-                                </svg>
-                                <div class="pie-legend">
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #C85A3E;"></span> Startup</div>
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #3A4D39;"></span> Medium</div>
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #2B2B2B;"></span> Large</div>
-                                    <div class="legend-item"><span class="legend-color"
-                                            style="background: #E8DCC4;"></span> Enterprise</div>
-                                </div>
-                            </div>
+                            <p style="text-align: center; padding: 40px; color: #666;">Loading...</p>
                         </div>
                     </div>
                 </section>
@@ -213,7 +153,11 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="clearOffersData.js"></script>
+    <script src="jaccardData.js"></script>
+    <script src="skillDataProcessor.js"></script>
+    <script src="wordCloudProcessor.js"></script>
+    <script src="skill-detail.js"></script>
 </body>
 
 </html>
