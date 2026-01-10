@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -52,7 +54,7 @@
             <section class="chart-section">
                 <div class="chart-header">
                     <h3>Related Technologies & Keywords</h3>
-                    <p class="chart-description">Word cloud visualization of associated skills</p>
+                    <p class="chart-description">Word cloud sized by Jaccard Index similarity</p>
                 </div>
                 <div class="chart-container large-chart" id="wordCloudChart">
                     <div class="chart-placeholder">
@@ -152,7 +154,9 @@
     </main>
 
     <script src="clearOffersData.js"></script>
+    <script src="jaccardData.js"></script>
     <script src="skillDataProcessor.js"></script>
+    <script src="wordCloudProcessor.js"></script>
     <script src="skill-detail.js"></script>
 </body>
 

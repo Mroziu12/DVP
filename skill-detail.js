@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
         renderPieChart('workModeChart', workModeData, getWorkModeColors());
         renderPieChart('experienceLevelChart', experienceData, getExperienceColors());
 
+        // Render the word cloud
+        renderWordCloud(skillName);
+
     } catch (error) {
         console.error('Error loading skill data:', error);
         showErrorMessage();
@@ -213,3 +216,91 @@ function showErrorMessage() {
         }
     });
 }
+
+// ===== WORD CLOUD RENDERING =====
+
+/**
+ * Render word cloud for related technologies
+ * @param {string} skillName - Name of the skill to show related technologies for
+ */
+async function renderWordCloud(skillName) {
+    console.log(`Rendering word cloud for: ${skillName}`);
+
+    const container = document.getElementById('wordCloudChart');
+    if (!container) {
+        console.error('Word cloud container not found');
+        return;
+    }
+
+    const placeholder = container.querySelector('.chart-placeholder');
+    if (!placeholder) {
+        console.error('Word cloud placeholder not found');
+        return;
+    }
+
+    try {
+        // Initialize word cloud processor
+        const processor = new WordCloudProcessor();
+        processor.loadData();
+
+        // Get related technologies (top 30, minimum Jaccard 0.01)
+        const relatedTechs = await processor.getRelatedTechnologies(skillName, 30, 0.01);
+
+        console.log(`Found ${relatedTechs.length} related technologies for ${skillName}`);
+
+        if (relatedTechs.length === 0) {
+            placeholder.innerHTML = '<p style="text-align: center; padding: 60px; color: #666;">No related technologies found</p>';
+            return;
+        }
+
+        // Clear placeholder
+        placeholder.innerHTML = '';
+
+        // Create word cloud container
+        const wordCloudDiv = document.createElement('div');
+        wordCloudDiv.className = 'word-cloud-container';
+
+        // Create words
+        relatedTechs.forEach(tech => {
+            const wordItem = document.createElement('span');
+            wordItem.className = 'word-item';
+            wordItem.textContent = tech.technology;
+
+            // Set CSS custom properties for positioning and sizing
+            wordItem.style.setProperty('--size', `${tech.size}px`);
+            wordItem.style.setProperty('--x', `${tech.x}%`);
+            wordItem.style.setProperty('--y', `${tech.y}%`);
+
+            // Set color based on Jaccard index
+            const color = processor.getWordColor(tech.jaccardIndex);
+            wordItem.style.color = color;
+
+            // Create tooltip
+            const tooltip = document.createElement('div');
+            tooltip.className = 'word-tooltip';
+            tooltip.innerHTML = `
+                <strong>${tech.technology}</strong><br>
+                Co-occurrences: ${tech.coOccurrenceCount}
+            `;
+            wordItem.appendChild(tooltip);
+
+            // Add hover effect
+            wordItem.addEventListener('mouseenter', function () {
+                this.style.zIndex = '100';
+            });
+
+            wordItem.addEventListener('mouseleave', function () {
+                this.style.zIndex = '1';
+            });
+
+            wordCloudDiv.appendChild(wordItem);
+        });
+
+        placeholder.appendChild(wordCloudDiv);
+
+    } catch (error) {
+        console.error('Error rendering word cloud:', error);
+        placeholder.innerHTML = '<p style="text-align: center; padding: 60px; color: #C85A3E;">Error loading word cloud data</p>';
+    }
+}
+
