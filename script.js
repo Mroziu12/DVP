@@ -1,3 +1,5 @@
+// ===== SKILL NAVIGATION =====
+// Handle skill bubble clicks on main page
 document.addEventListener('DOMContentLoaded', function () {
     const skillBubbles = document.querySelectorAll('.skill-bubble');
 
@@ -14,13 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         });
 
-        // Add hover sound effect placeholder
+        // Add hover sound effect placeholder (can be implemented later)
         bubble.addEventListener('mouseenter', function () {
+            // Placeholder for future sound effect
             console.log(`Hovering over ${this.getAttribute('data-skill')}`);
         });
     });
 
     // ===== SKILL DETAIL PAGE =====
+    // Update skill name on detail page based on URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const skillName = urlParams.get('skill');
 
@@ -28,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const skillNameElement = document.getElementById('skillName');
         if (skillNameElement) {
             skillNameElement.textContent = skillName;
+
+            // Update page title
             document.title = `${skillName} - Job Market Analytics`;
         }
     }
@@ -107,11 +113,13 @@ fetch('data/SkillVsSalary.json')
 
     chartElements.forEach(element => {
         element.addEventListener('mouseenter', function () {
+            // Placeholder for tooltip or data display
             console.log('Chart element hovered');
         });
     });
 
     // ===== SMOOTH SCROLL =====
+    // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -126,6 +134,7 @@ fetch('data/SkillVsSalary.json')
     });
 
     // ===== NAVIGATION ACTIVE STATE =====
+    // Update active navigation based on current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -139,6 +148,7 @@ fetch('data/SkillVsSalary.json')
     });
 
     // ===== CHART ANIMATIONS ON SCROLL =====
+    // Intersection Observer for animating charts when they come into view
     const observerOptions = {
         threshold: 0.2,
         rootMargin: '0px 0px -100px 0px'
@@ -153,6 +163,7 @@ fetch('data/SkillVsSalary.json')
         });
     }, observerOptions);
 
+    // Observe all chart sections
     const chartSections = document.querySelectorAll('.chart-section');
     chartSections.forEach(section => {
         section.style.opacity = '0';
@@ -161,6 +172,34 @@ fetch('data/SkillVsSalary.json')
         chartObserver.observe(section);
     });
 
+    // ===== PLACEHOLDER FOR FUTURE FEATURES =====
+
+    // Function to load actual chart data (to be implemented)
+    function loadChartData(chartId, dataUrl) {
+        console.log(`Loading data for ${chartId} from ${dataUrl}`);
+        // This will be implemented when real data is available
+    }
+
+    // Function to render interactive charts (to be implemented)
+    function renderChart(chartId, chartType, data) {
+        console.log(`Rendering ${chartType} chart in ${chartId}`);
+        // This will be implemented with actual charting library
+    }
+
+    // Function to handle chart click events (to be implemented)
+    function handleChartClick(event, chartData) {
+        console.log('Chart clicked:', chartData);
+        // This will be implemented for drill-down functionality
+    }
+
+    // Function to export chart data (to be implemented)
+    function exportChartData(chartId, format) {
+        console.log(`Exporting ${chartId} as ${format}`);
+        // This will be implemented for data export functionality
+    }
+
+    console.log('Job Market Analytics initialized');
+});
     console.log('Job Market Analytics initialized');
 });
 
