@@ -190,6 +190,15 @@ document.addEventListener('DOMContentLoaded', function () {
         chartObserver.observe(section);
     });
 
+    // Observe hero graph
+    const heroGraph = document.querySelector('.hero-graph');
+    if (heroGraph) {
+        heroGraph.style.opacity = '0';
+        heroGraph.style.transform = 'translateY(30px)';
+        heroGraph.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        chartObserver.observe(heroGraph);
+    }
+
     // ===== PLACEHOLDER FOR FUTURE FEATURES =====
 
 
