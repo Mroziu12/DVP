@@ -76,28 +76,15 @@
             </section>
 
             <!-- Two Charts Below -->
-            <div class="charts-grid">
-                <!-- Level vs Salary Chart -->
                 <section class="chart-section">
                     <div class="chart-header">
-                        <h3>Level vs Salary</h3>
-                        <p class="chart-description">Salary distribution across experience levels</p>
+                        <h3>Experience vs Salary</h3>
+                        <p class="chart-description">Salary distribution across experience levels </p>
                     </div>
                     <div class="chart-container medium-chart" id="levelSalaryChart">
                         <div class="chart-placeholder">
                             <div class="bar-chart-placeholder">
-                                <div class="bar" style="--height: 60%; --color: #C85A3E;">
-                                    <span class="bar-label">Junior</span>
-                                </div>
-                                <div class="bar" style="--height: 80%; --color: #3A4D39;">
-                                    <span class="bar-label">Mid</span>
-                                </div>
-                                <div class="bar" style="--height: 95%; --color: #2B2B2B;">
-                                    <span class="bar-label">Senior</span>
-                                </div>
-                                <div class="bar" style="--height: 75%; --color: #C85A3E;">
-                                    <span class="bar-label">Lead</span>
-                                </div>
+                                <p style="color: #666; font-style: italic; align-self: center;">Loading chart data...</p>
                             </div>
                         </div>
                     </div>
@@ -138,13 +125,36 @@
                             </div>
                         </div>
                     </div>
+                    
                 </section>
-            </div>
+                <section class="chart-section" style="margin-top: 2rem;">
+                    <div class="chart-header">
+                        <h3>Skill Value Analysis (Overview)</h3>
+                        <p class="chart-description">Full market view: Levels 1-5</p>
+                    </div>
+                    <div class="chart-container big-chart" id="skillCorrelationChart">
+                        <div class="chart-placeholder" style="position: relative; min-height: 400px;">
+                            <p style="text-align: center; color: #666; padding-top: 180px;">Loading overview...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="chart-section" style="margin-top: 2rem;">
+                    <div class="chart-header">
+                        <h3>Deep Dive: Mid/Senior Sweet Spot</h3>
+                        <p class="chart-description">Zoomed view: Levels 3.0 - 3.8 | Salary €3.6k - €7k</p>
+                    </div>
+                    <div class="chart-container big-chart" id="skillCorrelationChartZoom">
+                        <div class="chart-placeholder" style="position: relative; min-height: 400px;">
+                            <p style="text-align: center; color: #666; padding-top: 180px;">Loading zoom...</p>
+                        </div>
+                    </div>
+                </section>
+
         </div>
     </main>
 
-    <script src="main.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -38,8 +38,77 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // ===== LOAD REAL CHART DATA =====
+    // This replaces the artificial bars with real data from your Python aggregation
+    fetch('data/ExperienceStats.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            renderSalaryChart(data);
+        })
+        .catch(error => {
+            console.error('Error loading chart data:', error);
+        });
+    
+    fetch('data/ExperienceStats1.json')
+        .then(response => response.json())
+        .then(data => renderSalaryChart(data))
+        .catch(err => console.error('Error loading experience stats:', err));
+
+    // 2. NEW: Fetch Skill Correlation Data (Scatter Plot)
+fetch('data/SkillVsSalary.json')
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+            // --- PLOT 1: OVERVIEW (Full Data) ---
+            const salaries = data.map(d => d.avg_salary);
+            const maxSal = Math.ceil(Math.max(...salaries) / 1000) * 1000;
+
+            createScatterChart(data, {
+                containerId: '#skillCorrelationChart',
+                xMin: 1, xMax: 5,
+                yMin: 0, yMax: maxSal,
+                xLabel: 'Avg Required Level (1-5)',
+                jitterAmount: 0.6, // High jitter to spread out the crowd
+                labelThresholdSalary: 6000,
+                labelThresholdCount: 20
+            });
+
+            // --- PLOT 2: DEEP DIVE (Trimmed Data) ---
+            // Here is where we "Trim the bubbles" for the zoom
+            const trimmedData = data.filter(item => {
+                // 1. Must be within our zoom range
+                const inRange = item.avg_level >= 3.0 && item.avg_level <= 3.8 &&
+                                item.avg_salary >= 3600 && item.avg_salary <= 7000;
+                
+                // 2. TRIM NOISE: Only show skills with at least 5 offers
+                // This removes the tiny dots that make the chart unreadable
+                const isSignificant = item.count >= 5;
+
+                return inRange && isSignificant;
+            });
+
+            createScatterChart(trimmedData, {
+                containerId: '#skillCorrelationChartZoom',
+                xMin: 3.0, xMax: 3.8,
+                yMin: 3600, yMax: 7000,
+                xLabel: 'Zoomed Level (3.0 - 3.8)',
+                jitterAmount: 0.15, // Low jitter for precision
+                labelThresholdSalary: 5000, // Lower threshold so more labels show up in zoom
+                labelThresholdCount: 10
+            });
+        })
+        .catch(error => {
+            console.error('Error loading skill data:', error);
+        });
+
     // ===== CHART INTERACTIONS =====
-    // Add hover effects for chart elements
     const chartElements = document.querySelectorAll('.bar, .scatter-point, .word-item');
 
     chartElements.forEach(element => {
@@ -131,3 +200,310 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log('Job Market Analytics initialized');
 });
+    console.log('Job Market Analytics initialized');
+});
+
+// ===== HELPER FUNCTIONS =====
+function renderScatterPlot(data) {
+    const container = document.querySelector('#skillCorrelationChart .chart-placeholder');
+    if (!container) return;
+
+    container.innerHTML = ''; // Clear loading text
+    
+    // Setup container
+    container.style.position = 'relative';
+    container.style.height = '100%';
+    container.style.boxSizing = 'border-box';
+    // Add padding for axes: Top, Right, Bottom (X-axis), Left (Y-axis)
+    container.style.padding = '20px 40px 50px 60px'; 
+    container.style.borderLeft = '1px solid #ccc';
+    container.style.borderBottom = '1px solid #ccc';
+
+    // 1. Determine Scale
+    const salaries = data.map(d => d.avg_salary);
+    const maxSalary = Math.ceil(Math.max(...salaries) / 1000) * 1000; 
+    
+    // 2. Create Y-Axis (Salary)
+    const ySteps = 5;
+    for (let i = 0; i <= ySteps; i++) {
+        const value = Math.round((maxSalary / ySteps) * i);
+        
+        // Tick Label
+        const label = document.createElement('div');
+        label.textContent = value > 0 ? `${value/1000}k` : '0';
+        label.style.position = 'absolute';
+        label.style.left = '-45px'; 
+        label.style.bottom = `${(i / ySteps) * 100}%`;
+        label.style.transform = 'translateY(50%)'; 
+        label.style.fontSize = '12px';
+        label.style.color = '#666';
+        container.appendChild(label);
+        
+        // Grid Line
+        if (i > 0) {
+            const gridLine = document.createElement('div');
+            gridLine.style.position = 'absolute';
+            gridLine.style.left = '0';
+            gridLine.style.right = '0';
+            gridLine.style.bottom = `${(i / ySteps) * 100}%`;
+            gridLine.style.borderTop = '1px dashed #eee';
+            gridLine.style.zIndex = '0';
+            container.appendChild(gridLine);
+        }
+    }
+    
+    // Y-Axis Title
+    const yAxisTitle = document.createElement('div');
+    yAxisTitle.textContent = 'Avg Salary (EUR)';
+    yAxisTitle.style.position = 'absolute';
+    yAxisTitle.style.top = '-20px';
+    yAxisTitle.style.left = '-60px';
+    yAxisTitle.style.fontSize = '12px';
+    yAxisTitle.style.fontWeight = 'bold';
+    container.appendChild(yAxisTitle);
+
+    // 3. Create X-Axis (Levels 1-5)
+    const xLevels = [2.5,2.75,3,3.25, 3.5]; // Midpoints for levels 1-5
+    xLevels.forEach(level => {
+        // Map 1..5 to 0..100% width
+        const leftPercent = ((level - 3.5) / 1) * 100; 
+        
+        // Tick Label
+        const label = document.createElement('div');
+        label.textContent = level;
+        label.style.position = 'absolute';
+        label.style.left = `${leftPercent}%`;
+        label.style.bottom = '-30px';
+        label.style.transform = 'translateX(-50%)';
+        label.style.fontSize = '12px';
+        label.style.color = '#666';
+        container.appendChild(label);
+        
+        // Vertical Grid Line
+        const gridLine = document.createElement('div');
+        gridLine.style.position = 'absolute';
+        gridLine.style.top = '0';
+        gridLine.style.bottom = '0';
+        gridLine.style.left = `${leftPercent}%`;
+        gridLine.style.borderLeft = '1px dashed #eee';
+        gridLine.style.zIndex = '0';
+        container.appendChild(gridLine);
+    });
+
+    // X-Axis Title
+    const xAxisTitle = document.createElement('div');
+    xAxisTitle.textContent = 'Avg Required Level (1=Junior, 5=Expert)';
+    xAxisTitle.style.position = 'absolute';
+    xAxisTitle.style.bottom = '-50px';
+    xAxisTitle.style.width = '100%';
+    xAxisTitle.style.textAlign = 'center';
+    xAxisTitle.style.fontSize = '12px';
+    xAxisTitle.style.fontWeight = 'bold';
+    container.appendChild(xAxisTitle);
+
+    // 4. Plot Bubbles
+    data.forEach(item => {
+        const bubble = document.createElement('div');
+        
+        // Calculate Position
+        const xPercent = ((item.avg_level - 1) / 4) * 100;
+        const yPercent = (item.avg_salary / maxSalary) * 100;
+        
+        // Size based on popularity (clamped between 10px and 40px)
+        const size = Math.max(3, Math.min(10, item.count * 2));
+
+        // Styles
+        bubble.style.position = 'absolute';
+        bubble.style.left = `${xPercent}%`;
+        bubble.style.bottom = `${yPercent}%`;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.borderRadius = '50%';
+        bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.6)'; // Theme green
+        bubble.style.border = '1px solid #3A4D39';
+        bubble.style.transform = 'translate(-50%, 50%)'; 
+        bubble.style.cursor = 'pointer';
+        bubble.style.zIndex = '2';
+        
+        // Tooltip
+        bubble.title = `${item.skill}\nLevel: ${item.avg_level}\nSalary: €${item.avg_salary}\nOffers: ${item.count}`;
+
+        // Add Label for top skills
+        if (item.avg_salary > 6000 || item.count > 15) {
+            const text = document.createElement('span');
+            text.textContent = item.skill;
+            text.style.position = 'absolute';
+            text.style.left = '12px'; 
+            text.style.top = '-12px';
+            text.style.fontSize = '10px';
+            text.style.color = '#333';
+            text.style.pointerEvents = 'none';
+            text.style.whiteSpace = 'nowrap';
+            text.style.textShadow = '0 0 2px white';
+            bubble.appendChild(text);
+        }
+
+        // Hover Animation
+        bubble.addEventListener('mouseenter', () => {
+            bubble.style.backgroundColor = '#C85A3E'; // Theme orange
+            bubble.style.zIndex = '10';
+            bubble.style.transform = 'translate(-50%, 50%) scale(1.2)';
+        });
+        bubble.addEventListener('mouseleave', () => {
+            bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.6)';
+            bubble.style.zIndex = '2';
+            bubble.style.transform = 'translate(-50%, 50%) scale(1)';
+        });
+
+        container.appendChild(bubble);
+    });
+}
+// Renders the Level vs Salary chart using real JSON data
+function createScatterChart(data, config) {
+    const container = document.querySelector(`${config.containerId} .chart-placeholder`);
+    if (!container) return;
+
+    container.innerHTML = '';
+    
+    // Layout
+    container.style.position = 'relative';
+    container.style.height = '100%';
+    container.style.boxSizing = 'border-box';
+    container.style.padding = '20px 40px 50px 60px'; 
+    container.style.borderLeft = '1px solid #ccc';
+    container.style.borderBottom = '1px solid #ccc';
+
+    const { xMin, xMax, yMin, yMax } = config;
+
+    // --- A. Draw Y-Axis ---
+    const ySteps = 5;
+    for (let i = 0; i <= ySteps; i++) {
+        const value = yMin + ((yMax - yMin) / ySteps) * i;
+        const label = document.createElement('div');
+        label.textContent = `${(value/1000).toFixed(1)}k`; 
+        label.style.position = 'absolute';
+        label.style.left = '-50px'; 
+        label.style.bottom = `${(i / ySteps) * 100}%`;
+        label.style.transform = 'translateY(50%)'; 
+        label.style.fontSize = '11px';
+        label.style.color = '#666';
+        label.style.textAlign = 'right';
+        label.style.width = '40px';
+        container.appendChild(label);
+        
+        if (i > 0) {
+            const gridLine = document.createElement('div');
+            gridLine.style.position = 'absolute';
+            gridLine.style.left = '0';
+            gridLine.style.right = '0';
+            gridLine.style.bottom = `${(i / ySteps) * 100}%`;
+            gridLine.style.borderTop = '1px dashed #eee';
+            container.appendChild(gridLine);
+        }
+    }
+
+    // --- B. Draw X-Axis ---
+    const xSteps = 5;
+    for (let i = 0; i <= xSteps; i++) {
+        const value = xMin + ((xMax - xMin) / xSteps) * i;
+        const label = document.createElement('div');
+        label.textContent = value.toFixed(1);
+        label.style.position = 'absolute';
+        label.style.left = `${(i / xSteps) * 100}%`;
+        label.style.bottom = '-30px';
+        label.style.transform = 'translateX(-50%)';
+        label.style.fontSize = '12px';
+        label.style.color = '#666';
+        container.appendChild(label);
+        
+        const gridLine = document.createElement('div');
+        gridLine.style.position = 'absolute';
+        gridLine.style.top = '0';
+        gridLine.style.bottom = '0';
+        gridLine.style.left = `${(i / xSteps) * 100}%`;
+        gridLine.style.borderLeft = '1px dashed #eee';
+        container.appendChild(gridLine);
+    }
+    
+    // Axis Titles
+    const yTitle = document.createElement('div');
+    yTitle.textContent = 'EUR';
+    yTitle.style.position = 'absolute';
+    yTitle.style.top = '-20px';
+    yTitle.style.left = '-40px';
+    yTitle.style.fontSize = '12px';
+    yTitle.style.fontWeight = 'bold';
+    container.appendChild(yTitle);
+
+    const xTitle = document.createElement('div');
+    xTitle.textContent = config.xLabel;
+    xTitle.style.position = 'absolute';
+    xTitle.style.bottom = '-50px';
+    xTitle.style.width = '100%';
+    xTitle.style.textAlign = 'center';
+    xTitle.style.fontSize = '12px';
+    xTitle.style.fontWeight = 'bold';
+    container.appendChild(xTitle);
+
+    // --- C. Plot Bubbles ---
+    data.forEach(item => {
+        // Jitter
+        const jitter = 0; 
+        const jitteredLevel = item.avg_level + jitter;
+        
+        // Scale to %
+        const xPercent = ((jitteredLevel - xMin) / (xMax - xMin)) * 100;
+        const yPercent = ((item.avg_salary - yMin) / (yMax - yMin)) * 100;
+
+        // Skip if jitter pushed it out of bounds
+        if (xPercent < 0 || xPercent > 100 || yPercent < 0 || yPercent > 100) return;
+
+        const bubble = document.createElement('div');
+        const size = Math.max(8, Math.min(20, item.count));
+
+        bubble.style.position = 'absolute';
+        bubble.style.left = `${xPercent}%`;
+        bubble.style.bottom = `${yPercent}%`;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.borderRadius = '50%';
+        bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.5)'; 
+        bubble.style.border = '1px solid rgba(43, 43, 43, 0.5)';
+        bubble.style.transform = 'translate(-50%, 50%)'; 
+        bubble.style.cursor = 'pointer';
+        bubble.style.zIndex = '2';
+        
+        bubble.title = `${item.skill}\nLevel: ${item.avg_level}\nSalary: €${item.avg_salary}\nOffers: ${item.count}`;
+
+        // Dynamic Labeling based on Config
+        if (item.avg_salary > config.labelThresholdSalary || item.count > config.labelThresholdCount) {
+            const text = document.createElement('span');
+            text.textContent = item.skill;
+            text.style.position = 'absolute';
+            text.style.left = '10px'; 
+            text.style.top = '-10px';
+            text.style.fontSize = '10px';
+            text.style.color = '#333';
+            text.style.pointerEvents = 'none';
+            text.style.whiteSpace = 'nowrap';
+            text.style.textShadow = '0 0 2px white';
+            text.style.zIndex = '5';
+            bubble.appendChild(text);
+        }
+
+        // Hover
+        bubble.addEventListener('mouseenter', () => {
+            bubble.style.backgroundColor = '#C85A3E'; 
+            bubble.style.opacity = '1';
+            bubble.style.zIndex = '100'; 
+            bubble.style.transform = 'translate(-50%, 50%) scale(1.4)';
+        });
+        bubble.addEventListener('mouseleave', () => {
+            bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.5)';
+            bubble.style.zIndex = '2';
+            bubble.style.transform = 'translate(-50%, 50%) scale(1)';
+        });
+
+        container.appendChild(bubble);
+    });
+}
