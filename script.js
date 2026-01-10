@@ -53,11 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error('Error loading chart data:', error);
         });
-    
-    fetch('data/ExperienceStats1.json')
-        .then(response => response.json())
-        .then(data => renderSalaryChart(data))
-        .catch(err => console.error('Error loading experience stats:', err));
 
     // 2. NEW: Fetch Skill Correlation Data (Scatter Plot)
 fetch('data/SkillVsSalary.json')
@@ -174,36 +169,104 @@ fetch('data/SkillVsSalary.json')
 
     // ===== PLACEHOLDER FOR FUTURE FEATURES =====
 
-    // Function to load actual chart data (to be implemented)
-    function loadChartData(chartId, dataUrl) {
-        console.log(`Loading data for ${chartId} from ${dataUrl}`);
-        // This will be implemented when real data is available
-    }
-
-    // Function to render interactive charts (to be implemented)
-    function renderChart(chartId, chartType, data) {
-        console.log(`Rendering ${chartType} chart in ${chartId}`);
-        // This will be implemented with actual charting library
-    }
-
-    // Function to handle chart click events (to be implemented)
-    function handleChartClick(event, chartData) {
-        console.log('Chart clicked:', chartData);
-        // This will be implemented for drill-down functionality
-    }
-
-    // Function to export chart data (to be implemented)
-    function exportChartData(chartId, format) {
-        console.log(`Exporting ${chartId} as ${format}`);
-        // This will be implemented for data export functionality
-    }
 
     console.log('Job Market Analytics initialized');
 });
-    console.log('Job Market Analytics initialized');
-});
+
 
 // ===== HELPER FUNCTIONS =====
+function renderSalaryChart(data) {
+    const chartContainer = document.querySelector('#levelSalaryChart .bar-chart-placeholder');
+    if (!chartContainer) return;
+
+    chartContainer.innerHTML = '';
+    
+    // Layout: Flexbox for Axis + Bars
+    chartContainer.style.display = 'flex';
+    chartContainer.style.alignItems = 'flex-end';
+    chartContainer.style.paddingLeft = '10px';
+    
+    // Sort Levels
+    const order = ['Junior', 'Mid', 'Senior', 'C-level', 'Lead', 'Principal'];
+    data.sort((a, b) => {
+        let indexA = order.indexOf(a.experience_level);
+        let indexB = order.indexOf(b.experience_level);
+        if (indexA === -1) indexA = 99;
+        if (indexB === -1) indexB = 99;
+        return indexA - indexB;
+    });
+
+    const maxSalary = Math.max(...data.map(item => item.average_salary));
+    const scaleMax = Math.ceil(maxSalary / 1000) * 1000;
+
+    // Draw Y-Axis (Scale)
+    const axisContainer = document.createElement('div');
+    axisContainer.style.display = 'flex';
+    axisContainer.style.flexDirection = 'column-reverse';
+    axisContainer.style.justifyContent = 'space-between';
+    axisContainer.style.height = '100%';
+    axisContainer.style.marginRight = '15px';
+    axisContainer.style.paddingBottom = '24px';
+    axisContainer.style.color = '#666';
+    axisContainer.style.fontSize = '12px';
+    axisContainer.style.position = 'relative';
+
+    const currencyLabel = document.createElement('span');
+    currencyLabel.textContent = '(EUR)';
+    currencyLabel.style.position = 'absolute';
+    currencyLabel.style.top = '-20px';
+    currencyLabel.style.left = '0';
+    currencyLabel.style.fontWeight = 'bold';
+    currencyLabel.style.fontSize = '10px';
+    currencyLabel.style.whiteSpace = 'nowrap';
+    axisContainer.appendChild(currencyLabel);
+
+    for (let i = 0; i <= 5; i++) {
+        const value = Math.round((scaleMax / 5) * i);
+        const tick = document.createElement('div');
+        tick.textContent = value > 0 ? `${(value / 1000).toFixed(1)}k` : '0';
+        tick.style.height = '0';
+        tick.style.display = 'flex';
+        tick.style.alignItems = 'center';
+        axisContainer.appendChild(tick);
+    }
+    chartContainer.appendChild(axisContainer);
+
+    // Draw Bars
+    const barsContainer = document.createElement('div');
+    barsContainer.style.display = 'flex';
+    barsContainer.style.alignItems = 'flex-end';
+    barsContainer.style.justifyContent = 'space-around';
+    barsContainer.style.flexGrow = '1';
+    barsContainer.style.height = '100%';
+    
+    const colors = ['#C85A3E', '#3A4D39', '#2B2B2B', '#D4A373']; 
+
+    data.forEach((item, index) => {
+        if (!item.average_salary || item.experience_level === 'Unknown') return;
+
+        const barWrapper = document.createElement('div');
+        barWrapper.className = 'bar';
+        barWrapper.style.width = '12%'; 
+        barWrapper.style.margin = '0 1%';
+        
+        const heightPercent = (item.average_salary / scaleMax) * 100;
+        
+        barWrapper.style.setProperty('--height', `${heightPercent}%`);
+        barWrapper.style.setProperty('--color', colors[index % colors.length]);
+        barWrapper.title = `€${item.average_salary.toFixed(0)}`;
+
+        const label = document.createElement('span');
+        label.className = 'bar-label';
+        label.textContent = item.experience_level;
+        
+        barWrapper.appendChild(label);
+        barsContainer.appendChild(barWrapper);
+    });
+
+    chartContainer.appendChild(barsContainer);
+}
+
 function renderScatterPlot(data) {
     const container = document.querySelector('#skillCorrelationChart .chart-placeholder');
     if (!container) return;
