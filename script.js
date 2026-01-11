@@ -1,4 +1,3 @@
-// ===== SKILL NAVIGATION =====
 // Handle skill bubble clicks on main page
 document.addEventListener('DOMContentLoaded', function () {
     const skillBubbles = document.querySelectorAll('.skill-bubble');
@@ -16,14 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 200);
         });
 
-        // Add hover sound effect placeholder (can be implemented later)
+        // Add hover sound effect placeholder 
         bubble.addEventListener('mouseenter', function () {
-            // Placeholder for future sound effect
             console.log(`Hovering over ${this.getAttribute('data-skill')}`);
         });
     });
 
-    // ===== SKILL DETAIL PAGE =====
     // Update skill name on detail page based on URL parameter
     const urlParams = new URLSearchParams(window.location.search);
     const skillName = urlParams.get('skill');
@@ -32,15 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const skillNameElement = document.getElementById('skillName');
         if (skillNameElement) {
             skillNameElement.textContent = skillName;
-
             // Update page title
             document.title = `${skillName} - Job Market Analytics`;
         }
     }
 
     // ===== LOAD REAL CHART DATA =====
-    // This replaces the artificial bars with real data from your Python aggregation
-
     fetch('data/CategoryStats.json')
         .then(res => res.json())
         .then(data => renderCategoryChart(data))
@@ -60,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error loading chart data:', error);
         });
 
-    // 2. NEW: Fetch Skill Correlation Data (Scatter Plot)
     fetch('data/SkillVsSalary.json')
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
@@ -74,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
             createScatterChart(data, {
                 containerId: '#skillCorrelationChart',
                 xMin: 1, xMax: 5,
-                // CHANGE: 4 steps creates exactly 5 ticks: 1, 2, 3, 4, 5
                 xSteps: 4,
                 yMin: 0, yMax: maxSal,
                 xLabel: 'Avg Required Level (1-5)',
@@ -84,16 +76,15 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // --- PLOT 2: DEEP DIVE (Trimmed Data) ---
-            // Here is where we "Trim the bubbles" for the zoom
+            // "Trim the bubbles" for the zoom
             const trimmedData = data.filter(item => {
-                // 1. Must be within our zoom range
+                // Must be within our zoom range
                 const inRange = item.avg_level >= 3.0 && item.avg_level <= 3.8 &&
                     item.avg_salary >= 3600 && item.avg_salary <= 7000;
 
                 // 2. TRIM NOISE: Only show skills with at least 5 offers
                 // This removes the tiny dots that make the chart unreadable
                 const isSignificant = item.count >= 5;
-
                 return inRange && isSignificant;
             });
 
@@ -102,8 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 xMin: 3.0, xMax: 3.8,
                 yMin: 3600, yMax: 7000,
                 xLabel: 'Zoomed Level (3.0 - 3.8)',
-                jitterAmount: 0.15, // Low jitter for precision
-                labelThresholdSalary: 5000, // Lower threshold so more labels show up in zoom
+                jitterAmount: 0, 
+                labelThresholdSalary: 5000, 
                 labelThresholdCount: 10
             });
         })
@@ -111,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error loading skill data:', error);
         });
 
-    // 3. NEW: Render Edge Bundling Graph
+    // Render Edge Bundling Graph
     try {
         const edgeBundlingProcessor = new EdgeBundlingProcessor();
         edgeBundlingProcessor.loadData();
@@ -126,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Error rendering edge bundling graph:', error);
     }
 
-    // ===== CHART INTERACTIONS =====
     const chartElements = document.querySelectorAll('.bar, .scatter-point, .word-item');
 
     chartElements.forEach(element => {
@@ -137,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ===== SMOOTH SCROLL =====
-    // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -198,10 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
         heroGraph.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         chartObserver.observe(heroGraph);
     }
-
-    // ===== PLACEHOLDER FOR FUTURE FEATURES =====
-
-
     console.log('Job Market Analytics initialized');
 });
 
@@ -213,7 +198,6 @@ function renderSalaryChart(data) {
 
     chartContainer.innerHTML = '';
 
-    // Layout: Flexbox for Axis + Bars
     chartContainer.style.display = 'flex';
     chartContainer.style.alignItems = 'flex-end';
     chartContainer.style.paddingLeft = '10px';
@@ -303,22 +287,21 @@ function renderScatterPlot(data) {
     const container = document.querySelector('#skillCorrelationChart .chart-placeholder');
     if (!container) return;
 
-    container.innerHTML = ''; // Clear loading text
+    container.innerHTML = ''; 
 
     // Setup container
     container.style.position = 'relative';
     container.style.height = '100%';
     container.style.boxSizing = 'border-box';
-    // Add padding for axes: Top, Right, Bottom (X-axis), Left (Y-axis)
     container.style.padding = '20px 40px 50px 60px';
     container.style.borderLeft = '1px solid #ccc';
     container.style.borderBottom = '1px solid #ccc';
 
-    // 1. Determine Scale
+    // Determine Scale
     const salaries = data.map(d => d.avg_salary);
     const maxSalary = Math.ceil(Math.max(...salaries) / 1000) * 1000;
 
-    // 2. Create Y-Axis (Salary)
+    // Create Y-Axis (Salary)
     const ySteps = 5;
     for (let i = 0; i <= ySteps; i++) {
         const value = Math.round((maxSalary / ySteps) * i);
@@ -396,7 +379,7 @@ function renderScatterPlot(data) {
     xAxisTitle.style.fontWeight = 'bold';
     container.appendChild(xAxisTitle);
 
-    // 4. Plot Bubbles
+    // Plot Bubbles
     data.forEach(item => {
         const bubble = document.createElement('div');
 
@@ -404,7 +387,7 @@ function renderScatterPlot(data) {
         const xPercent = ((item.avg_level - 1) / 4) * 100;
         const yPercent = (item.avg_salary / maxSalary) * 100;
 
-        // Size based on popularity (clamped between 10px and 40px)
+        // Size based on popularity
         const size = Math.max(3, Math.min(10, item.count * 2));
 
         // Styles
@@ -414,7 +397,7 @@ function renderScatterPlot(data) {
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
         bubble.style.borderRadius = '50%';
-        bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.6)'; // Theme green
+        bubble.style.backgroundColor = 'rgba(58, 77, 57, 0.6)'; 
         bubble.style.border = '1px solid #3A4D39';
         bubble.style.transform = 'translate(-50%, 50%)';
         bubble.style.cursor = 'pointer';
@@ -459,7 +442,6 @@ function createScatterChart(data, config) {
     if (!container) return;
 
     container.innerHTML = '';
-
     // Layout
     container.style.position = 'relative';
     container.style.height = '100%';
@@ -469,7 +451,6 @@ function createScatterChart(data, config) {
     container.style.borderBottom = '1px solid #ccc';
 
     const { xMin, xMax, yMin, yMax } = config;
-
 
     // --- A. Draw Y-Axis ---
     const ySteps = 5;
@@ -541,9 +522,9 @@ function createScatterChart(data, config) {
     xTitle.style.fontWeight = 'bold';
     container.appendChild(xTitle);
 
-    // --- C. Plot Bubbles ---
+    // Plot Bubbles 
     data.forEach(item => {
-        // Jitter
+
         const jitter = 0;
         const jitteredLevel = item.avg_level + jitter;
 
@@ -604,13 +585,7 @@ function createScatterChart(data, config) {
     });
 }
 
-// ===== 3. CATEGORY CHART LOGIC (Treemap) =====
-// Recursive function to generate rectangles
-// items: array of data objects
-// x, y, w, h: bounding box in percentages (0-100)
-// ===== 3. CATEGORY CHART LOGIC (Treemap - Aspect Ratio Fixed) =====
-// ===== 3. CATEGORY CHART LOGIC (Robust Squarified Treemap) =====
-// ===== 3. CATEGORY CHART LOGIC (Fixed Squarified Treemap) =====
+// ===== Treemap =====
 function renderCategoryChart(data) {
     const container = document.querySelector('#categoryChart .chart-placeholder');
     if (!container) return;
@@ -623,7 +598,7 @@ function renderCategoryChart(data) {
     container.style.height = '100%';
     container.style.overflow = 'hidden';
 
-    // 1. DIMENSION FIX: Force valid height if DOM reports 0/small
+    //  DIMENSION FIX: Force valid height 
     let containerWidth = container.offsetWidth;
     let containerHeight = container.offsetHeight;
 
@@ -635,8 +610,7 @@ function renderCategoryChart(data) {
         container.style.height = '600px';
     }
 
-    // 2. DATA SORTING: Sort Largest to Smallest (Crucial for "Blocky" layout)
-    // Random sorting creates "strips". Descending sort creates "blocks".
+    // DATA SORTING: Sort Largest to Smallest 
     const sortedData = [...data]
         .filter(item => item.count > 0)
         .sort((a, b) => b.count - a.count); // Descending
@@ -703,7 +677,7 @@ function renderCategoryChart(data) {
             return;
         }
 
-        // --- SPLIT LOGIC ---
+        // SPLIT LOGIC 
         // Find split point close to 50% weight
         const totalWeight = items.reduce((sum, i) => sum + i.count, 0);
         let currentWeight = 0;

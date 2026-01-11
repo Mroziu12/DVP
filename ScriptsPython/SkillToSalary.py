@@ -5,25 +5,17 @@ from collections import defaultdict
 
 
 def analyze_skills_data():
-    # 1. Setup Paths
-    # Script location: .../job-market-page/scripts/
+    # Setup Paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Input: Go 2 folders up to find ClearOffers.json 
-    # (based on your previous structure)
-    # If ClearOffers is actually inside 'data', 
-    # change this to: os.path.join
-    # (script_dir, '..', 'data', 'ClearOffers.json')
     input_path = os.path.join(script_dir, '..', 'ClearOffers2.json')
     
-    # OUTPUT CHANGED HERE:
-    # Go UP one level (to job-market-page), then DOWN into 'data'
     output_json = os.path.join(script_dir, '..', 'data', 'SkillVsSalary.json')
 
     print(f"Reading data from: {os.path.abspath(input_path)}")
     print(f"Writing output to: {os.path.abspath(output_json)}")
 
-    # 2. Load Data
+    # Load Data
     try:
         with open(input_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -31,7 +23,7 @@ def analyze_skills_data():
         print(f"Error: Could not find input file at {input_path}")
         return
 
-    # 3. Process Data
+    # Process Data
     skill_data = defaultdict(lambda: {'levels': [], 'salaries': []})
 
     for offer in data:
@@ -47,7 +39,7 @@ def analyze_skills_data():
                 if salary is not None:
                     skill_data[name]['salaries'].append(float(salary))
 
-    # 4. Calculate Averages
+    # Calculate Averages
     results = []
     MIN_OFFERS = 10
 
@@ -63,8 +55,7 @@ def analyze_skills_data():
                 'count': len(stats['salaries'])
             })
 
-    # 5. Save processed data
-    # Ensure the 'data' directory exists before writing to it
+    # Save processed data
     os.makedirs(os.path.dirname(output_json), exist_ok=True)
 
     with open(output_json, 'w', encoding='utf-8') as f:

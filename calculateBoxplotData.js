@@ -45,7 +45,6 @@ function calculateQuartiles(sortedArray) {
 
     sortedArray.forEach(value => {
         if (value < whiskerLowerLimit || value > whiskerUpperLimit) {
-            // This is an outlier
             outliers.push(value);
         } else {
             // Update whisker positions
@@ -94,7 +93,7 @@ function getPercentile(sortedArray, percentile) {
 function calculateBoxplotDataForSkill(skillName) {
     console.log(`\nProcessing skill: ${skillName}`);
 
-    // Group salaries by skill level for this specific skill
+    // Group salaries by skill level for specific skill
     const salaryByLevel = {
         1: [],
         2: [],

@@ -3,14 +3,14 @@ import os
 from collections import defaultdict
 
 def analyze_categories():
-    # 1. Setup paths
+    #  Setup paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
     input_path = os.path.join(script_dir, '..', 'ClearOffers2.json')
     output_path = os.path.join(script_dir, '..', 'data', 'CategoryStats.json')
 
     print(f"Reading data from: {os.path.abspath(input_path)}")
 
-    # 2. Load Data
+    # Load Data
     try:
         with open(input_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -18,16 +18,12 @@ def analyze_categories():
         print(f"Error: Could not find input file.")
         return
 
-    # 3. Aggregate Data
-    # We will group by 'marker_icon' which usually acts as the category in this dataset
+    #  Aggregate Data
     stats = defaultdict(lambda: {'count': 0, 'salary_sum': 0.0, 'salary_records': 0})
 
     for entry in data:
-        # Try to find a category field, fallback to 'Unknown'
-        # Adjust 'marker_icon' if your JSON uses a different field for category like 'category'
+
         cat = entry.get('marker_icon') or entry.get('category') or 'Other'
-        
-        # Clean up string (capitalize)
         cat = cat.capitalize()
 
         stats[cat]['count'] += 1
@@ -37,7 +33,7 @@ def analyze_categories():
             stats[cat]['salary_sum'] += float(salary)
             stats[cat]['salary_records'] += 1
 
-    # 4. Process Results
+    # Process Results
     results = []
     for cat, data in stats.items():
         avg_salary = 0
@@ -50,10 +46,10 @@ def analyze_categories():
             'avg_salary': avg_salary
         })
 
-    # 5. Sort by Count (Most popular first)
+    # Sort by Count (Most popular first)
     results.sort(key=lambda x: x['count'], reverse=True)
 
-    # 6. Save
+    # Save
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2)
