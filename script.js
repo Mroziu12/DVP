@@ -641,7 +641,7 @@ function renderCategoryChart(data) {
         .filter(item => item.count > 0)
         .sort((a, b) => b.count - a.count); // Descending
 
-    const treeData = sortedData.slice(0, 10);
+    const treeData = sortedData.slice(0, 20);
     const colors = ['#C85A3E', '#3A4D39', '#2B2B2B', '#D4A373', '#6B705C', '#A5A58D', '#4A4A4A', '#8C3D2B'];
 
     // Recursive function
