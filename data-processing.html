@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Processing Pipeline - Job Market Analytics</title>
+    <meta name="description" content="Complete data processing workflow from research to visualization">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Simple Navigation Links -->
+    <div class="top-nav-links">
+        <a href="index.html" class="nav-link">Main</a>
+        <a href="data-processing.html" class="nav-link active">Data Processing</a>
+        <a href="team.html" class="nav-link">Team</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="page-header">
+                <h2>Data Processing Pipeline</h2>
+                <p class="subtitle">From raw data to actionable insights</p>
+            </header>
+
+            <!-- Timeline Container -->
+            <div class="timeline-container">
+                <!-- Step 1: Research -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Market Research & Platform Selection</h3>
+                        <p>Conducted comprehensive research of the Polish job market to identify the most suitable data
+                            source. After evaluating multiple job boards, we selected <strong>JustJoin.it</strong> for
+                            its comprehensive tech job listings and structured data format.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Scraper Development -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Web Structure Investigation & Scraper Development</h3>
+                        <p>Analyzed the website's structure, API endpoints, and data formats. Built a robust web scraper
+                            capable of extracting job offers across multiple technology categories (Java, PHP, Ruby,
+                            Python, JavaScript, Data).</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Data Scraping -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Data Scraping</h3>
+                        <p>Executed the scraper to collect job offers from all target categories. Raw data aggregated
+                            into <code>offersCombined.json</code> containing thousands of job postings with details on
+                            skills, salaries, locations, and requirements.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4: Core Processing Pipeline -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Core Data Processing Pipeline</h3>
+                        <p>Implemented a comprehensive data cleaning and transformation pipeline to standardize and
+                            enrich the raw data:</p>
+
+                        <div class="mermaid-container">
+                            <pre class="mermaid">
+graph TD
+    RawData[("Raw Data<br/>(offersCombined.json)")] --> |Load JSON| DeDup{Duplicate URL?}
+    DeDup -- Yes --> Skip[Skip Entry]
+    DeDup -- No --> Extraction
+
+    subgraph Processing["Processing Pipeline"]
+        Extraction[Extract Data]
+        
+        %% Location Branch
+        Extraction --> LocProc[Location Processing]
+        LocProc --> |"Warsaw → Warszawa"| City[Clean City]
+        
+        %% Salary Branch
+        Extraction --> SalProc[Salary Processing]
+        SalProc --> |"Hourly × 168"| Monthly[Monthly Basis]
+        Monthly --> |"NBP API Rates"| EurConv[Convert to EUR]
+        
+        %% Skill Branch
+        Extraction --> SkillProc[Skill Categorizer]
+        SkillProc --> |"Embeddings & Cosine Sim"| AI[Sentence Transformer]
+        AI --> |"Similarity > 0.65"| Category[Standardized Category]
+    end
+
+    City --> ObjBuilder[Build Pydantic Object]
+    EurConv --> ObjBuilder
+    Category --> ObjBuilder
+    
+    ObjBuilder --> |Save| Output[("Clean Data<br/>(ClearOffers2.json)")]
+
+    style RawData fill:#e8d5b7
+    style Output fill:#e8d5b7
+    style Processing fill:#f5f0e8
+                            </pre>
+                        </div>
+
+                        <div class="processing-details">
+                            <div class="detail-item">
+                                <strong>Deduplication:</strong> Removed duplicate entries based on unique job URLs
+                            </div>
+                            <div class="detail-item">
+                                <strong>Location Normalization:</strong> Standardized city names (e.g., "Warsaw" →
+                                "Warszawa")
+                            </div>
+                            <div class="detail-item">
+                                <strong>Salary Conversion:</strong> Converted all salaries to EUR using NBP API exchange
+                                rates, normalized hourly rates to monthly
+                            </div>
+                            <div class="detail-item">
+                                <strong>Skill Categorization:</strong> Used ML embeddings (Sentence Transformer) with
+                                cosine similarity to group similar skills into standardized categories
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Visualization-Specific Processing -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <h3>Visualization-Specific Data Processing</h3>
+                        <p>Generated specialized datasets for each visualization component:</p>
+
+                        <div class="processing-scripts">
+                            <div class="script-item">
+                                <code>calculateJaccardIndex.js</code>
+                                <span>Computes skill co-occurrence patterns using Jaccard similarity index for the skill
+                                    relationships network</span>
+                            </div>
+
+                            <div class="script-item">
+                                <code>calculateBoxplotData.js</code>
+                                <span>Generates salary distribution statistics (quartiles, outliers) grouped by skill
+                                    and experience level</span>
+                            </div>
+
+                            <div class="script-item">
+                                <code>processExperienceLevel.js</code>
+                                <span>Aggregates job offer counts and statistics by experience level (Junior, Mid,
+                                    Senior, Lead)</span>
+                            </div>
+
+                            <div class="script-item">
+                                <code>processContractType.js</code>
+                                <span>Analyzes distribution of contract types (B2B, UoP, etc.) across job offers</span>
+                            </div>
+
+                            <div class="script-item">
+                                <code>processWorkMode.js</code>
+                                <span>Categorizes work arrangements (Remote, Hybrid, Office) for market trend
+                                    analysis</span>
+                            </div>
+
+                            <div class="script-item">
+                                <code>CategoriesCount.py</code>
+                                <span>Counts job offers per technology category for treemap visualization</span>
+                            </div>
+
+                            <div class="script-item">
+                                <code>SkillToSalary.py</code>
+                                <span>Correlates individual skills with salary ranges for skill value analysis</span>
+                            </div>
+
+                            <div class="script-item">
+                                <code>AverageSalary.py</code>
+                                <span>Calculates average salaries segmented by experience level for career trajectory
+                                    insights</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Data to Insights -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">6</div>
+                    <div class="timeline-content">
+                        <h3>Data → Insights</h3>
+                        <p>The final transformation brings processed data to life through interactive visualizations.
+                            This entire pipeline was built with a clear purpose: to help us, as developers and data
+                            enthusiasts, make informed decisions about which skills and technologies to learn next.</p>
+
+                        <p>By analyzing thousands of job offers, salary ranges, and skill combinations, we can now see
+                            clear patterns in the market. Which technologies are in highest demand? What skills command
+                            the best salaries? How do different experience levels affect compensation? What's the
+                            optimal career progression path?</p>
+
+                        <p>These insights transform raw market data into actionable knowledge, empowering anyone to
+                            strategically plan their learning journey and career development based on real market trends
+                            rather than guesswork.</p>
+
+                        <p style="margin-top: var(--spacing-md); text-align: center;">
+                            <a href="index.html" class="dashboard-btn">Explore the Dashboard →</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#e8d5b7',
+                primaryTextColor: '#2d2d2d',
+                primaryBorderColor: '#8b7355',
+                lineColor: '#8b7355',
+                secondaryColor: '#f5f0e8',
+                tertiaryColor: '#fff'
+            }
+        });
+    </script>
+</body>
+
+</html>
