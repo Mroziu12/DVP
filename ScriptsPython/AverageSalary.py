@@ -62,4 +62,4 @@ def calculate_and_save_stats(input_file_name, output_file_name):
 
 # Run the function
 # Note: The function handles the folders, so just provide the filenames here
-calculate_and_save_stats('ClearOffers.json', 'ExperienceStats.json')
+calculate_and_save_stats('ClearOffers2.json', 'ExperienceStats.json')

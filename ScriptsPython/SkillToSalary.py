@@ -14,7 +14,7 @@ def analyze_skills_data():
     # If ClearOffers is actually inside 'data', 
     # change this to: os.path.join
     # (script_dir, '..', 'data', 'ClearOffers.json')
-    input_path = os.path.join(script_dir, '..', 'ClearOffers.json')
+    input_path = os.path.join(script_dir, '..', 'ClearOffers2.json')
     
     # OUTPUT CHANGED HERE:
     # Go UP one level (to job-market-page), then DOWN into 'data'
