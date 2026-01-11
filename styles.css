@@ -1010,8 +1010,11 @@ footer {
 }
 /* ===== EDGE BUNDLING GRAPH ===== */
 .edge-bundling-container {
-    width: 100%;
-    height: 900px;
+    width: 95%;
+    height: 1000px;
+    height: 1000px; 
+    
+    margin: 0 auto;
     position: relative;
     display: flex;
     align-items: center;
@@ -1047,7 +1050,7 @@ footer {
     }
 
     .edge-bundling-container {
-        height: 700px;
+        height: 500px;
     }
 
     .edge-bundling-node {

@@ -156,6 +156,23 @@ class EdgeBundlingProcessor {
         // Clear container
         container.innerHTML = '';
 
+        let tooltip = d3.select("body").select(".skill-tooltip");
+        if (tooltip.empty()) {
+            tooltip = d3.select("body").append("div")
+                .attr("class", "skill-tooltip")
+                .style("opacity", 0)
+                .style("position", "absolute")
+                .style("background", "rgba(43, 43, 43, 0.95)") // matte-carbon background
+                .style("color", "#F5F1E8")      // alabaster text
+                .style("padding", "8px 12px")
+                .style("border-radius", "4px")
+                .style("font-family", "IBM Plex Mono, monospace")
+                .style("font-size", "12px")
+                .style("pointer-events", "none")
+                .style("z-index", "1000")
+                .style("box-shadow", "0 4px 12px rgba(0,0,0,0.2)")
+                .style("border", "1px solid #C85A3E"); // burnt-orange border
+        }
         // Extract and filter data
         this.topSkills = this.extractTopSkills(settings.topSkills, settings.minJaccard);
         this.connections = this.filterConnections(this.topSkills, settings.minJaccard);
@@ -255,6 +272,14 @@ class EdgeBundlingProcessor {
             .style('fill', settings.nodeColor)
             .style('cursor', 'pointer')
             .on('mouseenter', function (d) {
+
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", 1);
+                tooltip.html(d.data.key)
+                    .style("left", (d3.event.pageX + 15) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px")
+
                 // Highlight connected links
                 link.style('stroke-opacity', l => {
                     if (l.source.data.key === d.data.key || l.target.data.key === d.data.key) {
@@ -283,6 +308,11 @@ class EdgeBundlingProcessor {
             })
             .on('mouseleave', function () {
                 // Reset links
+
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+
                 link.style('stroke-opacity', settings.linkOpacity)
                     .style('stroke', settings.linkColor)
                     .style('stroke-width', l => getStrokeWidth(l.source.data.key, l.target.data.key));
