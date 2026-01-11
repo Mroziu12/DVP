@@ -12,7 +12,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Read the ClearOffers.json file
-const offersPath = path.join(__dirname, 'ClearOffers.json');
+const offersPath = path.join(__dirname, 'ClearOffers2.json');
 const offers = JSON.parse(fs.readFileSync(offersPath, 'utf8'));
 
 console.log(`Loaded ${offers.length} offers from ClearOffers.json`);

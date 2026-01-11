@@ -12,7 +12,7 @@ const path = require('path');
 function processExperienceLevel() {
     try {
         // Read the ClearOffers.json file
-        const dataPath = path.join(__dirname, '..', 'ClearOffers.json');
+        const dataPath = path.join(__dirname, '..', 'ClearOffers2.json');
         const rawData = fs.readFileSync(dataPath, 'utf8');
         const offers = JSON.parse(rawData);
 

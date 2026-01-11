@@ -5,7 +5,7 @@ from collections import defaultdict
 def analyze_categories():
     # 1. Setup paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    input_path = os.path.join(script_dir, '..', 'ClearOffers.json')
+    input_path = os.path.join(script_dir, '..', 'ClearOffers2.json')
     output_path = os.path.join(script_dir, '..', 'data', 'CategoryStats.json')
 
     print(f"Reading data from: {os.path.abspath(input_path)}")
