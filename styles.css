@@ -1118,6 +1118,7 @@ footer {
     height: 80px;
     background: var(--warm-sand);
     border: 2px solid var(--matte-carbon);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
