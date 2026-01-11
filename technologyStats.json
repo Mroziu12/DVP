@@ -1,574 +1,966 @@
 [
   {
     "technology": "English",
-    "occurrences": 1561
+    "occurrences": 3405
   },
   {
     "technology": "Polish",
-    "occurrences": 740
+    "occurrences": 1550
   },
   {
     "technology": "Python",
-    "occurrences": 512
+    "occurrences": 1245
   },
   {
     "technology": "SQL",
-    "occurrences": 429
-  },
-  {
-    "technology": "Azure",
-    "occurrences": 337
-  },
-  {
-    "technology": "AWS",
-    "occurrences": 292
+    "occurrences": 1150
   },
   {
     "technology": "Java",
-    "occurrences": 288
+    "occurrences": 964
+  },
+  {
+    "technology": "Azure",
+    "occurrences": 837
+  },
+  {
+    "technology": "AWS",
+    "occurrences": 720
   },
   {
     "technology": "Kubernetes",
-    "occurrences": 249
-  },
-  {
-    "technology": "Docker",
-    "occurrences": 231
+    "occurrences": 624
   },
   {
     "technology": "CI/CD",
-    "occurrences": 203
+    "occurrences": 576
   },
   {
-    "technology": "JavaScript",
-    "occurrences": 197
-  },
-  {
-    "technology": ".NET",
-    "occurrences": 197
-  },
-  {
-    "technology": "Linux",
-    "occurrences": 191
+    "technology": "Docker",
+    "occurrences": 554
   },
   {
     "technology": "React",
-    "occurrences": 188
+    "occurrences": 523
   },
   {
-    "technology": "Git",
-    "occurrences": 182
+    "technology": "JavaScript",
+    "occurrences": 502
   },
   {
     "technology": "TypeScript",
-    "occurrences": 171
+    "occurrences": 484
   },
   {
-    "technology": "Jira",
-    "occurrences": 142
+    "technology": "Git",
+    "occurrences": 408
+  },
+  {
+    "technology": ".NET",
+    "occurrences": 405
+  },
+  {
+    "technology": "Linux",
+    "occurrences": 379
   },
   {
     "technology": "Agile",
-    "occurrences": 142
+    "occurrences": 349
+  },
+  {
+    "technology": "Jira",
+    "occurrences": 349
   },
   {
     "technology": "Artificial Intelligence",
-    "occurrences": 137
-  },
-  {
-    "technology": "Rest Api",
-    "occurrences": 127
-  },
-  {
-    "technology": "Terraform",
-    "occurrences": 121
-  },
-  {
-    "technology": "C#",
-    "occurrences": 118
-  },
-  {
-    "technology": "PostgreSQL",
-    "occurrences": 118
-  },
-  {
-    "technology": "PHP",
-    "occurrences": 117
-  },
-  {
-    "technology": "C++",
-    "occurrences": 112
-  },
-  {
-    "technology": "Kafka",
-    "occurrences": 110
+    "occurrences": 332
   },
   {
     "technology": "Angular",
-    "occurrences": 107
+    "occurrences": 330
   },
   {
-    "technology": "Kotlin",
-    "occurrences": 96
+    "technology": "Terraform",
+    "occurrences": 327
   },
   {
-    "technology": "UML",
-    "occurrences": 91
+    "technology": "Rest Api",
+    "occurrences": 320
   },
   {
-    "technology": "GCP",
-    "occurrences": 90
+    "technology": "PostgreSQL",
+    "occurrences": 309
+  },
+  {
+    "technology": "Kafka",
+    "occurrences": 301
   },
   {
     "technology": "Node.js",
-    "occurrences": 88
+    "occurrences": 249
   },
   {
-    "technology": "Android",
-    "occurrences": 85
+    "technology": "C#",
+    "occurrences": 231
   },
   {
-    "technology": "Scrum",
-    "occurrences": 84
+    "technology": "UML",
+    "occurrences": 231
   },
   {
-    "technology": "Confluence",
-    "occurrences": 84
-  },
-  {
-    "technology": "Cloud",
-    "occurrences": 83
+    "technology": "GCP",
+    "occurrences": 227
   },
   {
     "technology": "Devops",
-    "occurrences": 81
+    "occurrences": 216
   },
   {
-    "technology": "HTML",
-    "occurrences": 80
+    "technology": "Confluence",
+    "occurrences": 210
   },
   {
     "technology": "Bpmn",
-    "occurrences": 77
+    "occurrences": 208
   },
   {
-    "technology": "MySQL",
-    "occurrences": 70
+    "technology": "Cloud",
+    "occurrences": 200
   },
   {
-    "technology": "API",
-    "occurrences": 68
+    "technology": "Scrum",
+    "occurrences": 199
   },
   {
-    "technology": "CSS",
-    "occurrences": 67
+    "technology": "HTML",
+    "occurrences": 194
   },
   {
-    "technology": "Figma",
-    "occurrences": 65
+    "technology": "Kotlin",
+    "occurrences": 188
   },
   {
     "technology": "Machine Learning",
-    "occurrences": 61
+    "occurrences": 181
   },
   {
-    "technology": "Cybersecurity",
-    "occurrences": 61
-  },
-  {
-    "technology": "SAP",
-    "occurrences": 60
-  },
-  {
-    "technology": "LLM",
-    "occurrences": 59
-  },
-  {
-    "technology": "Go",
-    "occurrences": 56
-  },
-  {
-    "technology": "Project Management",
-    "occurrences": 54
-  },
-  {
-    "technology": "Microservices",
-    "occurrences": 53
-  },
-  {
-    "technology": "Rest",
-    "occurrences": 51
-  },
-  {
-    "technology": "Bash",
-    "occurrences": 51
-  },
-  {
-    "technology": "iOS",
-    "occurrences": 50
-  },
-  {
-    "technology": "Oracle",
-    "occurrences": 50
-  },
-  {
-    "technology": "Swift",
-    "occurrences": 50
-  },
-  {
-    "technology": "Powershell",
-    "occurrences": 48
-  },
-  {
-    "technology": "Security",
-    "occurrences": 46
-  },
-  {
-    "technology": "Scala",
-    "occurrences": 45
-  },
-  {
-    "technology": "ETL",
-    "occurrences": 44
-  },
-  {
-    "technology": "Data",
-    "occurrences": 44
-  },
-  {
-    "technology": "Business Analysis",
-    "occurrences": 43
-  },
-  {
-    "technology": "Golang",
-    "occurrences": 43
-  },
-  {
-    "technology": "C",
-    "occurrences": 43
-  },
-  {
-    "technology": "Ansible",
-    "occurrences": 43
-  },
-  {
-    "technology": "Jenkins",
-    "occurrences": 41
-  },
-  {
-    "technology": "Analytical Thinking",
-    "occurrences": 41
+    "technology": "CSS",
+    "occurrences": 172
   },
   {
     "technology": "Databricks",
-    "occurrences": 40
+    "occurrences": 171
   },
   {
-    "technology": "ERP",
-    "occurrences": 40
+    "technology": "API",
+    "occurrences": 168
   },
   {
-    "technology": "Enterprise Architect",
-    "occurrences": 40
+    "technology": "Project Management",
+    "occurrences": 149
   },
   {
-    "technology": "Restful Api",
-    "occurrences": 37
+    "technology": "C++",
+    "occurrences": 143
   },
   {
-    "technology": "Next.js",
-    "occurrences": 37
+    "technology": "Microservices",
+    "occurrences": 142
   },
   {
-    "technology": "Snowflake",
-    "occurrences": 36
+    "technology": "Data",
+    "occurrences": 141
   },
   {
-    "technology": "German",
-    "occurrences": 36
-  },
-  {
-    "technology": "Nosql",
-    "occurrences": 35
-  },
-  {
-    "technology": "PyTorch",
-    "occurrences": 35
-  },
-  {
-    "technology": "Google Cloud Platform",
-    "occurrences": 35
-  },
-  {
-    "technology": "Rust",
-    "occurrences": 35
-  },
-  {
-    "technology": "Architecture",
-    "occurrences": 34
-  },
-  {
-    "technology": "Spark",
-    "occurrences": 34
-  },
-  {
-    "technology": "React Native",
-    "occurrences": 34
-  },
-  {
-    "technology": "Data Science",
-    "occurrences": 31
-  },
-  {
-    "technology": "MongoDB",
-    "occurrences": 31
+    "technology": "LLM",
+    "occurrences": 140
   },
   {
     "technology": "Hibernate",
-    "occurrences": 31
+    "occurrences": 134
   },
   {
-    "technology": "Symfony",
-    "occurrences": 31
+    "technology": "Oracle",
+    "occurrences": 132
   },
   {
-    "technology": "Laravel",
-    "occurrences": 31
+    "technology": "Rest",
+    "occurrences": 131
   },
   {
-    "technology": "RAG",
-    "occurrences": 30
+    "technology": "ETL",
+    "occurrences": 131
   },
   {
-    "technology": "Vue.js",
-    "occurrences": 30
+    "technology": "PHP",
+    "occurrences": 130
   },
   {
-    "technology": "Ux/Ui",
-    "occurrences": 29
+    "technology": "Android",
+    "occurrences": 124
   },
   {
-    "technology": "Software Development",
-    "occurrences": 29
+    "technology": "Jenkins",
+    "occurrences": 123
   },
   {
-    "technology": "Redis",
-    "occurrences": 29
+    "technology": "Spark",
+    "occurrences": 115
   },
   {
-    "technology": "Windows",
-    "occurrences": 29
+    "technology": "Ansible",
+    "occurrences": 113
   },
   {
-    "technology": "Active Directory",
-    "occurrences": 29
+    "technology": "Enterprise Architect",
+    "occurrences": 110
   },
   {
-    "technology": "Graphql",
-    "occurrences": 28
+    "technology": "Bash",
+    "occurrences": 107
   },
   {
-    "technology": "Gitlab",
-    "occurrences": 28
-  },
-  {
-    "technology": "Django",
-    "occurrences": 28
-  },
-  {
-    "technology": "Soap",
-    "occurrences": 28
+    "technology": "SAP",
+    "occurrences": 107
   },
   {
     "technology": "Power Bi",
-    "occurrences": 28
+    "occurrences": 107
   },
   {
-    "technology": "Leadership",
-    "occurrences": 27
+    "technology": "Analytical Thinking",
+    "occurrences": 106
   },
   {
-    "technology": "Ruby",
-    "occurrences": 27
+    "technology": "MySQL",
+    "occurrences": 103
   },
   {
-    "technology": "Elasticsearch",
-    "occurrences": 26
+    "technology": "Data Science",
+    "occurrences": 99
   },
   {
-    "technology": "UX",
-    "occurrences": 26
+    "technology": "Snowflake",
+    "occurrences": 98
+  },
+  {
+    "technology": "Restful Api",
+    "occurrences": 97
+  },
+  {
+    "technology": "Business Analysis",
+    "occurrences": 97
+  },
+  {
+    "technology": "Next.js",
+    "occurrences": 96
+  },
+  {
+    "technology": "Nosql",
+    "occurrences": 95
+  },
+  {
+    "technology": "Powershell",
+    "occurrences": 94
+  },
+  {
+    "technology": "Cybersecurity",
+    "occurrences": 94
+  },
+  {
+    "technology": "Gitlab",
+    "occurrences": 84
+  },
+  {
+    "technology": "Figma",
+    "occurrences": 84
+  },
+  {
+    "technology": "Go",
+    "occurrences": 83
+  },
+  {
+    "technology": "MongoDB",
+    "occurrences": 81
+  },
+  {
+    "technology": "Scala",
+    "occurrences": 80
+  },
+  {
+    "technology": "Vue.js",
+    "occurrences": 80
+  },
+  {
+    "technology": "German",
+    "occurrences": 79
+  },
+  {
+    "technology": "Architecture",
+    "occurrences": 78
+  },
+  {
+    "technology": "Google Cloud Platform",
+    "occurrences": 76
+  },
+  {
+    "technology": "Swift",
+    "occurrences": 74
   },
   {
     "technology": "Pyspark",
-    "occurrences": 24
+    "occurrences": 74
   },
   {
-    "technology": "Langchain",
-    "occurrences": 24
+    "technology": "iOS",
+    "occurrences": 73
   },
   {
-    "technology": "Fastapi",
-    "occurrences": 24
+    "technology": "Soap",
+    "occurrences": 68
   },
   {
-    "technology": "Servicenow",
-    "occurrences": 24
+    "technology": "Software Development",
+    "occurrences": 68
+  },
+  {
+    "technology": "ERP",
+    "occurrences": 68
+  },
+  {
+    "technology": "Security",
+    "occurrences": 67
   },
   {
     "technology": "Grafana",
-    "occurrences": 24
+    "occurrences": 66
   },
   {
-    "technology": "Databases",
-    "occurrences": 23
+    "technology": "React Native",
+    "occurrences": 66
   },
   {
-    "technology": "IAM",
-    "occurrences": 23
+    "technology": "PyTorch",
+    "occurrences": 66
   },
   {
-    "technology": "TensorFlow",
-    "occurrences": 22
-  },
-  {
-    "technology": "Communication",
-    "occurrences": 22
-  },
-  {
-    "technology": "Product Management",
-    "occurrences": 22
-  },
-  {
-    "technology": "Rabbitmq",
-    "occurrences": 21
-  },
-  {
-    "technology": "Ms Excel",
-    "occurrences": 21
-  },
-  {
-    "technology": "Prometheus",
-    "occurrences": 21
-  },
-  {
-    "technology": "Analiza Biznesowa",
-    "occurrences": 21
-  },
-  {
-    "technology": "NLP",
-    "occurrences": 20
-  },
-  {
-    "technology": "Flutter",
-    "occurrences": 20
-  },
-  {
-    "technology": "E-Commerce",
-    "occurrences": 20
-  },
-  {
-    "technology": "IaC",
-    "occurrences": 19
-  },
-  {
-    "technology": "Team Leadership",
-    "occurrences": 19
-  },
-  {
-    "technology": "Vmware",
-    "occurrences": 19
-  },
-  {
-    "technology": "LAN",
-    "occurrences": 19
+    "technology": "Graphql",
+    "occurrences": 65
   },
   {
     "technology": "Airflow",
-    "occurrences": 18
+    "occurrences": 62
   },
   {
-    "technology": "Json",
-    "occurrences": 18
+    "technology": "IaC",
+    "occurrences": 60
   },
   {
-    "technology": "UI",
-    "occurrences": 18
+    "technology": "Fastapi",
+    "occurrences": 60
   },
   {
-    "technology": "Salesforce",
-    "occurrences": 18
-  },
-  {
-    "technology": "OOP",
-    "occurrences": 18
-  },
-  {
-    "technology": "Cisco",
-    "occurrences": 18
-  },
-  {
-    "technology": "Microsoft 365",
-    "occurrences": 17
-  },
-  {
-    "technology": "Entity Framework",
-    "occurrences": 17
-  },
-  {
-    "technology": "Siem",
-    "occurrences": 17
-  },
-  {
-    "technology": "Sap Hana",
-    "occurrences": 17
-  },
-  {
-    "technology": "Sap Sd",
-    "occurrences": 17
-  },
-  {
-    "technology": "Team Management",
-    "occurrences": 16
+    "technology": "Golang",
+    "occurrences": 59
   },
   {
     "technology": "Big Data",
-    "occurrences": 16
+    "occurrences": 58
   },
   {
-    "technology": "Togaf",
-    "occurrences": 16
+    "technology": "Ms Excel",
+    "occurrences": 58
   },
   {
-    "technology": "Backend",
-    "occurrences": 16
+    "technology": "Product Management",
+    "occurrences": 58
   },
   {
-    "technology": "Wordpress",
-    "occurrences": 16
+    "technology": "Redis",
+    "occurrences": 57
   },
   {
-    "technology": "Windows Server",
-    "occurrences": 16
+    "technology": "Communication",
+    "occurrences": 55
   },
   {
-    "technology": "Abap",
-    "occurrences": 16
+    "technology": "Windows",
+    "occurrences": 55
+  },
+  {
+    "technology": "Maven",
+    "occurrences": 54
+  },
+  {
+    "technology": "Itil",
+    "occurrences": 54
+  },
+  {
+    "technology": "RAG",
+    "occurrences": 54
+  },
+  {
+    "technology": "Leadership",
+    "occurrences": 53
+  },
+  {
+    "technology": "Servicenow",
+    "occurrences": 52
+  },
+  {
+    "technology": "Django",
+    "occurrences": 52
+  },
+  {
+    "technology": "Databases",
+    "occurrences": 50
+  },
+  {
+    "technology": "Elasticsearch",
+    "occurrences": 50
+  },
+  {
+    "technology": "Prometheus",
+    "occurrences": 50
+  },
+  {
+    "technology": "Rabbitmq",
+    "occurrences": 47
+  },
+  {
+    "technology": "Ux/Ui",
+    "occurrences": 46
+  },
+  {
+    "technology": "TensorFlow",
+    "occurrences": 46
+  },
+  {
+    "technology": "Analiza Biznesowa",
+    "occurrences": 46
+  },
+  {
+    "technology": "C",
+    "occurrences": 45
+  },
+  {
+    "technology": "Langchain",
+    "occurrences": 44
   },
   {
     "technology": "Genai",
-    "occurrences": 15
+    "occurrences": 43
   },
   {
-    "technology": "Sdlc",
-    "occurrences": 15
+    "technology": "Json",
+    "occurrences": 43
+  },
+  {
+    "technology": "Data Modeling",
+    "occurrences": 42
+  },
+  {
+    "technology": "NLP",
+    "occurrences": 42
+  },
+  {
+    "technology": "Rust",
+    "occurrences": 42
+  },
+  {
+    "technology": "IAM",
+    "occurrences": 42
+  },
+  {
+    "technology": "Entity Framework",
+    "occurrences": 42
+  },
+  {
+    "technology": "Analytics",
+    "occurrences": 42
+  },
+  {
+    "technology": "Bigquery",
+    "occurrences": 41
+  },
+  {
+    "technology": "Salesforce",
+    "occurrences": 40
+  },
+  {
+    "technology": "Junit",
+    "occurrences": 39
+  },
+  {
+    "technology": "Team Leadership",
+    "occurrences": 39
+  },
+  {
+    "technology": "Active Directory",
+    "occurrences": 39
+  },
+  {
+    "technology": "Ruby",
+    "occurrences": 38
+  },
+  {
+    "technology": "Prince2",
+    "occurrences": 38
+  },
+  {
+    "technology": "DDD",
+    "occurrences": 35
+  },
+  {
+    "technology": "Team Management",
+    "occurrences": 34
+  },
+  {
+    "technology": "Helm",
+    "occurrences": 34
+  },
+  {
+    "technology": "Tableau",
+    "occurrences": 34
+  },
+  {
+    "technology": "Ms Project",
+    "occurrences": 34
+  },
+  {
+    "technology": "Laravel",
+    "occurrences": 34
+  },
+  {
+    "technology": "Backend",
+    "occurrences": 33
+  },
+  {
+    "technology": "Siem",
+    "occurrences": 33
+  },
+  {
+    "technology": "DBT",
+    "occurrences": 33
+  },
+  {
+    "technology": "Togaf",
+    "occurrences": 32
+  },
+  {
+    "technology": "UX",
+    "occurrences": 32
+  },
+  {
+    "technology": "Nest.Js",
+    "occurrences": 32
+  },
+  {
+    "technology": "Postresql",
+    "occurrences": 31
+  },
+  {
+    "technology": "Generative Ai",
+    "occurrences": 31
+  },
+  {
+    "technology": "CRM",
+    "occurrences": 31
+  },
+  {
+    "technology": "Vmware",
+    "occurrences": 31
+  },
+  {
+    "technology": "Flutter",
+    "occurrences": 31
+  },
+  {
+    "technology": "Windows Server",
+    "occurrences": 31
+  },
+  {
+    "technology": "XML",
+    "occurrences": 30
+  },
+  {
+    "technology": "TDD",
+    "occurrences": 30
+  },
+  {
+    "technology": "Testing",
+    "occurrences": 30
+  },
+  {
+    "technology": "Tcp/Ip",
+    "occurrences": 30
+  },
+  {
+    "technology": "It Security",
+    "occurrences": 30
+  },
+  {
+    "technology": "Symfony",
+    "occurrences": 30
+  },
+  {
+    "technology": "Mlops",
+    "occurrences": 29
+  },
+  {
+    "technology": "JPA",
+    "occurrences": 28
+  },
+  {
+    "technology": "OOP",
+    "occurrences": 28
   },
   {
     "technology": "Software Architecture",
-    "occurrences": 15
+    "occurrences": 28
+  },
+  {
+    "technology": "Redux",
+    "occurrences": 28
+  },
+  {
+    "technology": "Sdlc",
+    "occurrences": 28
+  },
+  {
+    "technology": "Ms Office",
+    "occurrences": 28
+  },
+  {
+    "technology": "Pandas",
+    "occurrences": 28
+  },
+  {
+    "technology": "UI",
+    "occurrences": 27
   },
   {
     "technology": "Saas",
+    "occurrences": 27
+  },
+  {
+    "technology": "Sap Hana",
+    "occurrences": 27
+  },
+  {
+    "technology": "Kotlin Multiplatform",
+    "occurrences": 26
+  },
+  {
+    "technology": "Hadoop",
+    "occurrences": 26
+  },
+  {
+    "technology": "E-Commerce",
+    "occurrences": 26
+  },
+  {
+    "technology": "DNS",
+    "occurrences": 26
+  },
+  {
+    "technology": "Microsoft 365",
+    "occurrences": 26
+  },
+  {
+    "technology": "Flask",
+    "occurrences": 26
+  },
+  {
+    "technology": "Ai/Ml",
+    "occurrences": 25
+  },
+  {
+    "technology": "Quarkus",
+    "occurrences": 24
+  },
+  {
+    "technology": "Solid",
+    "occurrences": 24
+  },
+  {
+    "technology": "Oracle Db",
+    "occurrences": 24
+  },
+  {
+    "technology": "Http",
+    "occurrences": 24
+  },
+  {
+    "technology": "Kanban",
+    "occurrences": 24
+  },
+  {
+    "technology": "Abap",
+    "occurrences": 24
+  },
+  {
+    "technology": "Microservice Architecture",
+    "occurrences": 23
+  },
+  {
+    "technology": "Safe",
+    "occurrences": 23
+  },
+  {
+    "technology": "Rxjs",
+    "occurrences": 23
+  },
+  {
+    "technology": "LAN",
+    "occurrences": 23
+  },
+  {
+    "technology": "Cisco",
+    "occurrences": 23
+  },
+  {
+    "technology": "Github Actions",
+    "occurrences": 23
+  },
+  {
+    "technology": "Distributed Systems",
+    "occurrences": 22
+  },
+  {
+    "technology": "Langgraph",
+    "occurrences": 22
+  },
+  {
+    "technology": "Sap Sd",
+    "occurrences": 22
+  },
+  {
+    "technology": "JVM",
+    "occurrences": 21
+  },
+  {
+    "technology": "Groovy",
+    "occurrences": 21
+  },
+  {
+    "technology": "OpenShift",
+    "occurrences": 21
+  },
+  {
+    "technology": "Wordpress",
+    "occurrences": 21
+  },
+  {
+    "technology": "Front-End",
+    "occurrences": 21
+  },
+  {
+    "technology": "Sass",
+    "occurrences": 21
+  },
+  {
+    "technology": "Archimate",
+    "occurrences": 21
+  },
+  {
+    "technology": "Gradle",
+    "occurrences": 20
+  },
+  {
+    "technology": "Rdbms",
+    "occurrences": 20
+  },
+  {
+    "technology": "Websocket",
+    "occurrences": 20
+  },
+  {
+    "technology": "Power Platform",
+    "occurrences": 20
+  },
+  {
+    "technology": "Postman",
+    "occurrences": 20
+  },
+  {
+    "technology": "Mvvm",
+    "occurrences": 20
+  },
+  {
+    "technology": "Objective-C",
+    "occurrences": 20
+  },
+  {
+    "technology": "Waterfall",
+    "occurrences": 20
+  },
+  {
+    "technology": "DAX",
+    "occurrences": 20
+  },
+  {
+    "technology": "Swagger",
+    "occurrences": 19
+  },
+  {
+    "technology": "SRE",
+    "occurrences": 19
+  },
+  {
+    "technology": "Sharepoint",
+    "occurrences": 19
+  },
+  {
+    "technology": "Tailwind",
+    "occurrences": 19
+  },
+  {
+    "technology": "Sap S/4Hana",
+    "occurrences": 19
+  },
+  {
+    "technology": "Sap Mm",
+    "occurrences": 19
+  },
+  {
+    "technology": "Sap Fi",
+    "occurrences": 19
+  },
+  {
+    "technology": "Visual Studio",
+    "occurrences": 18
+  },
+  {
+    "technology": "Scripting",
+    "occurrences": 18
+  },
+  {
+    "technology": "Observability",
+    "occurrences": 17
+  },
+  {
+    "technology": "Bitbucket",
+    "occurrences": 17
+  },
+  {
+    "technology": "Networks",
+    "occurrences": 17
+  },
+  {
+    "technology": "Mobile Apps",
+    "occurrences": 17
+  },
+  {
+    "technology": "SOA",
+    "occurrences": 17
+  },
+  {
+    "technology": "Design Patterns",
+    "occurrences": 16
+  },
+  {
+    "technology": "People Management",
+    "occurrences": 16
+  },
+  {
+    "technology": "Analityczne Myślenie",
+    "occurrences": 16
+  },
+  {
+    "technology": "Relational Databases",
+    "occurrences": 16
+  },
+  {
+    "technology": "Splunk",
+    "occurrences": 16
+  },
+  {
+    "technology": "Unit Testing",
+    "occurrences": 16
+  },
+  {
+    "technology": "Bazy Danych",
+    "occurrences": 16
+  },
+  {
+    "technology": "Scss",
+    "occurrences": 16
+  },
+  {
+    "technology": "Pytest",
+    "occurrences": 16
+  },
+  {
+    "technology": "VPN",
+    "occurrences": 16
+  },
+  {
+    "technology": "BI",
+    "occurrences": 16
+  },
+  {
+    "technology": "Troubleshooting",
+    "occurrences": 16
+  },
+  {
+    "technology": "Google Cloud",
+    "occurrences": 16
+  },
+  {
+    "technology": "Zabbix",
+    "occurrences": 16
+  },
+  {
+    "technology": "Mlflow",
+    "occurrences": 16
+  },
+  {
+    "technology": "Data Warehousing",
+    "occurrences": 16
+  },
+  {
+    "technology": "NumPy",
+    "occurrences": 16
+  },
+  {
+    "technology": "Algorithms",
+    "occurrences": 15
+  },
+  {
+    "technology": "Elk Stack",
+    "occurrences": 15
+  },
+  {
+    "technology": "Apex",
+    "occurrences": 15
+  },
+  {
+    "technology": "Solid Principles",
+    "occurrences": 15
+  },
+  {
+    "technology": "Networking",
+    "occurrences": 15
+  },
+  {
+    "technology": "Google Analytics",
+    "occurrences": 15
+  },
+  {
+    "technology": "Scikit-learn",
+    "occurrences": 15
+  },
+  {
+    "technology": "ORM",
+    "occurrences": 14
+  },
+  {
+    "technology": "Network Protocols",
+    "occurrences": 14
+  },
+  {
+    "technology": "Playwright",
     "occurrences": 14
   },
   {
@@ -576,147 +968,227 @@
     "occurrences": 14
   },
   {
-    "technology": "Tcp/Ip",
-    "occurrences": 14
-  },
-  {
-    "technology": "DNS",
-    "occurrences": 14
-  },
-  {
-    "technology": "It Security",
-    "occurrences": 14
-  },
-  {
-    "technology": "Ms Office",
-    "occurrences": 14
-  },
-  {
-    "technology": "Github Actions",
-    "occurrences": 13
-  },
-  {
-    "technology": "Testing",
-    "occurrences": 13
-  },
-  {
-    "technology": "XML",
-    "occurrences": 13
-  },
-  {
-    "technology": "Scss",
-    "occurrences": 13
-  },
-  {
-    "technology": "Analytics",
-    "occurrences": 13
-  },
-  {
-    "technology": "DBT",
-    "occurrences": 13
-  },
-  {
-    "technology": "Bigquery",
-    "occurrences": 13
-  },
-  {
-    "technology": "Junit",
-    "occurrences": 13
-  },
-  {
     "technology": "Embedded",
-    "occurrences": 13
+    "occurrences": 14
   },
   {
     "technology": "Jetpack Compose",
-    "occurrences": 13
+    "occurrences": 14
   },
   {
-    "technology": "Ms Project",
-    "occurrences": 13
+    "technology": "Firebase",
+    "occurrences": 14
   },
   {
-    "technology": "Prince2",
-    "occurrences": 13
+    "technology": "Dhcp",
+    "occurrences": 14
   },
   {
-    "technology": "Sap Fi",
-    "occurrences": 13
-  },
-  {
-    "technology": "Langgraph",
-    "occurrences": 12
-  },
-  {
-    "technology": "Generative Ai",
-    "occurrences": 12
-  },
-  {
-    "technology": "Pandas",
-    "occurrences": 12
-  },
-  {
-    "technology": "People Management",
-    "occurrences": 12
-  },
-  {
-    "technology": "Flask",
-    "occurrences": 12
-  },
-  {
-    "technology": "Websocket",
-    "occurrences": 12
-  },
-  {
-    "technology": "CRM",
-    "occurrences": 12
-  },
-  {
-    "technology": "Rdbms",
-    "occurrences": 12
-  },
-  {
-    "technology": "Postresql",
-    "occurrences": 12
-  },
-  {
-    "technology": "Http",
-    "occurrences": 12
-  },
-  {
-    "technology": "Objective-C",
-    "occurrences": 12
-  },
-  {
-    "technology": "Helm",
-    "occurrences": 12
-  },
-  {
-    "technology": "Sap Mm",
-    "occurrences": 12
-  },
-  {
-    "technology": "Mlops",
-    "occurrences": 11
-  },
-  {
-    "technology": "Mlflow",
-    "occurrences": 11
-  },
-  {
-    "technology": "Itil",
-    "occurrences": 11
+    "technology": "Atlassian",
+    "occurrences": 14
   },
   {
     "technology": "Shopify",
-    "occurrences": 11
+    "occurrences": 14
+  },
+  {
+    "technology": "Restful",
+    "occurrences": 13
+  },
+  {
+    "technology": "Web Services",
+    "occurrences": 13
+  },
+  {
+    "technology": "BDD",
+    "occurrences": 13
+  },
+  {
+    "technology": "Clean Code",
+    "occurrences": 13
+  },
+  {
+    "technology": "Risk Management",
+    "occurrences": 13
+  },
+  {
+    "technology": "Jest",
+    "occurrences": 13
+  },
+  {
+    "technology": "Computer Vision",
+    "occurrences": 13
+  },
+  {
+    "technology": "Firewall",
+    "occurrences": 13
+  },
+  {
+    "technology": "WAN",
+    "occurrences": 13
   },
   {
     "technology": "Ui Design",
+    "occurrences": 13
+  },
+  {
+    "technology": "Miro",
+    "occurrences": 13
+  },
+  {
+    "technology": "PM",
+    "occurrences": 13
+  },
+  {
+    "technology": "Analiza Systemowa",
+    "occurrences": 13
+  },
+  {
+    "technology": "Cloud Computing",
+    "occurrences": 13
+  },
+  {
+    "technology": "Sap Btp",
+    "occurrences": 13
+  },
+  {
+    "technology": "Express.Js",
+    "occurrences": 13
+  },
+  {
+    "technology": "Camunda",
+    "occurrences": 12
+  },
+  {
+    "technology": "Mockito",
+    "occurrences": 12
+  },
+  {
+    "technology": "Test Automation",
+    "occurrences": 12
+  },
+  {
+    "technology": "Tomcat",
+    "occurrences": 12
+  },
+  {
+    "technology": "Selenium",
+    "occurrences": 12
+  },
+  {
+    "technology": "Containers",
+    "occurrences": 12
+  },
+  {
+    "technology": "IoT",
+    "occurrences": 12
+  },
+  {
+    "technology": "Teamcity",
+    "occurrences": 12
+  },
+  {
+    "technology": "Dynamodb",
+    "occurrences": 12
+  },
+  {
+    "technology": "Dynamics 365",
+    "occurrences": 12
+  },
+  {
+    "technology": "Openai",
+    "occurrences": 12
+  },
+  {
+    "technology": "Argocd",
+    "occurrences": 12
+  },
+  {
+    "technology": "Cloud Platforms",
+    "occurrences": 12
+  },
+  {
+    "technology": "Infrastructure As Code",
+    "occurrences": 12
+  },
+  {
+    "technology": "Entra Id",
+    "occurrences": 12
+  },
+  {
+    "technology": "Network",
+    "occurrences": 12
+  },
+  {
+    "technology": "Looker",
+    "occurrences": 12
+  },
+  {
+    "technology": "Deep Learning",
+    "occurrences": 12
+  },
+  {
+    "technology": "Network Automation",
+    "occurrences": 12
+  },
+  {
+    "technology": "Technical Leadership",
     "occurrences": 11
   },
   {
-    "technology": "DDD",
+    "technology": "Gitops",
+    "occurrences": 11
+  },
+  {
+    "technology": "SEO",
+    "occurrences": 11
+  },
+  {
+    "technology": "Openapi",
+    "occurrences": 11
+  },
+  {
+    "technology": "Datadog",
+    "occurrences": 11
+  },
+  {
+    "technology": "Devops Tools",
+    "occurrences": 11
+  },
+  {
+    "technology": "Llms",
+    "occurrences": 11
+  },
+  {
+    "technology": "SoC",
+    "occurrences": 11
+  },
+  {
+    "technology": "Uikit",
+    "occurrences": 11
+  },
+  {
+    "technology": "It Support",
+    "occurrences": 11
+  },
+  {
+    "technology": "PMI",
+    "occurrences": 11
+  },
+  {
+    "technology": "ESB",
+    "occurrences": 11
+  },
+  {
+    "technology": "Power Automate",
+    "occurrences": 11
+  },
+  {
+    "technology": "Ux Design",
+    "occurrences": 11
+  },
+  {
+    "technology": "Change Management",
     "occurrences": 11
   },
   {
@@ -724,43 +1196,55 @@
     "occurrences": 11
   },
   {
-    "technology": "Distributed Systems",
+    "technology": "Excel",
     "occurrences": 11
   },
   {
-    "technology": "Microservice Architecture",
+    "technology": "ML",
     "occurrences": 11
   },
   {
-    "technology": "WAN",
+    "technology": "Data Lake",
     "occurrences": 11
   },
   {
-    "technology": "Hadoop",
+    "technology": "Etl/Elt",
+    "occurrences": 11
+  },
+  {
+    "technology": "Cyberark",
+    "occurrences": 11
+  },
+  {
+    "technology": "Api Testing",
     "occurrences": 10
   },
   {
-    "technology": "Ux Design",
+    "technology": "Mikroserwisy",
     "occurrences": 10
   },
   {
-    "technology": "Visual Studio",
+    "technology": "Bootstrap",
     "occurrences": 10
   },
   {
-    "technology": "Sass",
+    "technology": "Sonarqube",
     "occurrences": 10
   },
   {
-    "technology": "Redux",
+    "technology": "ELK",
     "occurrences": 10
   },
   {
-    "technology": "Bitbucket",
+    "technology": "Material Ui",
     "occurrences": 10
   },
   {
-    "technology": "Solid",
+    "technology": "Microsoft",
+    "occurrences": 10
+  },
+  {
+    "technology": "Bicep",
     "occurrences": 10
   },
   {
@@ -768,23 +1252,15 @@
     "occurrences": 10
   },
   {
-    "technology": "Groovy",
+    "technology": "Management",
     "occurrences": 10
   },
   {
-    "technology": "VPN",
+    "technology": "Network Administration",
     "occurrences": 10
   },
   {
-    "technology": "Mvvm",
-    "occurrences": 10
-  },
-  {
-    "technology": "Entra Id",
-    "occurrences": 10
-  },
-  {
-    "technology": "Tableau",
+    "technology": "Itsm",
     "occurrences": 10
   },
   {
@@ -792,7 +1268,11 @@
     "occurrences": 10
   },
   {
-    "technology": "Archimate",
+    "technology": "DWH",
+    "occurrences": 10
+  },
+  {
+    "technology": "Business Intelligence",
     "occurrences": 10
   }
 ]

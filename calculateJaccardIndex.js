@@ -3,7 +3,7 @@
 
 // Import the data
 const fs = require('fs');
-const clearOffersData = JSON.parse(fs.readFileSync('./ClearOffers.json', 'utf8'));
+const clearOffersData = JSON.parse(fs.readFileSync('./ClearOffers2.json', 'utf8'));
 
 /**
  * Calculate Jaccard Index between two sets
